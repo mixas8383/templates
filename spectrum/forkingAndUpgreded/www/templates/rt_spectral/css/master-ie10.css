@@ -1,0 +1,12 @@
+/**
+* @version   $Id: master-ie10.css 14987 2013-10-30 18:40:54Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+/* Menu Module */
+body .menu-block .gf-menu.l1 > li > .item {display: block;height: 50px;padding-top: 25px;}
+#rt-like{position: absolute; top: 0px; left: -5500px;}
+/* MainBody */
+body section#rt-body-section {filter: none !important;}

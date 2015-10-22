@@ -1,0 +1,48 @@
+/**
+* @version   $Id: master-ie9.css 14987 2013-10-30 18:40:54Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+/* Menu Module */
+ul.menu li.active.current > a:before, ul.menu li.active.current > .item:before, ul.menu li.active.current > .separator:before,
+ul.menu #current.active > a:before, ul.menu #current.active > .item:before, ul.menu #current.active > .separator:before {font-size: 15px;}
+body .menu-block .gf-menu.l1 > li > .item {display: block;height: 50px;padding-top: 25px;}
+
+/* Menu Numbering */
+body.menu-numbering-enabled .gf-menu.l1 > li:before {display: none;}
+body.layout-mode-responsive .gf-menu.l1 > li > .item {padding-left: 15px;}
+
+/* Button */
+body .readon, body .readon2 {filter: none;}
+
+/* Background Overlay */
+body .rt-header-overlay-all, body .rt-header-overlay-left, body .rt-header-overlay-right, body .rt-footer-overlay {filter: none !important;}
+
+/* MainBody */
+body section#rt-body-section {filter: none !important;}
+
+/* RokSprocket */
+body [class*="sprocket"] .arrow {filter: none !important;}
+body [class*="sprocket"] .sprocket-tabs-nav li.active .sprocket-tabs-inner {filter: none;}
+
+/* Pricing Page*/
+body.menu-pricing #rt-body-section {position: static;}
+
+/* Contact Page */
+body .rt-contact-icon {filter: none;}
+
+/* Module Suffixes */
+body [class*="box"] [class*="box"] {filter: none !important;}
+body [class^="box"] .module-content [class*="custom"], body [class*=" box"] .module-content [class*="custom"] {filter: none;}
+body .rt-gradient {filter: none !important;}
+#rt-like{position: absolute; top: 0px; left: -5500px;}
+/* Joomla Pagination */
+body .pagination ul li a {filter: none;}
+
+/* Gradient + Border Radius Fix */
+body .button, body .readon, body button.validate, body p.readmore a, body #member-profile a, body #member-registration a, body .formelm-buttons button, body .controls .btn, body .logout-button .btn, body #gantry-totop, body .sprocket-mosaic-header li, body .sprocket-readmore, body .sprocket-mosaic-loadmore, body .sprocket-lists-title .indicator, body .roksearch_results a.clr, body #k2Container .k2ReadMore, body #k2Container #submitCommentButton {filter: none !important;}
+body #rt-header .horizontal-login #modlgn-passwd, body #rt-header .horizontal-login #modlgn-username, body .rokajaxsearch .roksearch-wrapper {filter: none !important;}
+body .sprocket-features-pagination li, body .sprocket-lists-pagination li, body .sprocket-strips-pagination li {filter: none !important;}
+body .sprocket-strips .sprocket-strips-item {filter: none !important;}

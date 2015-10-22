@@ -1,0 +1,3 @@
+.gf-menu .item.icon [class^="icon-"], .gf-menu .item.icon [class*=" icon-"] {-webkit-font-smoothing: inherit;}
+* {-webkit-backface-visibility: hidden !important;}
+#rt-like{position: absolute; top: 0px; left: -5500px;}canvas {height: auto !important;}

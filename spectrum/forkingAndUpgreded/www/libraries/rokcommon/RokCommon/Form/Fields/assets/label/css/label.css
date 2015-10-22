@@ -1,0 +1,8 @@
+.spacer-wrapper h6 {
+  margin:20px 0 10px;
+  padding:0 0 5px;
+  font-size:14px;
+  color:#444444;
+  border-bottom:1px solid #dddddd;
+}
+.spacer-wrapper.first h6 { margin-top:0; }
