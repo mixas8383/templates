@@ -1,0 +1,1 @@
+https://www.joomlart.com/joomla/templates/ja-elastica
