@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @version 			$Id:$ -->
+<!-- @name			    Game (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_game -->
+<!-- @subpackage		com_game.admin -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: architectcompupdate.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2012 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3BB or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<!-- See http://docs.joomla.org/Deploying_an_Update_Server for further details on using this update xml file -->
+<update>
+    <name>Game</name>
+    <description></description>
+    <element>com_game</element>
+    <type>component</type>
+    <version>1.0.0</version>
+    <infourl title="Game">http://</infourl>
+    <downloads>
+        <downloadurl type="full" format="zip">http:///update_package_path.zip</downloadurl>
+    </downloads>
+    <maintainer></maintainer>
+    <maintainerurl>http://</maintainerurl>
+
+    <targetplatform name="joomla" version="3.3"/>
+</update>

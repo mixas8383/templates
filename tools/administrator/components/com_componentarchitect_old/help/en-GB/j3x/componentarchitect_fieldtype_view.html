@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @version 			$Id: componentarchitect_fieldtype_view.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_componentarchitect -->
+<!-- @subpackage		com_componentarchitect.admin.help -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion		$Id: componentarchitect_fieldtype_view.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @CAauthor		Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		architectcomp -->
+<!-- @CAsubpackage	architectcomp.admin.help -->
+<!-- @CAtemplate    joomla_3_x_enhanced (Release 1.0.0)-->
+<!-- @CAcopyright	(c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @CAlicense		GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB" xml:lang="en_GB">
+<head>
+<title>Field Type View Help</title>
+<link href="../../css/help.css" rel="stylesheet" type="text/css" />
+<meta name="copyright" content="(c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved" />
+<meta name="license" content="GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html" />
+</head>
+<body>
+<h1><img src="images/icon-48-fieldtypes.png" alt="Field Types Image" style="width:32px; margin-right: 10px;"/>Field Type View Help</h1>
+    <div><p>A field type defines the basic characteristics for certain types of Joomla! fields. Each field must be one of the pre-defined field types.</p></div>
+    <div>You can use the following links to jump to a section of this help page:</div>
+    <ul>
+        <li>
+            <a href="#toolbar">Toolbar Buttons</a>
+        </li>
+        <li>
+           <a href="#headline">Headline Details</a>
+        </li>
+        <li>
+           <a href="#basic-details">Basic Details</a>
+        </li>
+        <li>
+            <a href="#required-attributes">Field Type Required Attributes</a>
+        </li>
+        <li>
+            <a href="#attributes-defaults">Field Type Attribute Defaults</a>
+        </li>
+        <li>
+            <a href="#mysql-settings">Field Type MySQL Settings</a>
+        </li>
+        <li>
+            <a href="#publishing">Publishing</a>
+        </li>
+    </ul>
+    <h2>Screenshot</h2>
+        <img class="help-image" src="images/fieldtype-view-screenshot.jpg" alt="Field Type - Screenshot" style="width:100%; max-width:1100px;"/>
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="toolbar">Toolbar Buttons</h2>
+        <img class="help-image" src="images/fieldtype-view-toolbar.jpg" alt="Field Type - Toolbar" style="width:100%; max-width:1100px;"/>
+       <h3>Close</h3>
+            <div class="parameter">
+                <div class="field-desc">Close the view form and return to the list.</div>
+            </div>     
+        <h3>Help</h3>
+            <div class="parameter">
+                <div class="field-desc">Link to display the Help system.</div>
+            </div> 
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="headline">Headline Details</h2>
+        <img class="help-image" src="images/fieldtype-view-headline.jpg" alt="Field Type - Headline Details"/>
+        <h3>Name</h3>
+            <div class="parameter">        
+                <div class="field-desc">The name for the type.</div>
+                <div class="field-type"><label>Field Type: </label>Text</div>
+            </div>
+            
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="basic-details">Basic Details</h2>
+        <img class="help-image" src="images/fieldtype-view-basic.jpg" alt="Field Type - Basic Details" style="width:90%; max-width:1000px;"/>
+        <h3>Description</h3>
+            <div class="parameter">         
+                <div class="field-desc">The description for the type.</div>
+                <div class="field-type"><label>Field Type: </label>Editor</div>
+            </div>      
+        <h3>Category</h3>
+            <div class="parameter">         
+                <div class="field-desc">The category that this item is assigned to.</div>
+                <div class="field-type"><label>Field Type: </label>Category List</div>
+            </div>    
+
+        <h3>Code Name</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The variable name used in code for a field type. This field is auto_generated from the field type name and can be changed. No spaces or punctuation marks (except underscore _) are allowed, the value must be unique and start with a letter.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+   
+        <h3>Ordering</h3>
+            <div class="parameter">         
+                <div class="field-desc">The ordering of type.</div>
+                <div class="field-type"><label>Field Type: </label>Ordering List</div>
+            </div>       
+        <h3>ID</h3>
+            <div class="parameter">        
+                <div class="field-desc">The ID of the displayed field type.</div>
+                <div class="field-type"><label>Field Type: </label>Text - read only</div>
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="required-attributes">Field Type Required Attributes</h2>
+        <div><p>A set of checkbox fields that indicate the field attributes that need to be displayed/set for a Field of this Field Type.</p></div>
+        <img class="help-image" src="images/fieldtype-view-required-attributes.jpg" alt="Field Type - Field Type Required Attributes" style="width:100%; max-width:800px;"/>
+        <h3>Class</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'class' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Size</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'size' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Width</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'width' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Max Length</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'max length' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Height</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'height' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Columns</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'columns' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Rows</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'rows' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Field Value Source</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'field value source' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Option Values</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'option_values' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Multiple</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'multiple' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Format</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'format' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>First Number</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'first number' attribute is used on a field of this field type. Only in field type 'integer'.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Last Number</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'last number' attribute is used on a field of this field type. Only in field type 'integer'.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Step</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'step' attribute is used on a field of this field type. Only in field type 'integer'.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Hide None Option</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'hide none option' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Hide Use Default Option</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'hide use default option' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Buttons</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'buttons' attribute is used on a field of this field type.  Only used for Editor field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Hide Buttons</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'hide buttons' attribute is used on a field of this field type.  Only used for Editor field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Foreign Object</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'foreign object' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Field Filter</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'field filter' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Max file size</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'max file size' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Exclude files</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'exclude files' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Accept file types</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'accept file types' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Start Directory</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'start directory' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Link URL</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'link url' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>SQL Query</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'sql query' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>SQL Key Field</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'sql key field' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>SQL Value Field</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'sql field value' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Translate</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'translate' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Client</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'client' attribute (i.e. administrator or site) is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Strip Extension</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'stripext' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Media Preview</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'preview' attribute (for media fields)is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Auto Complete</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'autocompleteAuto COmplete' attribute (for media fields)is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>On Click</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'on click' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>On Change</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A checkbox indicating whether the 'on change' attribute is used on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="attributes-defaults">Field Type Attribute Defaults</h2>
+        <div><p>A set of fields that are default values for an attribute of a Field which are derived from this Field Type.</p></div>
+        <img class="help-image" src="images/fieldtype-view-attributes-defaults.jpg" alt="Field Type - Field Type Attribute Defaults" style="width:100%; max-width:800px;"/>
+        <h3>Default Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the fields of this field type.</p>
+<p>For 'string' type fields this should be a value enclosed in single quotes or if blank is default just two single quotes. Numeric fields should just have a number without quotes e.g for foreign key fields a simple 0 with no quotes.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Class Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'class' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Max Length Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'Max Length' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Size Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'size' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Allowed Input Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'allowed input' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Format Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'format' attribute on a field of this field type. Generally used only for the display of date/time fields. Must be set to a valid php format value.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>PHP Variable Type</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The variable type used in PHP code for this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Columns Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'columns' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Rows Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'rows' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Width Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'width' attribute on a field of this field type. Either a '%' or 'px' value.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Height Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'height' attribute on a field of this field type. Either a '%' or 'px' value.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Buttons Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'buttons' attribute on a field of this field type. Only used for the Editor field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Hide Buttons Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'hide buttons' attribute on a field of this field type. Only used for the Editor field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Validation Type Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'validation type' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Field Filter Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'field filter' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Max File Size Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'Max File Size' attribute on a field of a 'File' field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Exclude Files Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Specify the default value for the 'exclude files' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Start Directory Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'start directory' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Accept File Types Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default value for the 'accept file types' attribute on a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="mysql-settings">Field Type MySQL Settings</h2>
+        <div><p>A fieldset for the default mysql settings for a particular Field Type.</p></div>
+        <img class="help-image" src="images/fieldtype-view-mysql-settings.jpg" alt="Field Type - Field Type MySQL Settings" style="width:100%; max-width:800px;"/>
+        <h3>MySQL Data Type Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default mysql data type for a field of this field type. It can be set to blank when a field is a registry entry which is to be held in a registry/json field on the database.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>MySQL Size Default</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default mysql field size for a field of this field type.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>MySQL Default Value</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The default mysql default value for a field of this field type. The value must be enclosed in single quotes.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+	
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="publishing">Publishing Options</h2>
+        <img class="help-image" src="images/fieldtype-view-publishing.jpg" alt="Field Type - Publishing" style="width:100%; max-width:800px;"/>
+        <h3>Created By</h3>
+            <div class="parameter">         
+                <div class="field-desc">The user that is to be shown as creating the type. If none selected on create then the current logged in user will be used.</div>
+                <div class="field-type"><label>Field Type: </label>Calendar</div> 
+            </div> 
+        <h3>Created By Alias</h3>
+            <div class="parameter">         
+                <div class="field-desc">An alias for the user that is to be shown as creating the type.</div>
+                <div class="field-type"><label>Field Type: </label>Text</div> 
+            </div>                 
+        <h3>Created Date</h3>
+            <div class="parameter">         
+                <div class="field-desc">Field type created date.</div>
+                <div class="field-type"><label>Field Type: </label>Calendar</div>
+            </div> 
+        <h3>Modified Date</h3>
+            <div class="parameter">         
+                <div class="field-desc">Field type last modified date.</div>
+                <div class="field-type"><label>Field Type: </label>Text - protected</div>
+            </div>  
+        <h3>Modified By</h3>
+            <div class="parameter">         
+                <div class="field-desc">The user that last modifed the Field type record.</div>
+                <div class="field-type"><label>Field Type: </label>Text - protected</div>
+            </div>                
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>  	
+</body>
+</html>

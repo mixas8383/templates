@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id:$ -->
+<!-- @name			    Videomanager (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_videomanager -->
+<!-- @subpackage		com_videomanager.site -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: edit.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<metadata>
+	<layout
+	    title="COM_VIDEOMANAGER_CATEGORIS_VIEW_FORM_TITLE"
+	    option="COM_VIDEOMANAGER_CATEGORIS_VIEW_FORM_OPTION"
+	>
+        <message>
+			<![CDATA[COM_VIDEOMANAGER_CATEGORIS_VIEW_FORM_DESC]]>
+		</message>
+	</layout>
+    <!-- Add fields to the request variables for the layout. -->
+    <fields
+        name="params"
+    >
+        <fieldset
+            name="categori_edit_settings"
+            label="COM_VIDEOMANAGER_EDIT_FORM_SETTINGS_LABEL"
+        >
+            <field
+                name="enable_category"
+				type="radio"
+				label="COM_VIDEOMANAGER_DEFAULT_CATEGORY_LABEL"
+				description="COM_VIDEOMANAGER_CATEGORIS_DEFAULT_CATEGORY_DESC"
+			    class="btn-group"
+				default="0"
+			>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="catid"
+				type="categoryedit"
+				label="JGLOBAL_CHOOSE_CATEGORY_LABEL"
+				description="JGLOBAL_CHOOSE_CATEGORY_DESC"
+				extension="com_videomanager"
+                addfieldpath="/administrator/components/com_categories/models/fields"
+			/>
+            <field
+                name="show_categori_name"
+                type="radio"
+                label="COM_VIDEOMANAGER_SHOW_NAME_LABEL"
+                description="COM_VIDEOMANAGER_CATEGORIS_SHOW_NAME_DESC"
+			    class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

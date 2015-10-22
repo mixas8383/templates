@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @version 			$Id: componentarchitect_component_edit.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_modcreator -->
+<!-- @subpackage		com_modcreator.admin.help -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion		$Id: componentarchitect_component_edit.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @CAauthor		Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		architectcomp -->
+<!-- @CAsubpackage	architectcomp.admin.help -->
+<!-- @CAtemplate    joomla_3_x_enhanced (Release 1.0.0)-->
+<!-- @CAcopyright	(c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @CAlicense		GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB" xml:lang="en_GB">
+<head>
+<title>Component/Extension New/Edit Help</title>
+<link href="../../css/help.css" rel="stylesheet" type="text/css" />
+<meta name="copyright" content="(c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved" />
+<meta name="license" content="GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html" />
+</head>
+<body>
+<h1><img src="images/icon-48-components.png" alt="Component/Extensions Image" style="width:32px; margin-right: 10px;"/>Component/Extension New/Edit Help</h1>
+    <div><p>A Component/Extension is the main definition record for the component (or extension) to be generated and provides the publishing details such as author, website, copyright etc. for the generation of the code. The default settings for the features and functionality to be generated for each Object/Table can also be specified.</p></div>
+    <div>You can use the following links to jump to a section of this help page:</div>
+    <ul>
+        <li>
+            <a href="#toolbar">Toolbar Buttons</a>
+        </li>
+        <li>
+           <a href="#headline">Headline Details</a>
+        </li>
+        <li>
+           <a href="#basic-details">Basic Details</a>
+        </li>
+        <li>
+            <a href="#joomla-parts">Joomla! Parts</a>
+        </li>
+        <li>
+            <a href="#joomla-features">Joomla! Fields/Features</a>
+        </li>
+        <li>
+            <a href="#publishing">Publishing</a>
+        </li>
+    </ul>
+    <h2>Screenshot</h2>
+        <img class="help-image" src="images/component-edit-screenshot.jpg" alt="Component/Extension - Screenshot" style="width:100%; max-width:1100px;"/>
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="toolbar">Toolbar Buttons</h2>
+        <img class="help-image" src="images/component-edit-toolbar.jpg" alt="Component/Extension - Toolbar" style="width:100%; max-width:1100px;"/>
+        <h3>Save</h3>
+            <div class="parameter">
+                <div class="field-desc">Save the Component/Extension record and continue editing it.</div>
+            </div>
+        <h3>Save & Close</h3>
+            <div class="parameter">
+                <div class="field-desc">Save the Component/Extension record and return to the Components/Extensions list page.</div>
+            </div>
+        <h3>Save & New</h3>
+            <div class="parameter">
+                <div class="field-desc">Save the Component/Extension record and then clear the edit form for a new record.</div>
+            </div>
+        <h3>Save as Copy</h3>
+            <div class="parameter">
+                <div class="field-desc">Save the Component/Extension record as a new copy of the record displayed.</div>
+            </div> 
+       <h3>Close</h3>
+            <div class="parameter">
+                <div class="field-desc">Close the edit form without saving and return to the list.</div>
+            </div>     
+        <h3>Help</h3>
+            <div class="parameter">
+                <div class="field-desc">Link to display the Help system.</div>
+            </div> 
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="headline">Headline Details</h2>
+        <img class="help-image" src="images/component-edit-headline.jpg" alt="Component/Extension - Headline Details"/>
+        <h3>Name</h3>
+            <div class="parameter">        
+                <div class="field-desc"><p>Enter a name for the component. This is the visible name of the component/extension. This will also be the label used for the component/extension in views.</p>
+<p>Only alphanumeric, space and \ / &amp; + - _ ( ) are allowed - this prevents problems in generated code.</p></div>
+                <div class="field-type"><label>Field Type: </label>Text</div>
+            </div>
+            
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="basic-details">Basic Details</h2>
+        <img class="help-image" src="images/component-edit-basic.jpg" alt="Component/Extension - Basic Details" style="width:90%; max-width:1000px;"/>
+        <h3>Description</h3>
+            <div class="parameter">         
+                <div class="field-desc">Enter a description for the component.</div>
+                <div class="field-type"><label>Field Type: </label>Editor</div>
+            </div>      
+
+        <h3>Author</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Enter an author's name or company name to be included in the header of each file generated.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Start Version</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Enter the first version number to be used for the Component/Extension. This will be set in all the manifest xml files for the Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Web Address</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Enter a web site address to be included in the header of each file generated.</p></div>
+                <div class="field-type"><label>Field Type: </label>url</div>
+            </div>   
+        <h3>Email</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Enter an email address to be included in the header of each file generated.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Code Name</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The variable name used in code for a Component/Extension. This field is auto_generated from the Component/Extension name and can be changed. No spaces or punctuation marks (except underscore _) are allowed, the value must be unique and start with a letter.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Copyright</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Enter a copyright statement to be included in the header of each file generated.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Default Object</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Chose the default Object/Table for this Component/Extension (e.g. if an event component then an object called 'Event' is likely to be the default object). This determines the default views for both Admin and the main Site plus the default Object/Table is the one linked to Joomla! categories, if Include Categories is selected for the Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>modal_componentobjects</div>
+            </div>   
+        <h3>Icon 16px</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A 16 x 16 pixel icon used for the Component/Extension in menu items. This must be a png file.</p></div>
+                <div class="field-type"><label>Field Type: </label>file</div>
+            </div>   
+        <h3>Icon 48px</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A 48 x 48 pixel icon used for the Component/Extension in titles. This must be a png file.</p></div>
+                <div class="field-type"><label>Field Type: </label>file</div>
+            </div>   
+        <h3>Categories Icon 16px</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A 16 x 16 pixel icon used for the Component/Extension Categories in menu items. This must be a png file.</p></div>
+                <div class="field-type"><label>Field Type: </label>file</div>
+            </div>   
+        <h3>Categories Icon 48px</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>A 48 x 48 pixel icon used for the Component/Extension Categories in titles. This must be a png file.</p></div>
+                <div class="field-type"><label>Field Type: </label>file</div>
+            </div>   
+   
+        <h3>Ordering</h3>
+            <div class="parameter">         
+                <div class="field-desc">The ordering of component.</div>
+                <div class="field-type"><label>Field Type: </label>Ordering List</div>
+            </div>       
+        <h3>ID</h3>
+            <div class="parameter">        
+                <div class="field-desc">The ID of the displayed component.</div>
+                <div class="field-type"><label>Field Type: </label>Text - read only</div>
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="joomla-parts">Joomla! Parts</h2>
+        <div><p>Select the options to control which parts of Joomla! (admin, site, plugins and modules) are to be generated for this Component/Extension.</p>
+<p>The value at the Component/Extension level will override that at the Object/Table level.</p>
+<p>So if not set for the Component/Extension that part will not be generated irrespective of what is set for the Object/Table.</p></div>
+        <img class="help-image" src="images/component-edit-joomla-parts.jpg" alt="Component/Extension - Joomla Parts"  style="width:90%; max-width:1000px;"/>
+        <h3>Generate Admin</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the administrator part of Joomla!. If not selected then no administrator part for any Object/Table will be generated irrespective of the Generate Admin setting at the Object/Table level.</p>
+<p>This may have only limited value at the moment as the component/extension structure requires an administrator area for it to function properly.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Site</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the site front end of Joomla!. If not selected then no site front end for any component object will be generated irrespective of the Generate Site setting at the component object level.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Site - Views</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the views in the front end of Joomla!. If not selected then no views in the front end for any Object/Table will be generated irrespective of the Generate Site Views setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Site must also be selected.</p>
+<p>There may be a requirement to have access to models in the front end but not to separate views e.g. for field values tables</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Site - Article Layout</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Article Layout in Object/Table view. If not selected then no Article Layouts for any Object/Table will be generated irrespective of the Generate Site - Article Layout setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Site and Generate Site Views options must also be selected.</p>
+<p>The article layout is based on the core Joomla! content article layouts.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Site - Blog Layout</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Blog Layout in Objects/Tables view. If not selected then no Blog Layouts for any Object/Table will be generated irrespective of the Generate Site - Blog Layout setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Site and Generate Site Views options must also be selected.</p>
+<p>The blog layout is based on the core Joomla! content blog layouts.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Categories</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s standard implementation of categories in the generated Component/Extension. If not selected then no categories functionality for any Object/Table will be generated irrespective of the Generate Categories setting at the Object/Table level.</p>
+<p>For Standard Code Templates, if Generate Categories is selected, then it will only ever be the Component/Extension's default Object/Table that will be linked to categories.  The Enhanced code template may have multiple Object/Tables that have categories.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Categories -Site Categories View</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Categories View. If not selected then no Categories View for any Object/Table will be generated irrespective of the Generate Categories - Site Categories View setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Categories, Generate Site and Generate Site Views options must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Categories - Site Category View</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Category View. If not selected then no Category View for any Object/Table will be generated irrespective of the Generate Categories - Site Category View setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Categories, Generate Site and Generate Site Views options must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end plugins of Joomla!. If not selected then no front end plugins for any Object/Table will be generated irrespective of the Generate Plugins setting at the Object/Table level.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins - Search</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Search (legacy Joomla! Search) plugin of Joomla!. If not selected then no front end Search plugins for any Object/Table will be generated irrespective of the Generate Plugins - Search setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Plugins option must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins - Finder</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Finder (Smart Search) plugin of Joomla!. If not selected then no front end Finder plugins for any Object/Table will be generated irrespective of the Generate Plugins - Finder setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Plugins option must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins - Item Navigation</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Item Navigation plugin of Joomla!. If not selected then no front end Item Navigation plugins for any Object/Table will be generated irrespective of the Generate Plugins - Item Navigation setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Plugins option must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins - Vote</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Vote plugin of Joomla!. If not selected then no front end Vote plugins for any Object/Table will be generated irrespective of the Generate Plugins - Vote setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Plugins option must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins - Page Break</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end Page Break plugin of Joomla! and the associated code to insert page breaks. If not selected then no front end Page Break plugins nor associated code for any Object/Table will be generated irrespective of the Generate Plugins - Page Break setting at the Object/Table level.</p>
+<p>For this to be selected the Generate Plugins option must also be selected.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Plugins - Events</h3>
+            <div class="parameter">         
+                <div class="field-desc">
+                    <p>Select whether to generate the front end Events (customisable plugin with place holder for each event raised) plugin of Joomla!. If not selected then no front end Events plugins for any Object/Table will be generated irrespective of the Generate Plugins - Events setting at the Object/Table level.</p>
+                    <p>For this to be selected the Generate Plugins option must also be selected. The Events plugin is only available in the Enhanced code templates.</p>
+                </div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Modules</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to generate the front end modules of Joomla!. If not selected then no front end modules for any Object/Table will be generated irrespective of the Generate Modules setting at the Object/Table level.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="joomla-features">Joomla! Fields/Features</h2>
+        <div>
+            <p>Select the options that are standard features in Joomla! that you wish to include in your Component/Extension.</p>
+            <p>The settings will include not just the field in a table and form but also the standard code for how it is used within the core Joomla! components.</p>
+            <p>The values set at the Component/Extension level can be over ruled by a setting for a Object/Table.</p>
+        </div>
+        <img class="help-image" src="images/component-edit-joomla-features.jpg" alt="Component/Extension - Joomla Fields/Features" style="width:90%; max-width:1000px;"/>
+        <h3>Include Access</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s legacy access control and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Alias</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s 'alias' field and associated code for Objects/Tables in the generated Component/Extension. This can only be set if 'Include Name' is also set.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Asset ACL</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s ACL and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Asset ACL - Record Level</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s ACL and associated code for record level access control for Objects/Tables in the generated Component/Extension. This can only be set if 'Include Asset ACL' is also set.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Batch</h3>
+            <div class="parameter">         
+                <div class="field-desc">
+                    <p>Select whether to include Joomla!'s Batch functionality for Objects/Tables in the generated Component/Extension.</p>
+                    <p>This will only be used in code templates for Joomla! 2.5 and later.</p>
+                </div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Check In/Out</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s 'checked_out' fields and associated check in/check out code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Copy</h3>
+            <div class="parameter">         
+                <div class="field-desc">
+                    <p>Select whether to include a copy function for Components/Extensions.  This will affect the copy functionality for Batch copy, Save and Copy, Cascade Copy and a Copy button.</p>
+                    <p>This will only be used in code templates for Joomla! 2.5 and later.</p>
+                </div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Created</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include Joomla!'s 'created' and 'created by' fields and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Description</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a 'description' field and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Featured</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a standard Joomla! 'featured' field and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Hits</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a standard Joomla! 'hits' field and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Image</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a standard set of Joomla! image fields and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Intro</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include an 'intro' field and associated code for Objects/Tables in the generated Component/Extension. This can only be set if 'Include Description' is also set.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Language</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a language fields and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Meta Data</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a set of meta data fields and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>
+        <h3>Include Micro Data</h3>
+            <div class="parameter">         
+                <div class="field-desc">
+                    <p>Select whether to include micro data mark-up of front end display output for Objects/Tables in the generated Component/Extension.</p>
+                    <p>Joomla! 3.3 onwards only.</p>
+                </div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>                
+        <h3>Include Modified</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include standard Joomla! 'modified' and modified by' fields and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Name</h3>
+            <div class="parameter">         
+                <div class="field-desc">
+                    <p>Select whether to include a name field and associated code for Objects/Tables in the generated Component/Extension.</p>
+                    <p><strong>Note:</strong> in Joomla! core components and most other components there is a mix of use of either 'title' or 'name' as being the short descriptor field for a record.  I have gone with using 'name' for this but plan in later enhancements to Component Architect and code templates to allow a choice for this.</p>
+                </div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Ordering</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include an ordering field and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Params Global</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include global component level params and associated code for Objects/Tables in the generated Component/Extension.</p>
+<p>Any combination of 'Global', 'Menu Item' and 'Record Level' params can be selected and the code will then be generated to check for the values set in the lowest level params before checking higher levels i,e, check record level first, then menu item and then global.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Params Menu</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include global menu item level params and associated code for Objects/Tables in the generated Component/Extension.</p>
+<p>Any combination of 'Global', 'Menu Item' and 'Record Level' params can be selected and the code will then be generated to check for the values set in the lowest level params before checking higher levels i,e, check record level first, then menu item and then global.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Params Record</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include data record level params and associated code for Objects/Tables in the generated Component/Extension.</p>
+<p>Any combination of 'Global', 'Menu Item' and 'Record Level' params can be selected and the code will then be generated to check for the values set in the lowest level params before checking higher levels i,e, check record level first, then menu item and then global.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Published Dates</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include standard Joomla! 'publish up' and 'published down' date fields and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Status</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include standard Joomla! 'state' field and associated code for Objects/Tables in the generated Component/Extension.</p>
+<p>This is used to set the status of the record e.g. Unpublished, Published, Trashed or Archived. The end user sees this as 'status' or 'published' but internally this uses the database field called 'state'.</p>
+<p>Future releases of Component Architect may change this internal field to be 'status' as the use of the field name 'state' causes confusion with the PopulateState function and 'state' part of an object of class JModel or JModelAdmin.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Tags</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include tags functionality for Objects/Tables in the generated Component/Extension. Note in Joomla! tags are not held in the Object/Table but in a separate table which links content to tags.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Urls</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include a standard set of 3 url links and associated code for Objects/Tables in the generated Component/Extension.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Include Versions</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Select whether to include versions functionality for Objects/Tables in the generated Component/Extension. Note in Joomla! version history are not held in the Object/Table but in a separate table which links content to version history. A latest version field is defined in the Object/Table.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="publishing">Publishing Options</h2>
+        <img class="help-image" src="images/component-edit-publishing.jpg" alt="Component/Extension - Publishing"/>
+        <h3>Created By</h3>
+            <div class="parameter">         
+                <div class="field-desc">Select the user that is to be shown as creating the component. If none selected on create then the current logged in user will be used.</div>
+                <div class="field-type"><label>Field Type: </label>Calendar</div> 
+            </div> 
+        <h3>Created By Alias</h3>
+            <div class="parameter">         
+                <div class="field-desc">Enter an alias for the user that is to be shown as creating the component.</div>
+                <div class="field-type"><label>Field Type: </label>Text</div> 
+            </div>                 
+        <h3>Created Date</h3>
+            <div class="parameter">         
+                <div class="field-desc">Component/extension created date. This can be changed if required.</div>
+                <div class="field-type"><label>Field Type: </label>Calendar</div>
+            </div> 
+        <h3>Modified Date</h3>
+            <div class="parameter">         
+                <div class="field-desc">Component/extension last modified date. This cannot be changed.</div>
+                <div class="field-type"><label>Field Type: </label>Text - protected</div>
+            </div>  
+        <h3>Modified By</h3>
+            <div class="parameter">         
+                <div class="field-desc">The user that last modifed the Component/extension record. This cannot be changed.</div>
+                <div class="field-type"><label>Field Type: </label>Text - protected</div>
+            </div>                
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>  	
+</body>
+</html>

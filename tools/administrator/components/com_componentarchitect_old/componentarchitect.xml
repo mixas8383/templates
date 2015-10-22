@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @version 			$Id: componentarchitect.xml 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (http://www.componentarchitect.com) -->
+<!-- @package			com_componentarchitect -->
+<!-- @subpackage		com_componentarchitect.admin -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: architectcomp.xml 799 2013-12-12 15:13:40Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_x_enhanced (Release 1.0.0) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2013 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_componentarchitect</name>
+    <author>Component Architect</author>
+    <creationDate>October 2014</creationDate>
+    <copyright>
+        Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail>development@componentarchitect.com</authorEmail>
+    <authorUrl>http://www.componentarchitect.com</authorUrl>
+    <version>1.1.3</version>
+    <description>
+        <p>Component Architect is a Joomla! extension that allows for the automated code generation of other Joomla! extensions (components, modules and plugins).</p>
+<p>Component Architect uses code templates which contain the basic files and code required for a component/extension, or a set of extensions, and this code is 'marked-up' using the Component Architect mark-up syntax. Each component/extension to be generated is defined in the definition tables of Component Architect together with the objects/tables, fieldsets, fields and field values required . The generation process applies a defined component/extension against a selected code template to produce a fully working Joomla! component/extension or set of extensions (e.g. a component with associated modules and plugins).</p>
+    </description>
+    <media destination="com_componentarchitect" folder="media">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+    </media>
+
+    <administration>
+        <!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+        <menu img="../media/com_componentarchitect/images/componentarchitect.png"
+              alt="Component Architect">COM_COMPONENTARCHITECT</menu>
+        <submenu>
+            <!--[%%START_CUSTOM_CODE%%]-->
+            <menu link="option=com_componentarchitect&amp;view=componentwizard" alias="componentwizard" img="../media/com_componentarchitect/images/componentarchitect-componentwizard.png"
+                   alt="Component Architect/Component Wizard">COM_COMPONENTARCHITECT_COMPONENT_WIZARD</menu>
+            <menu link="option=com_componentarchitect&amp;view=generatedialog" alias="generate" img="../media/com_componentarchitect/images/componentarchitect-generate.png"
+                   alt="Component Architect/Component Wizard">COM_COMPONENTARCHITECT_GENERATE</menu>
+            <!--[%%END_CUSTOM_CODE%%]-->        
+            <menu link="option=com_componentarchitect&amp;view=components" alias="components" img="../media/com_componentarchitect/images/componentarchitect-components.png"
+                    alt="Component Architect/Components/Extensions">COM_COMPONENTARCHITECT_COMPONENTS</menu>
+            <menu link="option=com_componentarchitect&amp;view=componentobjects" alias="componentobjects" img="../media/com_componentarchitect/images/componentarchitect-componentobjects.png"
+                    alt="Component Architect/Objects/Tables">COM_COMPONENTARCHITECT_COMPONENTOBJECTS</menu>
+            <menu link="option=com_componentarchitect&amp;view=fieldsets" alias="fieldsets" img="../media/com_componentarchitect/images/componentarchitect-fieldsets.png"
+                    alt="Component Architect/Fieldsets">COM_COMPONENTARCHITECT_FIELDSETS</menu>
+            <menu link="option=com_componentarchitect&amp;view=fields" alias="fields" img="../media/com_componentarchitect/images/componentarchitect-fields.png"
+                    alt="Component Architect/Fields">COM_COMPONENTARCHITECT_FIELDS</menu>
+            <menu link="option=com_componentarchitect&amp;view=fieldtypes" alias="fieldtypes" img="../media/com_componentarchitect/images/componentarchitect-fieldtypes.png"
+                    alt="Component Architect/Field Types">COM_COMPONENTARCHITECT_FIELDTYPES</menu>
+            <menu link="option=com_componentarchitect&amp;view=codetemplates" alias="codetemplates" img="../media/com_componentarchitect/images/componentarchitect-codetemplates.png"
+                    alt="Component Architect/Code Templates">COM_COMPONENTARCHITECT_CODETEMPLATES</menu>
+            <menu link="option=com_categories&amp;extension=com_componentarchitect" view="categories" img="../media/com_componentarchitect/images/componentarchitect-categories.png"
+                    alt="Component Architect/Categories">COM_COMPONENTARCHITECT_CATEGORIES</menu>
+            <!--[%%START_CUSTOM_CODE%%]-->
+            <menu link="option=com_componentarchitect&amp;view=logs" alias="logs" img="../media/com_componentarchitect/images/componentarchitect-logs.png"
+                   alt="Component Architect/View Logs">COM_COMPONENTARCHITECT_VIEW_LOGS</menu>
+            <!--[%%END_CUSTOM_CODE%%]-->
+        </submenu>
+
+        <files folder="admin">
+            <filename>config.xml</filename>
+            <filename>componentarchitect.php</filename>
+            <filename>controller.php</filename>
+            <filename>componentarchitect_uninstall.html</filename>
+            <filename>gpl-3.0.txt</filename>
+            <filename>index.html</filename>
+            <!-- [%%START_CUSTOM_CODE%%] -->
+            <folder>codetemplates</folder>
+            <!-- [%%END_CUSTOM_CODE%%] -->
+            <folder>controllers</folder>
+            <folder>help</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_componentarchitect.sys.ini</language>
+        </languages>
+    </administration>
+
+    <plugins>
+        <plugin folder="plugins/componentarchitect" plugin="plg_componentarchitect_events" group="componentarchitect" />
+        <!--[%%START_CUSTOM_CODE%%]-->
+        <plugin folder="plugins/cacodetemplates" plugin="plg_cacodetemplates_j25standard" group="cacodetemplates" />
+        <plugin folder="plugins/cacodetemplates" plugin="plg_cacodetemplates_j32standard" group="cacodetemplates" />
+        <plugin folder="plugins/cacodetemplates" plugin="plg_cacodetemplates_j33standard" group="cacodetemplates" />
+        <!--[%%END_CUSTOM_CODE%%]-->
+    </plugins>
+    <!-- Runs on install/uninstall/update -->
+    <scriptfile>componentarchitect_install.php</scriptfile>
+          
+    <install>
+        <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.componentarchitect_mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.componentarchitect_mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <!-- Runs on update; -->
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <updateservers>
+        <server type="extension" priority="1" name="Component Architect">http://liveupdate.componentarchitect.com/componentarchitect/comparch.xml</server>
+    </updateservers>
+
+    <config>
+        <fields name="params">
+            <!--[%%START_CUSTOM_CODE%%]-->
+            <fieldset
+                name="component_generate"
+		        label="COM_COMPONENTARCHITECT_GENERATE_CONFIG_FIELDSET_LABEL"
+		        description="COM_COMPONENTARCHITECT_GENERATE_CONFIG_FIELDSET_DESC"
+	        >
+                <field
+                    name="default_author"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_AUTHOR_LABEL"
+                    description="COM_COMPONENTARCHITECT_DEFAULT_COMPONENTS_FIELD_AUTHOR_DESC"
+			        class="inputbox"
+			        size="50"
+			        maxlength="100"
+			        default=""
+		        />
+                <field
+                    name="default_start_version"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_START_VERSION_LABEL"
+                    description="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_START_VERSION_DESC"
+			        class="inputbox"
+			        size="15"
+			        maxlength="15"
+			        default="1.0.0"
+		        />
+                <field
+                    name="default_web_address"
+                    type="url"
+                    label="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_WEB_ADDRESS_LABEL"
+                    description="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_WEB_ADDRESS_DESC"
+			        class="inputbox"
+			        size="50"
+			        maxlength="100"
+		        />
+                <field
+                    name="default_email"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_EMAIL_LABEL"
+                    description="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_EMAIL_DESC"
+			        class="inputbox"
+			        size="50"
+			        maxlength="100"
+			        default=""
+		        />
+                <field
+                    name="default_copyright"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_COPYRIGHT_LABEL"
+                    description="COM_COMPONENTARCHITECT_CONFIG_DEFAULT_FIELD_COPYRIGHT_DESC"
+			        class="inputbox"
+			        size="50"
+			        maxlength="255"
+			        default=""
+		        />
+                <field
+                    name="default_output_path"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_OUTPUT_PATH_LABEL"
+                    description="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_OUTPUT_PATH_DESC"
+                    filter="string"
+                    size="50"
+                    default="tmp"
+		        />
+                <field
+                    name="default_zip_format"
+                    type="list"
+                    label="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_ZIP_FORMAT_LABEL"
+                    description="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_ZIP_FORMAT_DESC"
+                    default=""
+		        >
+                    <option value="">JNONE</option>
+                    <option value="zip">COM_COMPONENTARCHITECT_GENERATE_ZIP_FORMAT_VALUE_ZIP</option>
+                </field>
+                <field
+                    name="default_logging"
+                    type="list"
+                    label="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_LOGGING_LABEL"
+                    description="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_LOGGING_DESC"
+                    default="0"
+		        >
+                    <option	value="0">JNO</option>
+                    <option	value="1">JYES</option>
+                </field>
+                <field
+		            name="default_logging_folder"
+		            type="text"
+                    label="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_LOGGING_FOLDER_LABEL"
+                    description="COM_COMPONENTARCHITECT_GENERATE_DEFAULT_LOGGING_FOLDER_DESC"
+                    class="inputbox"
+                    size="50"
+                    default="logs"
+		        />
+            </fieldset>
+            <!--[%%END_CUSTOM_CODE%%]-->
+            <fieldset
+                name="global_preferences"
+                label="COM_COMPONENTARCHITECT_GLOBAL_PREFERENCES_LABEL"
+                description="COM_COMPONENTARCHITECT_GLOBAL_PREFERENCES_DESC"
+	        >
+                <field
+                    name="helpURL"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_FIELD_REMOTE_HELP_URL_LABEL"
+                    description="COM_COMPONENTARCHITECT_FIELD_REMOTE_HELP_URL_DESC"
+                    class="inputbox"
+                    size="50"
+                    default="http://help.componentarchitect.com/componentarchitect/v_1_1/en-GB/j{major}x/{keyref}.html"
+	            />	        
+                <field
+                    name="spacer-file"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="default_empty_field"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_DEFAULT_EMPTY_FIELD_LABEL"
+                    description="COM_COMPONENTARCHITECT_DEFAULT_EMPTY_FIELD_DESC"
+                    class="inputbox"
+                    size="10"
+                    default=""
+		        />
+                <field
+                    name="spacer-file"
+                    type="spacer"
+                    hr="true"
+		        />		        
+                <field
+                    name="default_max_upload_size"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_DEFAULT_MAX_UPLOAD_SIZE_LABEL"
+                    description="COM_COMPONENTARCHITECT_DEFAULT_MAX_UPLOAD_SIZE_DESC"
+                    class="inputbox"
+                    size="10"
+                    default="2mb"
+		        />
+                <field
+                    name="default_allowed_mime_types"
+                    type="textarea"
+                    label="COM_COMPONENTARCHITECT_DEFAULT_ALLOWED_MIME_TYPES_LABEL"
+                    description="COM_COMPONENTARCHITECT_DEFAULT_ALLOWED_MIME_TYPES_DESC"
+                    class="inputbox"
+                    cols="50"
+                    rows="3"
+                    default="*"
+		        />
+                <field
+                    name="spacer-image"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="default_allowed_image_types"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_DEFAULT_ALLOWED_IMAGE_TYPES_LABEL"
+                    description="COM_COMPONENTARCHITECT_DEFAULT_ALLOWED_IMAGE_TYPES_DESC"
+                    class="inputbox"
+                    size="50"
+                    default="png"
+		        />
+                <field
+                    name="default_image_path"
+                    type="text"
+                    label="COM_COMPONENTARCHITECT_DEFAULT_IMAGE_PATH_LABEL"
+                    description="COM_COMPONENTARCHITECT_DEFAULT_IMAGE_PATH_DESC"
+                    class="inputbox"
+                    size="50"
+                    default="images/componentarchitect"
+                />
+            </fieldset>
+        </fields>
+    </config>    
+</extension>
+

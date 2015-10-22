@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id:$ -->
+<!-- @name			    Nicegallery (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_nicegallery -->
+<!-- @subpackage		com_nicegallery.site -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: compobject.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<form
+    addfieldpath="/components/com_nicegallery/models/fields"
+    addrulepath="/components/com_nicegallery/models/rules"
+>
+    <fieldset>
+        <field
+			id="id"
+			name="id"
+			type="hidden"
+			label="COM_NICEGALLERY_ID_LABEL"
+			class="readonly"
+			default="0"
+			readonly="true"
+		/>
+
+        <field
+			id="contenthistory"
+			name="contenthistory"
+			type="contenthistory"
+			label="JTOOLBAR_VERSIONS"
+			data-typeAlias="com_nicegallery.vote"
+		/>
+        <field
+			id="asset_id"
+			name="asset_id"
+			type="hidden"
+			filter="unset"
+		/>
+        <field
+			id="name"
+			name="name"
+			type="text"
+			label="COM_NICEGALLERY_VOTES_FIELD_NAME_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_NAME_DESC"
+			class="inputbox"
+			size="50"
+			required="true"
+		/>
+        <field
+			id="alias"
+			name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="COM_NICEGALLERY_FIELD_ALIAS_DESC"
+    		class="inputbox"
+			size="50"
+			filter="unset"
+		/>
+
+        <field
+		    id="introdescription"
+		    name="introdescription"
+			type="editor"
+			label="JGLOBAL_DESCRIPTION"
+			description="COM_NICEGALLERY_VOTES_FIELD_DESCRIPTION_DESC"
+			class="inputbox"
+            filter="JComponentHelper::filterText"
+			buttons="true"
+            hide="article,pagebreak"                
+		/>
+        <field
+		    id="intro"
+		    name="intro"
+            type="editor"
+			label="JGLOBAL_INTRO_TEXT"
+            description="COM_NICEGALLERY_VOTES_FIELD_INTRO_DESC"
+            class="inputbox"
+            buttons="false"
+            readonly="true"
+        />
+        <field
+            id="tags"
+            name="tags"
+            type="tag"
+            label="JTAG"
+            description="JTAG_DESC"
+            class="inputbox"
+            multiple="true"
+	>
+        </field>
+        <field
+			id="created"
+			name="created"
+			type="calendar"
+			label="COM_NICEGALLERY_FIELD_CREATED_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_CREATED_BY_DESC"
+			class="inputbox"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"			
+		/>
+        <field
+			id="created_by"
+			name="created_by"
+			type="user"
+			label="COM_NICEGALLERY_FIELD_CREATED_BY_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_CREATED_BY_DESC"
+		/>
+        <field
+			id="created_by_alias"
+			name="created_by_alias"
+			type="text"
+			label="COM_NICEGALLERY_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_CREATED_BY_ALIAS_DESC"
+            class="inputbox"
+            size="20"
+		/>
+        <field
+            id="modified"
+            name="modified"
+            type="calendar"
+			label="COM_NICEGALLERY_FIELD_MODIFIED_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_MODIFIED_DESC"
+            class="readonly"
+			size="22"
+			readonly="true"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+            id="modified_by"
+            name="modified_by"
+            type="user"
+		    label="COM_NICEGALLERY_FIELD_MODIFIED_BY_LABEL"
+		    class="readonly"
+		    readonly="true"
+		    filter="unset"
+		/>
+        <field
+			id="publish_up"
+			name="publish_up"
+			type="calendar"
+			label="COM_NICEGALLERY_FIELD_PUBLISH_UP_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_PUBLISH_UP_DESC"
+			class="inputbox"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc"
+		/>
+        <field
+			id="publish_down"
+			name="publish_down"
+			type="calendar"
+			label="COM_NICEGALLERY_FIELD_PUBLISH_DOWN_LABEL"
+			description="COM_NICEGALLERY_VOTES_FIELD_PUBLISH_DOWN_DESC"
+			class="inputbox"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc"
+		/>
+        <field
+            id="state"
+            name="state"
+            type="list"
+            label="JSTATUS"
+            description="JFIELD_PUBLISHED_DESC"
+			class="chzn-color-state"
+            size="1"
+            default="1"
+	    >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASH</option>
+        </field>
+        <field
+			id="access"
+			name="access"
+			type="accesslevel"
+			label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		/>
+        <field
+			id="featured"
+			name="featured"
+			type="radio"
+			label="JGLOBAL_FIELD_FEATURED_LABEL"
+			description="JGLOBAL_FIELD_FEATURED_DESC"
+            class="btn-group"    
+			default="0"
+		>
+            <option	value="1">JYES</option>
+            <option	value="0">JNO</option>
+        </field>
+        <field
+            id="language"
+            name="language"
+            type="contentlanguage"
+            label="JFIELD_LANGUAGE_LABEL"
+            description="JFIELD_LANGUAGE_DESC"
+            class="inputbox"
+ 			default="*"
+       >
+            <option value="*">JALL</option>
+        </field>
+        <field
+			id="version_note"
+			name="version_note"
+			type="text"
+			label="JGLOBAL_FIELD_VERSION_NOTE_LABEL"
+			description="JGLOBAL_FIELD_VERSION_NOTE_DESC"
+			class="inputbox"
+			size="45"
+		/>
+        <field
+           id="metakey"
+           name="metakey"
+           type="textarea"
+           label="JFIELD_META_KEYWORDS_LABEL"
+           description="JFIELD_META_KEYWORDS_DESC"
+           cols="60"
+           rows="3"
+	    />
+        <field
+            id="metadesc"
+            name="metadesc"
+            type="textarea"
+            label="JFIELD_META_DESCRIPTION_LABEL"
+            description="JFIELD_META_DESCRIPTION_DESC"
+            cols="60"
+            rows="3"
+	    />
+        <field
+            id="robots"
+            name="robots"
+            type="list"
+            label="COM_NICEGALLERY_FIELD_METADATA_ROBOTS_LABEL"
+			class="chzn-color"
+            description="COM_NICEGALLERY_FIELD_METADATA_ROBOTS_DESC"
+		>
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="index, follow">COM_NICEGALLERY_FIELD_METADATA_ROBOTS_VALUE_INDEX_FOLLOW</option>
+            <option value="noindex, follow">COM_NICEGALLERY_FIELD_METADATA_ROBOTS_VALUE_NOINDEX_FOLLOW</option>
+            <option value="index, nofollow">COM_NICEGALLERY_FIELD_METADATA_ROBOTS_VALUE_INDEX_NOFOLLOW</option>
+            <option value="noindex, nofollow">COM_NICEGALLERY_FIELD_METADATA_ROBOTS_VALUE_NOINDEX_NOFOLLOW</option>
+        </field>
+        <field
+            id="author" 
+            name="author" 
+            type="text"
+			label="JAUTHOR"
+			description="COM_NICEGALLERY_FIELD_METADATA_AUTHOR_DESC"
+			size="20"
+		/>        
+        <field
+            id="xreference"
+            name="xreference"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_XREFERENCE_LABEL"
+            description="COM_NICEGALLERY_FIELD_XREFERENCE_DESC"
+            class="inputbox"
+            size="50"
+        />
+    </fieldset>
+    <fields
+        name="images"
+        label="COM_NICEGALLERY_VOTES_IMAGE_OPTIONS"
+    >
+        <field
+            id="image_url"
+            name="image_url"
+            type="media"
+            label="COM_NICEGALLERY_FIELD_IMAGE_LABEL"
+            description="COM_NICEGALLERY_VOTES_FIELD_IMAGE_DESC"
+        />
+        <field
+            id="image_alt_text"
+            name="image_alt_text"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_IMAGE_ALTTEXT_LABEL"
+            description="COM_NICEGALLERY_VOTES_FIELD_IMAGE_ALTTEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            name="image_caption"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_IMAGE_CAPTION_LABEL"
+            description="COM_NICEGALLERY_VOTES_FIELD_IMAGE_CAPTION_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="intro_image_url"
+            name="intro_image_url"
+            type="media"
+            label="COM_NICEGALLERY_FIELD_INTRO_IMAGE_LABEL"
+            description="COM_NICEGALLERY_VOTES_FIELD_INTRO_IMAGE_DESC"
+        />
+        <field
+            id="intro_image_alt_text"
+            name="intro_image_alt_text"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_INTRO_IMAGE_ALTTEXT_LABEL"
+            description="COM_NICEGALLERY_VOTES_FIELD_INTRO_IMAGE_ALTTEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            name="intro_image_caption"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_INTRO_IMAGE_CAPTION_LABEL"
+            description="COM_NICEGALLERY_VOTES_FIELD_INTRO_IMAGE_CAPTION_DESC"
+            class="inputbox"
+            size="20"
+        />
+    </fields>
+    <fields
+        name="urls"
+        label="COM_NICEGALLERY_VOTES_URLS_OPTIONS"
+    >
+        <field
+            id="urla"
+            name="urla"
+            type="url"
+            label="COM_NICEGALLERY_FIELD_URLA_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_DESC"
+            validate="url"
+            filter="url"
+        />
+        <field
+            id="urla_text"
+            name="urla_text"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_URLA_LINK_TEXT_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_LINK_TEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="urla_target"
+            name="urla_target"
+            type="list"
+            label="COM_NICEGALLERY_FIELD_URLA_TARGET_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_TARGET_DESC"
+			class="chzn-color"
+            filter="options"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+        <field
+                name="spacer3"
+            type="spacer"
+            hr="true"
+				/>
+        <field
+            id="urlb"
+            name="urlb"
+            type="url"
+            label="COM_NICEGALLERY_FIELD_URLB_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_DESC"
+            validate="url"
+            filter="url"
+       />
+        <field
+            id="urlb_text"
+            name="urlb_text"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_URLB_LINK_TEXT_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_LINK_TEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="urlb_target"
+            name="urlb_target"
+            type="list"
+            label="COM_NICEGALLERY_FIELD_URLB_TARGET_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_TARGET_DESC"
+			class="chzn-color"
+            default=""
+            filter="options"
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+        <field
+                name="spacer4"
+            type="spacer"
+            hr="true"
+				/>
+        <field
+            id="urlc"
+            name="urlc"
+            type="url"
+            label="COM_NICEGALLERY_FIELD_URLC_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_DESC"
+            validate="url"
+            filter="url"
+        />
+        <field
+            id="urlc_text"
+            name="urlc_text"
+            type="text"
+            label="COM_NICEGALLERY_FIELD_URLC_LINK_TEXT_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_LINK_TEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="urlc_target"
+            name="urlc_target"
+            type="list"
+            label="COM_NICEGALLERY_FIELD_URLC_TARGET_LABEL"
+            description="COM_NICEGALLERY_FIELD_URL_TARGET_DESC"
+			class="chzn-color"
+            filter="options"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+    </fields>
+</form>

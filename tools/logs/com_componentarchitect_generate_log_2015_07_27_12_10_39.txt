@@ -1,0 +1,7 @@
+#Date: 2015-07-27 08:10:39 UTC
+#Software: Joomla Platform 11.4.0 Stable [ Brian Kernighan ] 03-Jan-2012 00:00 GMT
+
+#Fields: date	time	duration	message	errorcode	file	line_number
+2015-07-27	08:10:39	0.000000	Stage 1 - Analysing Component started (0 fields to process)	-	-	-
+2015-07-27	08:10:39	0.000000	No component objects have been created for the component - ModCreat	gen0006		
+2015-07-27	08:10:39	0.000000	An error occurred in setting up the component object details for the component 'ModCreat'	gen0012		

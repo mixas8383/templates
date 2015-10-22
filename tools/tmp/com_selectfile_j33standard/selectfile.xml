@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @version 			$Id:$ -->
+<!-- @name			    Selectfile (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_selectfile -->
+<!-- @subpackage		com_selectfile.admin -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: architectcomp.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension type="component" version="3.3" method="upgrade">
+    <name>com_selectfile</name>
+    <author></author>
+    <creationDate>August 2015</creationDate>
+    <copyright>
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail></authorEmail>
+    <authorUrl></authorUrl>
+    <version>1.0.0</version>
+    <description>
+    </description>
+    <files folder="site">
+        <filename>selectfile.php</filename>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <filename>router.php</filename>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+    </files>
+    <media destination="com_selectfile" folder="media">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+    </media>
+
+    <administration>
+        <!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+        <menu img="../media/com_selectfile/images/selectfile.png"
+              alt="Selectfile">COM_SELECTFILE</menu>
+        <submenu>
+            <menu link="option=com_selectfile&amp;view=sizes" alias="sizes" img="../media/com_selectfile/images/selectfile-sizes.png"
+                    alt="Selectfile/Sizes">COM_SELECTFILE_SIZES</menu>
+        </submenu>
+
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>selectfile.php</filename>
+            <filename>controller.php</filename>
+            <filename>selectfile_uninstall.html</filename>
+            <filename>gpl-3.0.txt</filename>
+            <filename>index.html</filename>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_selectfile.sys.ini</language>
+        </languages>
+    </administration>
+
+    <!-- Runs on install/uninstall/update; New in 1.6 -->
+    <scriptfile>selectfile_install.php</scriptfile>
+          
+    <install>
+        <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.selectfile_mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.selectfile_mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <!-- Runs on update; -->
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <config>
+    
+        <fields name="params">
+            <fieldset
+                name="size_display"
+                label="COM_SELECTFILE_SIZES_FIELD_CONFIG_SINGLE_ITEM_DISPLAY"
+                description="COM_SELECTFILE_SIZES_FIELD_CONFIG_SINGLE_ITEM_DESC"
+	        >
+                <field
+                    name="size_layout"
+                    type="componentlayout"
+                    label="JGLOBAL_FIELD_LAYOUT_LABEL"
+                    description="COM_SELECTFILE_SIZES_CHOOSE_LAYOUT_DESC"
+                    menuitems="true"
+                    extension="com_selectfile"
+                    view="size"
+                    default="_:default"
+		        />
+                <field
+                    name="spacer0"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="show_size_icons"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_ICONS_LABEL"
+                    description="COM_SELECTFILE_SHOW_ICONS_DESC"
+                    class="btn-group"
+                    default="1"
+		        >
+                    <option	value="0">COM_SELECTFILE_SHOW_ICONS_VALUE_TEXT</option>
+                    <option	value="1">COM_SELECTFILE_SHOW_ICONS_VALUE_ICONS</option>
+                    <option	value="-1">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_print_icon"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_PRINT_ICON_LABEL"
+                    description="COM_SELECTFILE_SHOW_PRINT_ICON_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_email_icon"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_EMAIL_ICON_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_EMAIL_ICON_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="keep_size_itemid"
+                    type="radio"
+                    label="COM_SELECTFILE_KEEP_ITEMID_LABEL"
+                    description="COM_SELECTFILE_SIZES_KEEP_ITEMID_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_size_navigation"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_NAVIGATION_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_NAVIGATION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="spacer1"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="show_size_readmore"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_READMORE_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_READMORE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="size_readmore_limit"
+                    type="text"
+                    label="COM_SELECTFILE_SHOW_READMORE_LIMIT_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_READMORE_LIMIT_DESC"
+                    default="100"
+		        />
+                <field
+                    name="show_size_readmore_name"
+                    type="radio"
+                    label="COM_SELECTFILE_SIZES_SHOW_READMORE_NAME_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_READMORE_NAME_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_noauth"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_UNAUTH_LINKS_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_UNAUTH_LINKS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="spacer2"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="show_size_name"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_NAME_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_NAME_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="link_size_names"
+                    type="radio"
+                    label="COM_SELECTFILE_LINKED_NAMES_LABEL"
+                    description="COM_SELECTFILE_SIZES_LINKED_NAMES_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_size_created_by"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_CREATED_BY_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_CREATED_BY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="link_size_created_by"
+                    type="radio"
+                    label="COM_SELECTFILE_LINK_CREATED_BY_LABEL"
+                    description="COM_SELECTFILE_SIZES_LINK_CREATED_BY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_size_created_by_alias"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_CREATED_BY_ALIAS_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_CREATED_BY_ALIAS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+				>
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_created"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_CREATED_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_CREATED_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_modified"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_MODIFIED_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_MODIFIED_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_admin"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_ADMIN_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_ADMIN_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+            </fieldset>
+            <fieldset
+                name="sizes_list_display"
+                label="COM_SELECTFILE_SIZES_FIELD_CONFIG_BLOG_LIST_LABEL"
+                description="COM_SELECTFILE_SIZES_FIELD_CONFIG_BLOG_LIST_DESC"
+	        >
+                <field
+                    name="size_initial_sort"
+                    type="list"
+                    label="COM_SELECTFILE_SIZES_ORDER_LABEL"
+                    description="COM_SELECTFILE_SIZES_ORDER_DESC"
+			        class="chzn-color"
+		        >
+                    <option value="created">JGLOBAL_CREATED</option>
+                    <option value="modified">JGLOBAL_MODIFIED</option>
+                    <option value="name">COM_SELECTFILE_NAME_ALPHABETICAL</option>
+                    <option value="created_by_name">COM_SELECTFILE_CREATED_BY_ALPHABETICAL</option>
+                    <option value="ordering">COM_SELECTFILE_SIZES_ORDER</option>
+                </field>
+                <field
+                    name="size_initial_direction"
+                    type="radio"
+                    label="COM_SELECTFILE_ORDER_DIRECTION_LABEL"
+                    description="COM_SELECTFILE_SIZES_ORDER_DIRECTION_DESC"
+                    class="btn-group"
+                    default="ASC"
+		        >
+                    <option value="DESC">COM_SELECTFILE_ORDER_DIRECTION_DESCENDING_LABEL</option>
+                    <option value="ASC">COM_SELECTFILE_ORDER_DIRECTION_ASCENDING_LABEL</option>
+                </field>
+                <field
+                    name="show_size_filter_field"
+                    type="list"
+                    label="JGLOBAL_FILTER_FIELD_LABEL"
+                    description="COM_SELECTFILE_SIZES_FILTER_FIELD_DESC"
+                    class="chzn-color"
+                    default="name"
+			    >
+                    <option value="hide">JHIDE</option>
+                    <option value="name">COM_SELECTFILE_FIELD_VALUE_NAME</option>
+                    <option value="created_by">COM_SELECTFILE_FIELD_VALUE_CREATED_BY</option>
+                </field>                
+                <field
+                    name="show_size_headings"
+                    type="radio"
+                    label="JGLOBAL_SHOW_HEADINGS_LABEL"
+                    description="JGLOBAL_SHOW_HEADINGS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_pagination"
+                    type="radio"
+                    label="JGLOBAL_PAGINATION_LABEL"
+                    description="JGLOBAL_PAGINATION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="2"
+		        >
+                    <option value="2">JGLOBAL_AUTO</option>
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_pagination_results"
+                    type="radio"
+                    label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+                    description="JGLOBAL_PAGINATION_RESULTS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_pagination_limit"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_PAGINATION_LIMIT_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_PAGINATION_LIMIT_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="size_num_per_page"
+                    type="list"
+                    description="COM_SELECTFILE_SIZES_NUM_PER_PAGE_DESC"
+                    label="COM_SELECTFILE_SIZES_NUM_PER_PAGE_LABEL"
+			        class="chzn-color"
+                    default="5"
+                >
+                    <option value="5">J5</option>
+                    <option value="10">J10</option>
+                    <option value="15">J15</option>
+                    <option value="20">J20</option>
+                    <option value="25">J25</option>
+                    <option value="30">J30</option>
+                    <option value="50">J50</option>
+                    <option value="100">J100</option>
+                    <option value="0">JALL</option>
+                </field>
+                <field
+                    name="show_no_sizes"
+                    type="radio"
+                    label="COM_SELECTFILE_SIZES_NO_ITEMS_LABEL"
+                    description="COM_SELECTFILE_SIZES_NO_ITEMS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+			    >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_size_add_link"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_ADD_LINK_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_ADD_LINK_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="list_show_size_date"
+                    type="radio"
+                    label="COM_SELECTFILE_SHOW_DATE_LABEL"
+                    description="COM_SELECTFILE_SIZES_SHOW_DATE_DESC"
+                    class="btn-group"
+                    default="0"
+		        >
+                    <option value="0">JHIDE</option>
+                    <option value="created">JGLOBAL_CREATED</option>
+                    <option value="modified">JGLOBAL_MODIFIED</option>
+                </field>
+                <field
+                    name="size_date_format"
+                    type="text"
+                    label="JGLOBAL_DATE_FORMAT_LABEL"
+                    description="JGLOBAL_DATE_FORMAT_DESC"
+                    size="15"
+		        />
+                <field
+                    name="list_show_size_created_by"
+                    type="radio"
+                    label="COM_SELECTFILE_LIST_CREATED_BY_LABEL"
+                    description="COM_SELECTFILE_SIZES_LIST_CREATED_BY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="list_show_size_ordering"
+                    type="radio"
+                    label="COM_SELECTFILE_LIST_ORDERING_LABEL"
+                    description="COM_SELECTFILE_SIZES_LIST_ORDERING_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>    
+</extension>
+

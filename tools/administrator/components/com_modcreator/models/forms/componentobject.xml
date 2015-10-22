@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id: componentobject.xml 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_modcreator -->
+<!-- @subpackage		com_modcreator.admin -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: compobject.xml 785 2013-12-08 18:44:06Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_x_enhanced (Release 1.0.0) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<form
+    addfieldpath="/administrator/components/com_modcreator/models/fields"
+    addrulepath="/administrator/components/com_modcreator/models/rules"
+
+>
+    <fieldset
+        name="basic_details"
+    >
+        <field
+		    name="id"
+		    type="text"
+            label="JGLOBAL_FIELD_ID_LABEL"
+            description ="JGLOBAL_FIELD_ID_DESC"
+			readonly="true"
+			class="readonly"
+            default="0"
+		/>
+        <field
+		    name="name"
+		    type="text"
+			label="COM_COMPONENTARCHITECT_FIELD_NAME_LABEL"
+			description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_NAME_DESC"
+		    class="inputbox"
+			size="50"
+			required="true"
+   		/>
+        <field
+            name="source_table"
+            type="hidden"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_SOURCE_TABLE_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_SOURCE_TABLE_DESC"
+		/>
+        <field
+            name="ordering"
+			label="JFIELD_ORDERING_LABEL"
+			description="JFIELD_ORDERING_DESC"
+			type="componentarchitectordering"
+			class="inputbox"
+			table="#__componentarchitect_componentobjects"
+		/>
+        <field
+		    name="description"
+            type="editor"
+			label="JGLOBAL_DESCRIPTION"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_DESCRIPTION_DESC"
+            class="inputbox"
+            filter="JComponentHelper::filterText"
+            buttons="true"
+            hide="article"
+        />
+        <field
+            name="component_id"
+            type="modal_components"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_COMPONENT_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_COMPONENT_ID_DESC"
+			class="modal"
+			required="true"
+			default="0"
+		/>
+        <field
+            name="readonly"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_READONLY_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_READONLY_DESC"
+			class="inputbox"
+			default="0"
+			value="1"
+		/>
+        <field
+            name="plural_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_PLURAL_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_PLURAL_NAME_DESC"
+			class="inputbox validate-componentobjectpluralname"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="componentobjectpluralname"
+		/>
+        <field
+            name="code_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_CODE_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_CODE_NAME_DESC"
+			class="inputbox validate-componentobjectcodename"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="componentobjectcodename"
+		/>
+        <field
+            name="plural_code_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_PLURAL_CODE_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_PLURAL_CODE_NAME_DESC"
+			class="inputbox validate-componentobjectpluralcodename"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="componentobjectpluralcodename"
+		/>
+        <field
+            name="short_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_SHORT_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_SHORT_NAME_DESC"
+			class="inputbox validate-componentobjectshortname"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="componentobjectshortname"
+		/>
+        <field
+            name="short_plural_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_SHORT_PLURAL_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_SHORT_PLURAL_NAME_DESC"
+			class="inputbox validate-componentobjectshortpluralname"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="componentobjectshortpluralname"
+		/>
+        <field
+            name="default_fieldset_id"
+            type="modal_fieldsets"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_DEFAULT_FIELDSET_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_DEFAULT_FIELDSET_ID_DESC"
+			class="modal"
+			default="0"
+		/>
+        <field
+            name="icon_16px"
+            type="file"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_ICON_16PX_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_ICON_16PX_DESC"
+			class="inputbox validate-componentobjecticon16px"
+			size="40"
+			validate="componentobjecticon16px"
+		/>
+        <field
+            name="icon_48px"
+            type="file"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_ICON_48PX_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_ICON_48PX_DESC"
+			class="inputbox validate-componentobjecticon48px"
+			size="40"
+			validate="componentobjecticon48px"
+		/>
+    </fieldset>
+    <fields
+        name="joomla_parts"
+        label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_JOOMLA_PARTS_LABEL"        
+    >
+        <fieldset
+            name="joomla_parts"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_JOOMLA_PARTS_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_JOOMLA_PARTS_DESC"
+        >
+            <field
+                name="generate_admin"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_ADMIN_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_ADMIN_DESC"
+			    class="btn-group"
+			    size="1"
+			    required="true"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_site"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_DESC"
+			    class="btn-group"
+			    size="1"
+			    required="true"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_site_views"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_VIEWS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_VIEWS_DESC"
+			    class="btn-group validate-componentobjectgeneratesiteviews"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratesiteviews"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_site_layout_article"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_LAYOUT_ARTICLE_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_LAYOUT_ARTICLE_DESC"
+			    class="btn-group validate-componentobjectgeneratesitelayoutarticle"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratesitelayoutarticle"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_site_layout_blog"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_LAYOUT_BLOG_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_SITE_LAYOUT_BLOG_DESC"
+			    class="btn-group validate-componentobjectgeneratesitelayoutblog"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratesitelayoutblog"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_categories"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_CATEGORIES_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_CATEGORIES_DESC"
+			    class="btn-group"
+			    size="1"
+			    required="true"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_categories_site_views_categories"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_CATEGORIES_SITE_VIEWS_CATEGORIES_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_CATEGORIES_SITE_VIEWS_CATEGORIES_DESC"
+			    class="btn-group validate-componentobjectgeneratecategoriessiteviewscategories"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratecategoriessiteviewscategories"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_categories_site_views_category"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_CATEGORIES_SITE_VIEWS_CATEGORY_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_CATEGORIES_SITE_VIEWS_CATEGORY_DESC"
+			    class="btn-group validate-componentobjectgeneratecategoriessiteviewscategory"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratecategoriessiteviewscategory"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_DESC"
+			    class="btn-group"
+			    size="1"
+			    required="true"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins_search"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_SEARCH_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_SEARCH_DESC"
+			    class="btn-group validate-componentobjectgeneratepluginssearch"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratepluginssearch"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins_finder"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_FINDER_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_FINDER_DESC"
+			    class="btn-group validate-componentobjectgeneratepluginsfinder"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratepluginsfinder"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins_itemnavigation"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_ITEMNAVIGATION_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_ITEMNAVIGATION_DESC"
+			    class="btn-group validate-componentobjectgeneratepluginsitemnavigation"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratepluginsitemnavigation"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins_vote"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_VOTE_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_VOTE_DESC"
+			    class="btn-group validate-componentobjectgeneratepluginsvote"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratepluginsvote"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins_pagebreak"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_PAGEBREAK_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_PAGEBREAK_DESC"
+			    class="btn-group validate-componentobjectgeneratepluginspagebreak"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratepluginspagebreak"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_plugins_events"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_EVENTS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_PLUGINS_EVENTS_DESC"
+			    class="btn-group validate-componentobjectgeneratepluginsevents"
+			    size="1"
+			    required="true"
+			    validate="componentobjectgeneratepluginsevents"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+            <field
+                name="generate_modules"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_MODULES_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_GENERATE_MODULES_DESC"
+			    class="btn-group"
+			    size="1"
+			    default="1"
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_GENERATE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_GENERATES_GENERIC_VALUE_DO_NOT_GENERATE</option>
+		    </field>
+        </fieldset>
+    </fields>
+    <fields
+        name="joomla_features"
+        label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_JOOMLA_FEATURES_LABEL"        
+    >
+        <fieldset
+            name="joomla_features"
+            label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_JOOMLA_FEATURES_LABEL"
+            description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_JOOMLA_FEATURES_DESC"
+        >
+            <field
+                name="include_access"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ACCESS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ACCESS_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_alias"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ALIAS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ALIAS_DESC"
+			    class="btn-group validate-componentobjectincludealias"
+			    size="1"
+			    validate="componentobjectincludealias"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_assetacl"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ASSETACL_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ASSETACL_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_assetacl_record"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ASSETACL_RECORD_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ASSETACL_RECORD_DESC"
+			    class="btn-group validate-componentobjectincludeassetaclrecord"
+			    size="1"
+			    validate="componentobjectincludeassetaclrecord"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_batch"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_BATCH_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_BATCH_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_checkout"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_CHECKOUT_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_CHECKOUT_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_copy"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_COPY_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_COPY_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_created"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_CREATED_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_CREATED_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_description"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_DESCRIPTION_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_DESCRIPTION_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_featured"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_FEATURED_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_FEATURED_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_hits"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_HITS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_HITS_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_image"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_IMAGE_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_IMAGE_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_intro"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_INTRO_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_INTRO_DESC"
+			    class="btn-group validate-componentobjectincludeintro"
+			    size="1"
+			    validate="componentobjectincludeintro"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_language"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_LANGUAGE_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_LANGUAGE_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_metadata"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_METADATA_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_METADATA_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_microdata"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_MICRODATA_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_MICRODATA_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+                <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+                <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+                <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+            </field>
+            <field
+                name="include_modified"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_MODIFIED_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_MODIFIED_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_name"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_NAME_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_NAME_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_ordering"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ORDERING_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_ORDERING_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_params_global"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PARAMS_GLOBAL_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PARAMS_GLOBAL_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_params_menu"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PARAMS_MENU_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PARAMS_MENU_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_params_record"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PARAMS_RECORD_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PARAMS_RECORD_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_published_dates"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PUBLISHED_DATES_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_PUBLISHED_DATES_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_status"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_STATUS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_STATUS_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_tags"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_TAGS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_TAGS_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_urls"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_URLS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_URLS_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+            <field
+                name="include_versions"
+                type="radio"
+                label="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_VERSIONS_LABEL"
+                description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_INCLUDE_VERSIONS_DESC"
+			    class="btn-group"
+			    size="1"
+			    default=""
+		    >
+			    <option	value="1">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_INCLUDE</option>
+			    <option	value="0">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_DO_NOT_INCLUDE</option>
+			    <option	value="">COM_COMPONENTARCHITECT_OBJECT_INCLUDES_GENERIC_VALUE_USE_GLOBAL</option>
+		    </field>
+        </fieldset>
+    </fields>
+    <fieldset
+        name="publishing"
+		label="COM_COMPONENTARCHITECT_FIELDSET_PUBLISHING_LABEL"
+    >
+        <field
+            name="created_by"
+            type="user"
+			label="COM_COMPONENTARCHITECT_FIELD_CREATED_BY_LABEL"
+			description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_CREATED_BY_DESC"
+		/>
+        <field
+            name="created"
+            type="calendar"
+            label="COM_COMPONENTARCHITECT_FIELD_CREATED_LABEL"
+			description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_CREATED_DESC"
+			class="inputbox"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+			id="created_by_alias"
+			name="created_by_alias"
+			type="text"
+			label="COM_COMPONENTARCHITECT_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_CREATED_BY_ALIAS_DESC"
+            class="inputbox"
+            size="20"
+		/>
+        <field
+            name="modified"
+            type="calendar"
+			label="COM_COMPONENTARCHITECT_FIELD_MODIFIED_LABEL"
+			description="COM_COMPONENTARCHITECT_COMPONENTOBJECTS_FIELD_MODIFIED_DESC"
+            class="readonly"
+			size="22"
+			readonly="true"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+            name="modified_by"
+            type="user"
+		    label="COM_COMPONENTARCHITECT_FIELD_MODIFIED_BY_LABEL"
+		    class="readonly"
+		    readonly="true"
+		    filter="unset"
+		/>
+        <field
+            name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+        <field
+            name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		 />
+    </fieldset>
+</form>

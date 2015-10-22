@@ -1,0 +1,112 @@
+/**
+ * @version 		$Id: generate.css 411 2014-10-19 18:39:07Z BrianWade $
+ * @name			Component Architect (Release 1.1.3)
+ * @author			Component Architect (www.componentarchitect.com)
+ * @package			com_componentarchitect
+ * @subpackage		com_componentarchitect.admin
+ * @copyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+ /*[%%START_CUSTOM_CODE%%]*/
+/********************************** Progress Bar *****************************************/
+/* progress container */
+div.progress-container
+{
+    border: 6px double #ccc;
+	
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);          
+	width: 90%;
+	height: 18px; 
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+
+}
+div.progress-stage-title
+{
+    padding-top: 15px;
+}
+div.progress-stage-text
+{
+    margin-bottom: 5px;
+}
+ /* progress bar */
+div.progress-container .progress-bar
+{
+	color: white;
+	background-color: #99D100;
+	width: 0%; 
+	height: 16px;
+	padding-bottom: 2px;
+	font-size: 12px;
+	text-align: center;
+	overflow: hidden;
+}
+
+/* progress bar */
+div.progress-container .progress-text
+{
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+}
+/* progress bar */
+.progress-stage-title
+{
+	font-size: 110%;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/********************************** Completion messages *****************************************/
+/* success messages */
+#generate-success
+{
+	font-size: 110%;
+	font-weight: bold;
+	margin-top: 10px;
+}
+#generate-success div
+{
+	margin-top: 5px;
+}
+/********************************** Errors and Warnings *****************************************/
+/* warnings title */
+#generate-warnings
+{
+	font-size: 110%;
+	font-weight: bold;
+	color: #FFBA00;
+}
+/* warnings title */
+#generate-warnings legend
+{
+	font-size: 110%;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #FFBA00;	
+}
+/* error message */
+#generate-failed
+{
+	font-size: 110%;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+    color: #C00000;    
+}
+ /*[%%END_CUSTOM_CODE%%]*/

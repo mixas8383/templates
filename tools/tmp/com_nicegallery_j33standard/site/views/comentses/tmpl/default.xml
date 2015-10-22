@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id:$ -->
+<!-- @name			    Nicegallery (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_nicegallery -->
+<!-- @subpackage		com_nicegallery.site -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: default.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<metadata>
+	<layout
+	    title="COM_NICEGALLERY_COMENTSES_VIEW_LIST_TITLE"
+	    option="COM_NICEGALLERY_COMENTSES_VIEW_LIST_OPTION"
+	>
+        <message>
+			<![CDATA[COM_NICEGALLERY_COMENTSES_VIEW_LIST_DESC]]>
+		</message>
+	</layout>
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields
+        name="params"
+    >
+        <fieldset
+            name="comentses_filter_settings"
+            label="COM_NICEGALLERY_COMENTSES_FIELDSET_FILTERS"
+        >
+            <field
+                name="filter_coments_featured"
+                type="radio"
+                label="COM_NICEGALLERY_FEATURED_FILTER_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_FEATURED_FILTER_DESC"
+				class="btn-group"
+ 		    >
+                <option value="">COM_NICEGALLERY_SHOW_ALL</option>
+                <option value="0">COM_NICEGALLERY_HIDE_ALL</option>
+                <option value="1">COM_NICEGALLERY_SHOW_ONLY</option>
+            </field>
+            <field
+                name="filter_coments_archived"
+                type="radio"
+                label="COM_NICEGALLERY_ARCHIVED_FILTER_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_ARCHIVED_FILTER_DESC"
+				class="btn-group btn-group-yesno"
+				default="0"
+ 		    >
+                <option	value="2">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="comentses_list_settings"
+            label="COM_NICEGALLERY_COMENTSES_LIST_LAYOUT_OPTIONS"
+        >
+            <field
+                name="coments_initial_sort"
+                type="list"
+				label="COM_NICEGALLERY_COMENTSES_ORDER_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_ORDER_DESC"
+			    class="chzn-color"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="created">JGLOBAL_CREATED</option>
+                <option value="modified">JGLOBAL_MODIFIED</option>
+                <option value="publish_up">JPUBLISHED</option>
+                <option value="name">COM_NICEGALLERY_NAME_ALPHABETICAL</option>
+                <option value="created_by_name">COM_NICEGALLERY_CREATED_BY_ALPHABETICAL</option>
+                <option value="hits">JGLOBAL_MOST_HITS</option>
+                <option value="ordering">COM_NICEGALLERY_COMENTSES_ORDER</option>
+            </field>
+            <field
+                name="coments_initial_direction"
+                type="radio"
+                label="COM_NICEGALLERY_ORDER_DIRECTION_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_ORDER_DIRECTION_DESC"
+				class="btn-group"
+                default="ASC"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="DESC">COM_NICEGALLERY_ORDER_DIRECTION_DESCENDING_LABEL</option>
+                <option value="ASC">COM_NICEGALLERY_ORDER_DIRECTION_ASCENDING_LABEL</option>
+            </field>
+            <field
+                name="show_coments_filter_field"
+                type="list"
+				label="JGLOBAL_FILTER_FIELD_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_FILTER_FIELD_DESC"
+			    class="chzn-color"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="hide">JHIDE</option>
+                <option value="name">COM_NICEGALLERY_FIELD_VALUE_NAME</option>
+                <option value="created_by">COM_NICEGALLERY_FIELD_VALUE_CREATED_BY</option>
+                <option value="hits">JGLOBAL_HITS</option>
+            </field>
+            <field
+                name="show_coments_headings"
+                type="radio"
+                label="JGLOBAL_SHOW_HEADINGS_LABEL"
+				description="JGLOBAL_SHOW_HEADINGS_DESC"
+				class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_pagination"
+                type="radio"
+			    label="JGLOBAL_PAGINATION_LABEL"
+			    description="JGLOBAL_PAGINATION_DESC"
+				class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+                <option value="2">JGLOBAL_AUTO</option>
+            </field>
+            <field
+                name="show_coments_pagination_results"
+			    type="radio"
+			    label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+			    description="JGLOBAL_PAGINATION_RESULTS_DESC"
+				class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_pagination_limit"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_PAGINATION_LIMIT_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_SHOW_PAGINATION_LIMIT_DESC"
+				class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="coments_num_per_page"
+                type="list"
+                label="COM_NICEGALLERY_COMENTSES_NUM_PER_PAGE_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_NUM_PER_PAGE_DESC"
+			    class="chzn-color"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="5">J5</option>
+                <option value="10">J10</option>
+                <option value="15">J15</option>
+                <option value="20">J20</option>
+                <option value="25">J25</option>
+                <option value="30">J30</option>
+                <option value="50">J50</option>
+                <option value="100">J100</option>
+                <option value="0">JALL</option>
+            </field>
+            <field
+		        name="show_no_comentses"
+		        type="radio"
+		        label="COM_NICEGALLERY_COMENTSES_NO_ITEMS_LABEL"
+		        description="COM_NICEGALLERY_COMENTSES_NO_ITEMS_DESC"
+				class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>            
+            <field
+		        name="show_coments_add_link"
+		        type="radio"
+		        label="COM_NICEGALLERY_SHOW_ADD_LINK_LABEL"
+		        description="COM_NICEGALLERY_COMENTSES_SHOW_ADD_LINK_DESC"
+				class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="coments_list_field_settings"
+            label="COM_NICEGALLERY_COMENTSES_LIST_FIELD_OPTIONS"
+        >            
+            <field
+		        name="list_show_coments_date"
+		        type="list"
+		        label="COM_NICEGALLERY_SHOW_DATE_LABEL"
+		        description="COM_NICEGALLERY_COMENTSES_SHOW_DATE_DESC"
+			    class="chzn-color"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="created">JGLOBAL_CREATED</option>
+                <option value="publish_up">COM_NICEGALLERY_FIELD_VALUE_PUBLISH_UP</option>
+                <option value="modified">JGLOBAL_MODIFIED</option>
+            </field>
+            <field
+                name="coments_date_format"
+                type="text"
+				label="JGLOBAL_DATE_FORMAT_LABEL"
+				description="JGLOBAL_DATE_FORMAT_DESC"
+				size="15"
+			/>
+            <field
+                name="list_show_coments_hits"
+                type="radio"
+                label="COM_NICEGALLERY_LIST_HITS_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_LIST_HITS_DESC"
+				class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="list_show_coments_created_by"
+                type="radio"
+				label="COM_NICEGALLERY_LIST_CREATED_BY_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_LIST_CREATED_BY_DESC"
+				class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="list_show_coments_ordering"
+                type="radio"
+                label="COM_NICEGALLERY_LIST_ORDERING_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_LIST_ORDERING_DESC"
+				class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="coments_layout_settings"
+            label="COM_NICEGALLERY_COMENTSES_FIELDSET_LAYOUT"
+        >
+            <field
+                name="coments_layout"
+                type="componentlayout"
+                label="JGLOBAL_FIELD_LAYOUT_LABEL"
+				description="COM_NICEGALLERY_COMENTSES_CHOOSE_LAYOUT_DESC"
+                menuitems="true"
+                extension="com_nicegallery"
+                view="coments"
+                default="_:default"
+		    />
+            <field
+                name="spacer1"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_coments_icons"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_ICONS_LABEL"
+                description="COM_NICEGALLERY_SHOW_ICONS_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option	value="0">COM_NICEGALLERY_SHOW_ICONS_VALUE_TEXT</option>
+                <option	value="1">COM_NICEGALLERY_SHOW_ICONS_VALUE_ICONS</option>
+                <option	value="-1">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_print_icon"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_PRINT_ICON_LABEL"
+                description="COM_NICEGALLERY_SHOW_PRINT_ICON_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_email_icon"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_EMAIL_ICON_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_EMAIL_ICON_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+		        name="coments_info_block_position"
+		        type="radio"
+		        label="COM_NICEGALLERY_COMENTSES_INFOBLOCK_POSITION_LABEL"
+		        description="COM_NICEGALLERY_COMENTSES_INFOBLOCK_POSITION_DESC"
+                class="btn-group"            
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="0">COM_NICEGALLERY_VALUE_ABOVE</option>
+                <option value="1">COM_NICEGALLERY_VALUE_BELOW</option>
+            </field>            
+            <field
+                name="keep_coments_itemid"
+                type="radio"
+                label="COM_NICEGALLERY_KEEP_ITEMID_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_KEEP_ITEMID_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_coments_navigation"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_NAVIGATION_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_NAVIGATION_DESC"
+                class="btn-group"            
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="spacer2"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_coments_readmore"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_READMORE_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_READMORE_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="coments_readmore_limit"
+                type="text"
+                label="COM_NICEGALLERY_SHOW_READMORE_LIMIT_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_READMORE_LIMIT_DESC"
+                default="100"
+	        />
+            <field
+                name="show_coments_readmore_name"
+                type="radio"
+                label="COM_NICEGALLERY_COMENTSES_SHOW_READMORE_NAME_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_READMORE_NAME_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_noauth"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_UNAUTH_LINKS_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_UNAUTH_LINKS_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="coments_field_settings"
+	        label="COM_NICEGALLERY_COMENTSES_FIELDSET_FIELDS"
+	    >
+            <field
+                name="show_coments_name"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_NAME_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_NAME_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_coments_names"
+                type="radio"
+                label="COM_NICEGALLERY_LINKED_NAMES_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_LINKED_NAMES_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_coments_intro"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_INTRO_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_INTRO_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_image"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_IMAGE_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_IMAGE_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_image_float"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_IMAGE_FLOAT_LABEL"
+                description="COM_NICEGALLERY_SHOW_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="right">COM_NICEGALLERY_VALUE_FLOAT_RIGHT</option>
+                <option value="left">COM_NICEGALLERY_VALUE_FLOAT_LEFT</option>
+                <option value="none">COM_NICEGALLERY_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_coments_image_width"
+                type="text"
+                label="COM_NICEGALLERY_SHOW_IMAGE_WIDTH_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_coments_image_height"
+                type="text"
+                label="COM_NICEGALLERY_SHOW_IMAGE_HEIGHT_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_coments_intro_image"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_INTRO_IMAGE_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_INTRO_IMAGE_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_intro_image_float"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_INTRO_IMAGE_FLOAT_LABEL"
+                description="COM_NICEGALLERY_SHOW_INTRO_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="right">COM_NICEGALLERY_VALUE_FLOAT_RIGHT</option>
+                <option value="left">COM_NICEGALLERY_VALUE_FLOAT_LEFT</option>
+                <option value="none">COM_NICEGALLERY_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_coments_intro_image_width"
+                type="text"
+                label="COM_NICEGALLERY_SHOW_INTRO_IMAGE_WIDTH_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_INTRO_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_coments_intro_image_height"
+                type="text"
+                label="COM_NICEGALLERY_SHOW_INTRO_IMAGE_HEIGHT_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_INTRO_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_coments_urls"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_URLS_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_URLS_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field> 
+            <field
+                name="show_coments_urls_position"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_URLS_POSITION_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_URLS_POSITION_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="0">COM_NICEGALLERY_VALUE_ABOVE</option>
+                <option value="1">COM_NICEGALLERY_VALUE_BELOW</option>
+            </field>
+            <field
+                name="spacer3"
+                type="spacer"
+                hr="true"
+	        />
+            <field
+                name="show_coments_tags"
+                type="radio"
+                label="COM_NICEGALLERY_FIELD_SHOW_TAGS_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_FIELD_SHOW_TAGS_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="spacer4"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_coments_created_by"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_CREATED_BY_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_CREATED_BY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_coments_created_by"
+                type="radio"
+                label="COM_NICEGALLERY_LINK_CREATED_BY_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_LINK_CREATED_BY_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_coments_created_by_alias"
+                type="radio"
+		        label="COM_NICEGALLERY_SHOW_CREATED_BY_ALIAS_LABEL"
+		        description="COM_NICEGALLERY_COMENTSES_SHOW_CREATED_BY_ALIAS_DESC"
+		        class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_created"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_CREATED_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_CREATED_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_modified"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_MODIFIED_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_MODIFIED_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_publish_up"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_PUBLISH_UP_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_PUBLISH_UP_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_coments_publish_down"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_PUBLISH_DOWN_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_PUBLISH_DOWN_DESC"
+                class="btn-group"
+             >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_coments_hits"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_HITS_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_HITS_DESC"
+                class="btn-group"
+             >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_coments_admin"
+                type="radio"
+                label="COM_NICEGALLERY_SHOW_ADMIN_LABEL"
+                description="COM_NICEGALLERY_COMENTSES_SHOW_ADMIN_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_coments">COM_NICEGALLERY_COMENTSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+        </fieldset>
+        <fieldset
+	        name="integration"
+            label="JGLOBAL_INTEGRATION_LABEL"
+	    >
+            <field
+		        name="show_feed_link"
+		        type="radio"
+			    label="COM_NICEGALLERY_SHOW_FEED_LINK_LABEL"
+			    description="COM_NICEGALLERY_SHOW_FEED_LINK_DESC"
+                class="btn-group"
+			    default="1"
+		    >
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+		        name="feed_summary"
+		        type="radio"
+			    label="COM_NICEGALLERY_FEED_SUMMARY_LABEL"
+			    description="COM_NICEGALLERY_COMENTSES_FEED_SUMMARY_DESC"
+                class="btn-group"
+			    default="0"
+		    >
+                <option value="0">JGLOBAL_INTRO_TEXT</option>
+                <option value="1">JGLOBAL_FULL_TEXT</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

@@ -1,0 +1,499 @@
+/**
+ * @tempversion
+ * @name			[%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%])
+ * @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%])
+ * @package			[%%com_architectcomp%%]
+ * @subpackage		[%%com_architectcomp%%].site
+ * @copyright		[%%COMPONENTCOPYRIGHT%%]
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @version			$Id: compobjectplural.css 418 2014-10-22 14:42:36Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.site
+ * @CAtemplate		joomla_2_5_standard (Release 1.0.4)
+ * @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @Joomlacopyright Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+/*#################### [%%compobjectplural%%] list table with grid settings ############################ */
+.[%%compobjectplural%%]-list table.[%%compobjectplural%%]
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.[%%compobjectplural%%]-list table.[%%compobjectplural%%] td
+{
+        padding:7px;
+}
+.[%%compobjectplural%%]-list table.[%%compobjectplural%%] th
+{
+        padding:7px;
+}
+/*#################### [%%compobjectplural%%] list grid settings ############################ */
+
+.[%%compobjectplural%%]-list a.saveorder {
+        width: 16px;
+        height: 16px;
+        display: block;
+        overflow: hidden;
+        background: url(../images/filesave.png) no-repeat;
+        float: right;
+        margin-right: 8px;
+}
+.[%%compobjectplural%%]-list td.list-order
+{
+	    float: right;
+	    border: none;
+}
+.[%%compobjectplural%%]-list a.jgrid:hover
+{
+    text-decoration: none;
+}
+
+.[%%compobjectplural%%]-list .jgrid span.state
+{
+	    display: inline-block;
+	    height: 16px;
+	    width: 16px;
+}
+.[%%compobjectplural%%]-list .jgrid span.text 
+{
+        display:none;
+}
+.[%%compobjectplural%%]-list .jgrid span.downarrow				
+{
+        background-image: url(../images/downarrow.png);
+}
+.[%%compobjectplural%%]-list .jgrid span.downarrow_disabled
+{
+       background-image: url(../images/downarrow0.png);
+       background-position: 0 -12px;
+}
+.[%%compobjectplural%%]-list .jgrid span.uparrow	
+{
+        background-image: url(../images/uparrow.png);
+}
+.[%%compobjectplural%%]-list .jgrid span.uparrow_disabled
+{
+        background-image: url(../images/uparrow0.png);
+        background-position: 0 -12px;
+}
+/*#################### [%%compobjectplural%%] list actions icons ############################ */
+.[%%compobjectplural%%]-list ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.[%%compobjectplural%%]-list ul.actions li
+{
+        display:inline
+}
+.[%%compobjectplural%%]-list ul.actions a
+{
+        text-decoration:none
+}
+/*#################### [%%compobjectplural%%] list pagination ############################ */
+.[%%compobjectplural%%]-list .pagination
+{
+        margin:10px 0 ;
+        padding:10px 0 10px 0px;
+        clear:both;
+}
+.[%%compobjectplural%%]-list .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+.[%%compobjectplural%%]-list .pagination ul
+{
+        list-style-type:none;
+        margin: 0 auto 0 auto; 
+        padding:0;
+        text-align:center;
+}
+.[%%compobjectplural%%]-list .pagination li
+{
+        display:inline;
+        padding:2px 5px;
+        text-align:center;
+        border:solid 1px #eee;
+        margin:0 2px
+}
+.[%%compobjectplural%%]-list .pagenav
+{
+        padding:2px; clear:both;
+}
+.[%%compobjectplural%%]-list .pagination li.pagination-start,
+.[%%compobjectplural%%]-list .pagination li.pagination-next,
+.[%%compobjectplural%%]-list .pagination li.pagination-end,
+.[%%compobjectplural%%]-list .pagination li.pagination-prev
+{
+        border:0
+}
+.[%%compobjectplural%%]-list .pagination li.pagination-start,
+.[%%compobjectplural%%]-list .pagination li.pagination-prev
+{
+        float: left;
+}
+.[%%compobjectplural%%]-list .pagination li.pagination-end,
+.[%%compobjectplural%%]-list .pagination li.pagination-next
+{
+        float: right;
+}
+/*#################### [%%compobjectplural%%] modal list ############################ */
+.[%%compobjectplural%%]-modal
+{
+        width: 760px;
+}
+/*#################### [%%compobjectplural%%] modal list tables ############################ */
+.[%%compobjectplural%%]-modal table.[%%compobjectplural%%] th a {
+}
+.[%%compobjectplural%%]-modal table.[%%compobjectplural%%] th  a img {
+	    border:solid 0px ;
+}
+.[%%compobjectplural%%]-modal table.[%%compobjectplural%%]
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.[%%compobjectplural%%]-modal table.[%%compobjectplural%%] td
+{
+        padding:7px;
+}
+.[%%compobjectplural%%]-modal table.[%%compobjectplural%%] th
+{
+        padding:7px;
+        text-align:left;
+	    background:#444 ;        
+}
+.[%%compobjectplural%%]-modal table.[%%compobjectplural%%] th
+{
+	    color:#fff
+}
+/*#################### [%%compobjectplural%%] modal list pagination ############################ */
+.[%%compobjectplural%%]-modal .pagination
+{
+        margin:10px 0 ;
+        padding:10px 0 10px 0px;
+        clear:both;
+}
+.[%%compobjectplural%%]-modal .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+.[%%compobjectplural%%]-modal .pagination ul
+{
+        list-style-type:none;
+        margin: 0 auto 0 auto; 
+        padding:0;
+        text-align:center;
+}
+.[%%compobjectplural%%]-modal .pagination li
+{
+        display:inline;
+        padding:2px 5px;
+        text-align:center;
+        border:solid 1px #eee;
+        margin:0 2px
+}
+.[%%compobjectplural%%]-modal .pagenav
+{
+        padding:2px; clear:both;
+}
+.[%%compobjectplural%%]-modal .pagination li.pagination-start,
+.[%%compobjectplural%%]-modal .pagination li.pagination-next,
+.[%%compobjectplural%%]-modal .pagination li.pagination-end,
+.[%%compobjectplural%%]-modal .pagination li.pagination-prev
+{
+        border:0
+}
+.[%%compobjectplural%%]-modal .pagination li.pagination-start,
+.[%%compobjectplural%%]-modal .pagination li.pagination-prev
+{
+        float: left;
+}
+.[%%compobjectplural%%]-modal .pagination li.pagination-end,
+.[%%compobjectplural%%]-modal .pagination li.pagination-next
+{
+        float: right;
+}
+/*[%%IF GENERATE_SITE_LAYOUT_BLOG%%]*/
+/*#################### [%%compobjectplural%%] blog ############################ */
+.[%%compobjectplural%%]-blog h1
+{
+        margin:0 0px 10px 0px
+}
+/*#################### [%%compobjectplural%%] blog actions icons ############################ */
+.[%%compobjectplural%%]-blog ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.[%%compobjectplural%%]-blog ul.actions li
+{
+        display:inline
+}
+.[%%compobjectplural%%]-blog ul.actions a
+{
+        text-decoration:none
+}
+/*#################### [%%compobjectplural%%] blog items more ############################ */
+.[%%compobjectplural%%]-blog .items-more
+{
+        padding-top:10px;
+}
+.[%%compobjectplural%%]-blog .items-more h3
+{
+        font-weight:normal;
+        margin:0;
+        padding:5px 5px 5px 5px;
+        font-size:1.4em
+}
+.[%%compobjectplural%%]-blog .items-more ol
+{
+        line-height:1.3em;
+        list-style-type:none;
+        margin:0;
+        padding:10px 0 10px 2px;
+}
+.[%%compobjectplural%%]-blog .items-more ol li
+{
+        padding:2px;
+}
+.[%%compobjectplural%%]-blog .items-more ol li a
+{
+        display:inline;
+        margin:0;
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+}
+.[%%compobjectplural%%]-blog .items-more ol li a:hover,
+.[%%compobjectplural%%]-blog .items-more ol li a:active,
+.[%%compobjectplural%%]-blog .items-more ol li a:focus
+{
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+        text-decoration:none
+}
+/*#################### [%%compobjectplural%%] blog pagination ############################ */
+.[%%compobjectplural%%]-blog .pagination
+{
+        margin:10px 0 ;
+        padding:10px 0 10px 0px;
+        clear:both;
+}
+.[%%compobjectplural%%]-blog .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+.[%%compobjectplural%%]-blog .pagination ul
+{
+        list-style-type:none;
+        margin: 0 auto 0 auto; 
+        padding:0;
+        text-align:center;
+}
+.[%%compobjectplural%%]-blog .pagination li
+{
+        display:inline;
+        padding:2px 5px;
+        text-align:center;
+        border:solid 1px #eee;
+        margin:0 2px
+}
+.[%%compobjectplural%%]-blog .pagenav
+{
+        padding:2px; clear:both;
+}
+.[%%compobjectplural%%]-blog .pagination li.pagination-start,
+.[%%compobjectplural%%]-blog .pagination li.pagination-next,
+.[%%compobjectplural%%]-blog .pagination li.pagination-end,
+.[%%compobjectplural%%]-blog .pagination li.pagination-prev
+{
+        border:0
+}
+.[%%compobjectplural%%]-blog .pagination li.pagination-start,
+.[%%compobjectplural%%]-blog .pagination li.pagination-prev
+{
+        float: left;
+}
+.[%%compobjectplural%%]-blog .pagination li.pagination-end,
+.[%%compobjectplural%%]-blog .pagination li.pagination-next
+{
+        float: right;
+}
+/*[%%ENDIF GENERATE_SITE_LAYOUT_BLOG%%]*/
+
+/*#################### [%%compobject%%] view ############################ */
+.[%%compobject%%]-view
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+#main .[%%compobject%%]-view .formelm ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .[%%compobject%%]-view .formelm ul label
+{
+         font-weight: normal;
+}
+.[%%compobject%%]-view .formelm fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+.[%%compobject%%]-view .formelm label,
+.[%%compobject%%]-view .formelm-area label  
+{
+        font-weight: bold;
+}
+.[%%compobject%%]-view fieldset legend
+{
+        font-weight: bold;
+        font-size: 120%;
+}
+/*#################### [%%compobject%%] view actions icons ############################ */
+.[%%compobject%%]-view ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.[%%compobject%%]-view ul.actions li
+{
+        display:inline
+}
+.[%%compobject%%]-view ul.actions a
+{
+        text-decoration:none
+}
+/*[%%IF GENERATE_SITE_LAYOUT_ARTICLE%%]*/
+/*#################### [%%compobject%%] article ############################ */
+.[%%compobject%%]-article
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.[%%compobject%%]-article dt.info-title,
+.[%%compobject%%]-srticle dt.fields-title
+{
+        font-weight: bold;
+        font-size: 120%;
+}
+/*#################### [%%compobject%%] article actions icons ############################ */
+.[%%compobject%%]-article ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.[%%compobject%%]-article ul.actions li
+{
+        display:inline
+}
+.[%%compobject%%]-article ul.actions a
+{
+        text-decoration:none
+}
+#main .[%%compobject%%]-article dd ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .[%%compobject%%]-article dd ul label
+{
+         font-weight: normal;
+}
+.[%%compobject%%]-article dd fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+/*[%%ENDIF GENERATE_SITE_LAYOUT_ARTICLE%%]*/
+
+/*#################### [%%compobject%%] edit form ############################ */
+.[%%compobject%%]-edit
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.[%%compobject%%]-edit .toggle-editor
+{
+        float:right;
+        margin-top: -20px;
+}
+.[%%compobject%%]-edit .formelm
+{
+        margin: 10px;
+}
+#main .[%%compobject%%]-edit .formelm .checkboxes ul
+{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;        
+}
+#main .[%%compobject%%] .formelm .checkboxes ul label
+{
+         margin-left: 10px;
+         font-weight: normal;
+}
+.[%%compobject%%] .formelm fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+.[%%compobject%%]-edit .button2-left,
+.[%%compobject%%]-edit .button2-left div,
+.[%%compobject%%]-edit .button2-left a,
+.[%%compobject%%]-edit .fltlft
+
+{
+        float: none;
+        display: inline;
+}
+.[%%compobject%%]-edit label#jform_description-lbl,
+.[%%compobject%%]-edit .formelm label,
+.[%%compobject%%]-edit .formelm-area label,
+.[%%compobject%%]-edit legend
+{
+        font-weight: bold;
+}
+.[%%compobject%%]-edit legend
+{
+        font-weight: bold;
+        font-size: 120%;
+}

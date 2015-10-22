@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @version 			$Id: componentarchitect_component_wizard.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_modcreator -->
+<!-- @subpackage		com_modcreator.admin.help -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+<!--[%%START_CUSTOM_CODE%%]-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB" xml:lang="en_GB">
+<head>
+<title>Component Wizard Help</title>
+<link href="../../css/help.css" rel="stylesheet" type="text/css" />
+<meta name="copyright" content="c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved" />
+<meta name="license" content="GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html" />
+</head>
+<body>
+<h1><img src="images/icon-48-componentwizard.png" alt="Component Wizard Image" style="width:32px; margin-right: 10px;"/>Component Wizard Help</h1>
+    <div>
+        <p>The Component Wizard allows you to quickly create a component/extension and the objects/tables you require for a new component/extension.  Just enter the names below - Object/Tables should use the singular of the name (e.g. Event), the plural name (e.g. Events) and also code names will be automatically generated - and click on Create.</p>
+        <p>This will create records for the component and the objects/tables and automatically generate pre-defined fieldsets and fields for the common Joomla! fields.</p>
+        <p>By later editing the object/table records you can adjust which common Joomla! fields are required.  The predefined fieldsets and fields will then be automatically adjusted.</p>    
+    </div> 
+    <div> You can use the following links to jump to a section of this help page:</div>
+   <ul>
+        <li>
+            <a href="#toolbar">Toolbar Buttons</a>
+        </li>
+        <li>
+            <a href="#component-details">Component Details</a>
+        </li>  
+        <li>
+            <a href="#actions">Action Buttons</a>
+        </li>
+    </ul> 
+    <h2>Screenshot</h2>
+        <img class="help-image" src="images/component-wizard-screenshot.jpg" alt="Component Wizard - Screenshot" style="width:100%; max-width:1100px;"/>
+    
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>                  
+    <h2 id="toolbar">Toolbar Buttons</h2>
+        <img class="help-image" src="images/component-wizard-toolbar.jpg" alt="Component Wizard - Toolbar"/>
+        <h3>Create</h3>
+            <div class="parameter">
+                <div class="field-desc"><p>Once the Component name and Object/Table names have been entered this will commence the component generation process.  If any errors in the names are detected an error message will be displayed and no component/extensions or objects/tables will be generated. On completion the popup will be closed and the new component/extesnion will be shown in the Component/Extension List.</p></div>
+            </div>
+        <h3>Cancel</h3>
+            <div class="parameter">
+                <div class="field-desc">Cancel and return to the Component/Extension List page.</div>
+            </div> 
+         <h3>Help</h3>
+            <div class="parameter">
+                <div class="field-desc">Link to display the Help system.</div>
+            </div>            
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>                         
+   <h2 id="component-details">Component Details</h2>
+        <img class="help-image" src="images/component-wizard-step-1.jpg" alt="Component Wizard - Step 1" style="width:100%; max-width:1000px;"/>
+        <h3>Component Name</h3>
+            <div class="parameter">
+                <div class="field-desc">
+                    <p>Enter a name for the component. This is the visible name of the component/extension. This will also be the label used for the component/extension in views.</p>
+                    <p>Only alphanumeric, space and \ / &amp; + - _ ( ) are allowed - this prevents problems in generated code.</p>
+                </div>
+                <div class="field-type"><label>Field Type: </label>Text</div>
+            </div>  
+        <h3>Object/Table Name(s)</h3>
+                <div class="field-desc">
+                    <p>Enter a name for each object/table to be created in the component. This is the visible name of the object/table. This will also be the label used for the object/table in views.</p>
+                    <p>Only alphanumeric, space and \ / &amp; + - _ ( ) are allowed - this prevents problems in generated code.</p>
+                    <p><strong>Note:</strong> It is important to only use the singular of the name (e.g. Event), the plural name (e.g. Events) and also code names will be automatically generated.</p>
+                </div>
+         <h3>Select a table to import</h3>
+            <div class="parameter">        
+                <div class="field-desc"><p>You can also select to import fields from a source table just by selecting one for those Objects/Tables you want to have imported fields.</p></div>
+                <div class="field-type"><label>Field Type: </label>List</div>
+            </div>                  
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>                          
+   <h2 id="actions" >Action Buttons</h2>
+        <img class="help-image" src="images/component-wizard-step-2.jpg" alt="Component WIzard - Step 2" style="width:100%; max-width:1000px;"/>
+        <h3>Add</h3>
+            <div class="parameter">
+                <div class="field-desc"><p>Add a new Object/Table name field below the associated field for this Add Button.</p></div>
+            </div>  
+        <h3>Remove</h3>
+            <div class="parameter">
+                <div class="field-desc"><p>Add a new Object/Table name field below the associated field for this Add Button.</p></div>
+            </div>               
+        <h3>Create</h3>
+            <div class="parameter">
+                <div class="field-desc"><p>Once the Component name and Object/Table names have been entered this will commence the component generation process.  If any errors in the names are detected an error message will be displayed and no component/extensions or objects/tables will be generated. On completion the popup will be closed and the new component/extesnion will be shown in the Component/Extension List.</p></div>
+            </div>
+        <h3>Cancel</h3>
+            <div class="parameter">
+                <div class="field-desc">Cancel and return to the Component/Extension List page.</div>
+            </div>  
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>                 
+</body>
+</html>
+<!--[%%END_CUSTOM_CODE%%]-->

@@ -1,0 +1,362 @@
+/**
+ * @version 		$Id:$
+ * @name			Nicegallery (Release 1.0.0)
+ * @author			 ()
+ * @package			com_nicegallery
+ * @subpackage		com_nicegallery.site
+ * @copyright		
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @CAversion		Id: site_compobjectplural.css 408 2014-10-19 18:31:00Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.site
+ * @CAtemplate		joomla_3_3_standard (Release 0.5.0)
+ * @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @Joomlacopyright Copyright (c)2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+/*#################### configs list table with grid settings ############################ */
+.configs-list table.configs
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.configs-list table.configs td
+{
+        padding:7px;
+}
+.configs-list table.configs th
+{
+        padding:7px;
+}
+.configs .display-limit
+{
+    float: right;
+    display: inline;
+}
+/*#################### configs list grid settings ############################ */
+
+.configs-list a.saveorder {
+        width: 16px;
+        height: 16px;
+        display: block;
+        overflow: hidden;
+        background: url(../images/filesave.png) no-repeat;
+        float: right;
+        margin-right: 8px;
+}
+.configs-list td.list-order
+{
+	    float: right;
+	    border: none;
+}
+.configs-list a.jgrid:hover
+{
+    text-decoration: none;
+}
+
+.configs-list .jgrid span.state
+{
+	    display: inline-block;
+	    height: 16px;
+	    width: 16px;
+}
+.configs-list .jgrid span.text 
+{
+        display:none;
+}
+.configs-list .jgrid span.downarrow				
+{
+        background-image: url(../images/downarrow.png);
+}
+.configs-list .jgrid span.downarrow_disabled
+{
+       background-image: url(../images/downarrow0.png);
+       background-position: 0 -12px;
+}
+.configs-list .jgrid span.uparrow	
+{
+        background-image: url(../images/uparrow.png);
+}
+.configs-list .jgrid span.uparrow_disabled
+{
+        background-image: url(../images/uparrow0.png);
+        background-position: 0 -12px;
+}
+/*#################### configs list actions icons ############################ */
+.configs-list ul.actions
+{
+        padding:0 ;
+        width:100%;
+        margin:0;
+        list-style-type: none;
+}
+.configs-list ul.actions a
+{
+        text-decoration:none
+}
+/*#################### configs list pagination ############################ */
+.configs-list .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+/*#################### configs modal list ############################ */
+.configs-modal
+{
+        width: 760px;
+}
+/*#################### configs modal list tables ############################ */
+.configs-modal table.configs th a {
+}
+.configs-modal table.configs th  a img {
+	    border:solid 0px ;
+}
+.configs-modal table.configs
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.configs-modal table.configs td
+{
+        padding:7px;
+}
+.configs-modal table.configs th
+{
+        padding:7px;
+        text-align:left;
+	    background:#444 ;        
+}
+.configs-modal table.configs th
+{
+	    color:#fff
+}
+/*#################### configs modal list pagination ############################ */
+
+.configs-modal .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### configs blog ############################ */
+.configs-blog h1
+{
+        margin:0 0px 10px 0px
+}
+/*#################### configs blog actions icons ############################ */
+.configs-blog ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.configs-blog ul.actions li
+{
+        display:inline
+}
+.configs-blog ul.actions a
+{
+        text-decoration:none
+}
+/*#################### configs blog items more ############################ */
+.configs-blog .items-more
+{
+        padding-top:10px;
+}
+.configs-blog .items-more h3
+{
+        font-weight:normal;
+        margin:0;
+        padding:5px 5px 5px 5px;
+        font-size:1.4em
+}
+.configs-blog .items-more ol
+{
+        line-height:1.3em;
+        list-style-type:none;
+        margin:0;
+        padding:10px 0 10px 2px;
+}
+.configs-blog .items-more ol li
+{
+        padding:2px;
+}
+.configs-blog .items-more ol li a
+{
+        display:inline;
+        margin:0;
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+}
+.configs-blog .items-more ol li a:hover,
+.configs-blog .items-more ol li a:active,
+.configs-blog .items-more ol li a:focus
+{
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+        text-decoration:none
+}
+/*#################### configs blog pagination ############################ */
+.configs-blog .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### config view ############################ */
+.config-view
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.config-view .formelm label,
+{
+    width: 200px;
+}
+/* #main required */
+#main .config-view .formelm ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .config-view .formelm ul label
+{
+         font-weight: normal;
+}
+.config-view .formelm fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+.config-view .formelm label,
+.config-view .formelm-area label  
+{
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;    
+}
+.config-view .formelm span  
+{
+        margin-bottom: 5px;    
+}
+.config-view fieldset legend
+{
+        font-weight: bold;
+        font-size: 120%;
+}
+/*#################### config view actions icons ############################ */
+.config-view ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.config-view ul.actions li
+{
+        display:inline
+}
+.config-view ul.actions a
+{
+        text-decoration:none
+}
+/*#################### config article ############################ */
+.config-article
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.config-article dt.info-title,
+.config-article dt.fields-title
+{
+        font-weight: bold;
+        font-size: 120%;
+		margin-top: 10px;
+}
+#main .config-article dd ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .config-article dd.field label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+#main .config-article dd ul label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+.config-article dd fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+/*#################### config article actions icons ############################ */
+.config-article ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.config-article ul.actions li
+{
+        display:inline
+}
+.config-article ul.actions a
+{
+        text-decoration:none
+}
+
+
+/*#################### config edit form ############################ */
+.config-edit
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.config-edit .button2-left,
+.config-edit .button2-left div,
+.config-edit .button2-left a
+{
+        float: none;
+        display: inline;
+}
+.config-edit .control-group .control-label
+{
+        display: inline-block !important; 
+}
+.config-edit .control-group .controls
+{
+        display: inline-block !important;      
+}
+.config-edit .control-group .control-label
+{
+        width: 150px !important;      
+}

@@ -1,0 +1,112 @@
+/**
+ * @version 		$Id:$
+ * @name			Game (Release 1.0.0)
+ * @author			 ()
+ * @package			com_game
+ * @subpackage		com_game.admin
+ * @copyright		
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @CAversion		Id: categories.css 404 2012-11-14 17:14:48Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.admin
+ * @CAtemplate		joomla_3_3_standard (Release 0.5.0)
+ * @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @Joomlacopyright Copyright (c)2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+  /********************************** Field layouts in tabs at bottom *****************************************/
+.icon-16-game-categories
+{
+      background-image: url(../images/icon-16-categories.png) !important;
+}
+.icon-48-game-categories
+{
+      background-image: url(../images/icon-48-categories.png) !important;
+}
+/*#################### category view ############################ */
+.game .category-desc
+{
+        line-height:1.7em;
+        margin:10px 0;
+        padding-left:0px;
+}
+/*#################### categories list ############################ */
+.game .categories-list
+{
+        padding:0 5px;
+}
+.game .categories-list ul
+{
+        margin:0px 0 0 20px;
+        padding:0;
+}
+
+.game .categories-list ul li
+{
+        padding: 5px;
+}
+.game .categories-list ul ul
+{
+        margin-left:15px;
+}
+.game .categories-list dl dt,
+.game .categories-list dl dd
+{
+	    display:inline;
+}
+.game .categories-list dl dt
+{
+	    font-weight: bold;
+}
+/*#################### category list ############################ */
+.game .category-list
+{
+        padding:0 5px;
+        display:block;
+}
+.game .category-list h1
+{
+        margin-left:-5px;
+        margin-right:-5px;
+}
+/*#################### category tables ############################ */
+.game table.category
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.game table.category td
+{
+        padding:7px;
+}
+.game table.category th
+{
+        padding:7px;
+        text-align:left;
+        background:#444;        
+}
+.game table.category th
+{
+        color:#fff;
+}
+.game table.category th a img
+{
+        padding:2px 10px;
+        border:solid 0px;
+}
+.game .cat-items
+{
+        margin-top:20px;
+}
+

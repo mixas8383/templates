@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id:$ -->
+<!-- @name			    Slider (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_slider -->
+<!-- @subpackage		com_slider.site -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: article.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<metadata>
+	<layout
+	    title="COM_SLIDER_ITEMS_VIEW_ITEM_ARTICLE_TITLE"
+	    option="COM_SLIDER_ITEMS_VIEW_ITEM_ARTICLE_OPTION"
+	>
+        <message>
+			<![CDATA[COM_SLIDER_ITEMS_VIEW_ITEM_ARTICLE_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields
+	    name="request"
+	>
+		<fieldset
+		    name="request"
+			addfieldpath="/administrator/components/com_slider/models/fields"
+		>
+			<field
+			    name="id"
+			    type="modal_items"
+				label="COM_SLIDER_ITEMS_SELECT_ITEM_LABEL"
+				description="COM_SLIDER_ITEMS_SELECT_ITEM_DESC"
+				required="true"
+				edit="true"
+				clear="false"				
+			/>
+		</fieldset>
+	</fields>
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields
+	    name="params"
+	>
+        <!-- Basic options. -->
+        <fieldset
+            name="item_basic_settings"
+            label="COM_SLIDER_ITEMS_FIELDSET_LAYOUT"
+            >
+            <field
+                name="show_item_icons"
+                type="radio"
+                label="COM_SLIDER_SHOW_ICONS_LABEL"
+                description="COM_SLIDER_SHOW_ICONS_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">COM_SLIDER_SHOW_ICONS_VALUE_TEXT</option>
+                <option	value="1">COM_SLIDER_SHOW_ICONS_VALUE_ICONS</option>
+                <option	value="-1">JHIDE</option>
+            </field>
+            <field
+                name="show_item_print_icon"
+                type="radio"
+                label="COM_SLIDER_SHOW_PRINT_ICON_LABEL"
+                description="COM_SLIDER_SHOW_PRINT_ICON_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_email_icon"
+                type="radio"
+                label="COM_SLIDER_SHOW_EMAIL_ICON_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_EMAIL_ICON_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+		        name="item_info_block_position"
+		        type="radio"
+		        label="COM_SLIDER_ITEMS_INFOBLOCK_POSITION_LABEL"
+		        description="COM_SLIDER_ITEMS_INFOBLOCK_POSITION_DESC"
+                class="btn-group"            
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="0">COM_SLIDER_VALUE_ABOVE</option>
+                <option value="1">COM_SLIDER_VALUE_BELOW</option>
+            </field>            
+            <field
+                name="keep_item_itemid"
+                type="radio"
+                label="COM_SLIDER_KEEP_ITEMID_LABEL"
+                description="COM_SLIDER_ITEMS_KEEP_ITEMID_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_item_navigation"
+                type="radio"
+                label="COM_SLIDER_SHOW_NAVIGATION_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_NAVIGATION_DESC"
+                class="btn-group"            
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_category_breadcrumb"
+                type="radio"
+                label="COM_SLIDER_SHOW_CATEGORY_BREADCRUMB_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_CATEGORY_BREADCRUMB_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="limit_category_item_navigation"
+                type="radio"
+                label="COM_SLIDER_LIMIT_CATEGORY_NAVIGATION_LABEL"
+                description="COM_SLIDER_ITEMS_LIMIT_CATEGORY_NAVIGATION_DESC"
+                class="btn-group"            
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="spacer2"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_item_readmore"
+                type="radio"
+                label="COM_SLIDER_SHOW_READMORE_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_READMORE_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="item_readmore_limit"
+                type="text"
+                label="COM_SLIDER_SHOW_READMORE_LIMIT_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_READMORE_LIMIT_DESC"
+                default="100"
+	        />
+            <field
+                name="show_item_readmore_name"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_READMORE_NAME_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_READMORE_NAME_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_noauth"
+                type="radio"
+                label="COM_SLIDER_SHOW_UNAUTH_LINKS_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_UNAUTH_LINKS_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="item_field_settings"
+	        label="COM_SLIDER_ITEMS_FIELDSET_FIELDS"
+	    >
+            <field
+                name="show_item_name"
+                type="radio"
+                label="COM_SLIDER_SHOW_NAME_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_NAME_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_item_names"
+                type="radio"
+                label="COM_SLIDER_LINKED_NAMES_LABEL"
+                description="COM_SLIDER_ITEMS_LINKED_NAMES_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_item_intro"
+                type="radio"
+                label="COM_SLIDER_SHOW_INTRO_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_INTRO_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_image"
+                type="radio"
+                label="COM_SLIDER_SHOW_IMAGE_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_IMAGE_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_image_float"
+                type="radio"
+                label="COM_SLIDER_SHOW_IMAGE_FLOAT_LABEL"
+                description="COM_SLIDER_SHOW_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="right">COM_SLIDER_VALUE_FLOAT_RIGHT</option>
+                <option value="left">COM_SLIDER_VALUE_FLOAT_LEFT</option>
+                <option value="none">COM_SLIDER_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_item_image_width"
+                type="text"
+                label="COM_SLIDER_SHOW_IMAGE_WIDTH_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_item_image_height"
+                type="text"
+                label="COM_SLIDER_SHOW_IMAGE_HEIGHT_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_item_intro_image"
+                type="radio"
+                label="COM_SLIDER_SHOW_INTRO_IMAGE_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_INTRO_IMAGE_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_intro_image_float"
+                type="radio"
+                label="COM_SLIDER_SHOW_INTRO_IMAGE_FLOAT_LABEL"
+                description="COM_SLIDER_SHOW_INTRO_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="right">COM_SLIDER_VALUE_FLOAT_RIGHT</option>
+                <option value="left">COM_SLIDER_VALUE_FLOAT_LEFT</option>
+                <option value="none">COM_SLIDER_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_item_intro_image_width"
+                type="text"
+                label="COM_SLIDER_SHOW_INTRO_IMAGE_WIDTH_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_INTRO_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_item_intro_image_height"
+                type="text"
+                label="COM_SLIDER_SHOW_INTRO_IMAGE_HEIGHT_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_INTRO_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_item_urls"
+                type="radio"
+                label="COM_SLIDER_SHOW_URLS_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_URLS_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field> 
+            <field
+                name="show_item_urls_position"
+                type="radio"
+                label="COM_SLIDER_SHOW_URLS_POSITION_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_URLS_POSITION_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="0">COM_SLIDER_VALUE_ABOVE</option>
+                <option value="1">COM_SLIDER_VALUE_BELOW</option>
+            </field>
+            <field
+                name="spacer3"
+                type="spacer"
+                hr="true"
+	        />
+            <field
+                name="show_item_category"
+                type="radio"
+                label="COM_SLIDER_SHOW_CATEGORY_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_item_category"
+                type="radio"
+                label="COM_SLIDER_LINK_CATEGORY_LABEL"
+                description="COM_SLIDER_ITEMS_LINK_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_item_parent_category"
+                type="radio"
+                label="COM_SLIDER_SHOW_PARENT_CATEGORY_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_PARENT_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_item_parent_category"
+                type="radio"
+                label="COM_SLIDER_LINK_PARENT_CATEGORY_LABEL"
+                description="COM_SLIDER_ITEMS_LINK_PARENT_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_item_tags"
+                type="radio"
+                label="COM_SLIDER_FIELD_SHOW_TAGS_LABEL"
+                description="COM_SLIDER_ITEMS_FIELD_SHOW_TAGS_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="spacer4"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_item_created_by"
+                type="radio"
+                label="COM_SLIDER_SHOW_CREATED_BY_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_CREATED_BY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_item_created_by"
+                type="radio"
+                label="COM_SLIDER_LINK_CREATED_BY_LABEL"
+                description="COM_SLIDER_ITEMS_LINK_CREATED_BY_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_item_created_by_alias"
+                type="radio"
+		        label="COM_SLIDER_SHOW_CREATED_BY_ALIAS_LABEL"
+		        description="COM_SLIDER_ITEMS_SHOW_CREATED_BY_ALIAS_DESC"
+		        class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_created"
+                type="radio"
+                label="COM_SLIDER_SHOW_CREATED_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_CREATED_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_modified"
+                type="radio"
+                label="COM_SLIDER_SHOW_MODIFIED_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_MODIFIED_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_publish_up"
+                type="radio"
+                label="COM_SLIDER_SHOW_PUBLISH_UP_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_PUBLISH_UP_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_publish_down"
+                type="radio"
+                label="COM_SLIDER_SHOW_PUBLISH_DOWN_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_PUBLISH_DOWN_DESC"
+                class="btn-group"
+             >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_hits"
+                type="radio"
+                label="COM_SLIDER_SHOW_HITS_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_HITS_DESC"
+                class="btn-group"
+             >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_item_metadata"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_METADATA_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_METADATA_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_parentid"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_PARENTID_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_PARENTID_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_attribs"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_ATTRIBS_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_ATTRIBS_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_mask"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_MASK_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_MASK_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_sectionid"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_SECTIONID_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_SECTIONID_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_fulltext"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_FULLTEXT_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_FULLTEXT_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_introtext"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_INTROTEXT_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_INTROTEXT_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_title_alias"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_TITLE_ALIAS_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_TITLE_ALIAS_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_item_title"
+                type="radio"
+                label="COM_SLIDER_ITEMS_SHOW_FIELD_TITLE_LABEL"
+                description="COM_SLIDER_ITEMS_SHOW_FIELD_TITLE_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_item">COM_SLIDER_ITEMS_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

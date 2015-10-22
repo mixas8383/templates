@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version			$Id: j33standard.xml 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name              Joomla! 3.3 Standard Code Template (Release 1.0.3) -->
+<!-- @author		    Component Architect (www.componentarchitect.com) -->
+<!-- @package		    componentarchitect -->
+<!-- @subpackage	    componentarchitect.cacodetemplates.j33standard -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension version="2.5" type="plugin" group="cacodetemplates" method="upgrade">
+    <name>plg_cacodetemplates_j33standard</name>
+    <author>Component Architect</author>
+    <creationDate>October 2014</creationDate>
+    <copyright>
+        Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail>development@componentarchitect.com</authorEmail>
+    <authorUrl>http://www.componentarchitect.com</authorUrl>
+    <version>1.0.3</version>
+    <description>PLG_CACODETEMPLATES_J33STANDARD_XML_DESCRIPTION</description>
+	<files>
+		<file plugin="j33standard">j33standard.php</file>
+    	<filename>index.html</filename>
+        <filename>com_architectcomp_j33standard.zip</filename>
+
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j33standard.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j33standard.sys.ini</language>
+    </languages>
+    <scriptfile>j33standard_install.php</scriptfile>
+
+    <config>
+        <fields
+		    name="params"
+		>
+            <fieldset
+                name="basic"
+            >
+                <field
+                    name="codetemplate_record_id"
+                    type="text"
+					label="PLG_CACODETEMPLATES_J33STANDARD_RECORD_LABEL"
+					description="PLG_CACODETEMPLATES_J33STANDARD_RECORD_DESC"
+					class="inputbox"
+					default=""
+					disabled="true"
+					size="10"
+				/>
+                <field
+                    name="codetemplate_folder_path"
+                    type="text"
+					label="PLG_CACODETEMPLATES_J33STANDARD_FOLDER_LABEL"
+					description="PLG_CACODETEMPLATES_J33STANDARD_FOLDER_DESC"
+					class="inputbox"
+					default="j33standard"
+					disabled="true"
+					size="100"
+				/>
+             </fieldset>
+        </fields>
+    </config>             
+</extension>

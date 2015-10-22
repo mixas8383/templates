@@ -1,0 +1,362 @@
+/**
+ * @version 		$Id:$
+ * @name			Videomanager (Release 1.0.0)
+ * @author			 ()
+ * @package			com_videomanager
+ * @subpackage		com_videomanager.site
+ * @copyright		
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @CAversion		Id: site_compobjectplural.css 408 2014-10-19 18:31:00Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.site
+ * @CAtemplate		joomla_3_3_standard (Release 0.5.0)
+ * @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @Joomlacopyright Copyright (c)2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+/*#################### videoses list table with grid settings ############################ */
+.videoses-list table.videoses
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.videoses-list table.videoses td
+{
+        padding:7px;
+}
+.videoses-list table.videoses th
+{
+        padding:7px;
+}
+.videoses .display-limit
+{
+    float: right;
+    display: inline;
+}
+/*#################### videoses list grid settings ############################ */
+
+.videoses-list a.saveorder {
+        width: 16px;
+        height: 16px;
+        display: block;
+        overflow: hidden;
+        background: url(../images/filesave.png) no-repeat;
+        float: right;
+        margin-right: 8px;
+}
+.videoses-list td.list-order
+{
+	    float: right;
+	    border: none;
+}
+.videoses-list a.jgrid:hover
+{
+    text-decoration: none;
+}
+
+.videoses-list .jgrid span.state
+{
+	    display: inline-block;
+	    height: 16px;
+	    width: 16px;
+}
+.videoses-list .jgrid span.text 
+{
+        display:none;
+}
+.videoses-list .jgrid span.downarrow				
+{
+        background-image: url(../images/downarrow.png);
+}
+.videoses-list .jgrid span.downarrow_disabled
+{
+       background-image: url(../images/downarrow0.png);
+       background-position: 0 -12px;
+}
+.videoses-list .jgrid span.uparrow	
+{
+        background-image: url(../images/uparrow.png);
+}
+.videoses-list .jgrid span.uparrow_disabled
+{
+        background-image: url(../images/uparrow0.png);
+        background-position: 0 -12px;
+}
+/*#################### videoses list actions icons ############################ */
+.videoses-list ul.actions
+{
+        padding:0 ;
+        width:100%;
+        margin:0;
+        list-style-type: none;
+}
+.videoses-list ul.actions a
+{
+        text-decoration:none
+}
+/*#################### videoses list pagination ############################ */
+.videoses-list .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+/*#################### videoses modal list ############################ */
+.videoses-modal
+{
+        width: 760px;
+}
+/*#################### videoses modal list tables ############################ */
+.videoses-modal table.videoses th a {
+}
+.videoses-modal table.videoses th  a img {
+	    border:solid 0px ;
+}
+.videoses-modal table.videoses
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.videoses-modal table.videoses td
+{
+        padding:7px;
+}
+.videoses-modal table.videoses th
+{
+        padding:7px;
+        text-align:left;
+	    background:#444 ;        
+}
+.videoses-modal table.videoses th
+{
+	    color:#fff
+}
+/*#################### videoses modal list pagination ############################ */
+
+.videoses-modal .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### videoses blog ############################ */
+.videoses-blog h1
+{
+        margin:0 0px 10px 0px
+}
+/*#################### videoses blog actions icons ############################ */
+.videoses-blog ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.videoses-blog ul.actions li
+{
+        display:inline
+}
+.videoses-blog ul.actions a
+{
+        text-decoration:none
+}
+/*#################### videoses blog items more ############################ */
+.videoses-blog .items-more
+{
+        padding-top:10px;
+}
+.videoses-blog .items-more h3
+{
+        font-weight:normal;
+        margin:0;
+        padding:5px 5px 5px 5px;
+        font-size:1.4em
+}
+.videoses-blog .items-more ol
+{
+        line-height:1.3em;
+        list-style-type:none;
+        margin:0;
+        padding:10px 0 10px 2px;
+}
+.videoses-blog .items-more ol li
+{
+        padding:2px;
+}
+.videoses-blog .items-more ol li a
+{
+        display:inline;
+        margin:0;
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+}
+.videoses-blog .items-more ol li a:hover,
+.videoses-blog .items-more ol li a:active,
+.videoses-blog .items-more ol li a:focus
+{
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+        text-decoration:none
+}
+/*#################### videoses blog pagination ############################ */
+.videoses-blog .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### videos view ############################ */
+.videos-view
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.videos-view .formelm label,
+{
+    width: 200px;
+}
+/* #main required */
+#main .videos-view .formelm ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .videos-view .formelm ul label
+{
+         font-weight: normal;
+}
+.videos-view .formelm fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+.videos-view .formelm label,
+.videos-view .formelm-area label  
+{
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;    
+}
+.videos-view .formelm span  
+{
+        margin-bottom: 5px;    
+}
+.videos-view fieldset legend
+{
+        font-weight: bold;
+        font-size: 120%;
+}
+/*#################### videos view actions icons ############################ */
+.videos-view ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.videos-view ul.actions li
+{
+        display:inline
+}
+.videos-view ul.actions a
+{
+        text-decoration:none
+}
+/*#################### videos article ############################ */
+.videos-article
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.videos-article dt.info-title,
+.videos-article dt.fields-title
+{
+        font-weight: bold;
+        font-size: 120%;
+		margin-top: 10px;
+}
+#main .videos-article dd ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .videos-article dd.field label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+#main .videos-article dd ul label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+.videos-article dd fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+/*#################### videos article actions icons ############################ */
+.videos-article ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.videos-article ul.actions li
+{
+        display:inline
+}
+.videos-article ul.actions a
+{
+        text-decoration:none
+}
+
+
+/*#################### videos edit form ############################ */
+.videos-edit
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.videos-edit .button2-left,
+.videos-edit .button2-left div,
+.videos-edit .button2-left a
+{
+        float: none;
+        display: inline;
+}
+.videos-edit .control-group .control-label
+{
+        display: inline-block !important; 
+}
+.videos-edit .control-group .controls
+{
+        display: inline-block !important;      
+}
+.videos-edit .control-group .control-label
+{
+        width: 150px !important;      
+}

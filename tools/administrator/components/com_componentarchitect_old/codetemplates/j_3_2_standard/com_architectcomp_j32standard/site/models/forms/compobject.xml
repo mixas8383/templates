@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @tempversion -->
+<!-- @name			    [%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%]) -->
+<!-- @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%]) -->
+<!-- @package			[%%com_architectcomp%%] -->
+<!-- @subpackage		[%%com_architectcomp%%].site -->
+<!-- @copyright		    [%%COMPONENTCOPYRIGHT%%] -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @version			$Id: compobject.xml 417 2014-10-22 14:42:10Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_2_standard (Release 1.0.4) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<form
+    addfieldpath="/components/[%%com_architectcomp%%]/models/fields"
+    addrulepath="/components/[%%com_architectcomp%%]/models/rules"
+>
+    <fieldset>
+        <field
+			id="id"
+			name="id"
+			type="hidden"
+			label="[%%COM_ARCHITECTCOMP%%]_ID_LABEL"
+			class="readonly"
+			default="0"
+			readonly="true"
+		/>
+
+        [%%IF INCLUDE_VERSIONS%%]
+        <field
+			id="contenthistory"
+			name="contenthistory"
+			type="contenthistory"
+			label="JTOOLBAR_VERSIONS"
+			data-typeAlias="[%%com_architectcomp%%].[%%compobject%%]"
+		/>
+        [%%ENDIF INCLUDE_VERSIONS%%]
+        [%%IF INCLUDE_ASSETACL%%]
+            [%%IF INCLUDE_ASSETACL_RECORD%%]
+        <field
+			id="asset_id"
+			name="asset_id"
+			type="hidden"
+			filter="unset"
+		/>
+            [%%ENDIF INCLUDE_ASSETACL_RECORD%%]
+        [%%ENDIF INCLUDE_ASSETACL%%]
+        [%%IF INCLUDE_NAME%%]
+        <field
+			id="name"
+			name="name"
+			type="text"
+			label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_NAME_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_NAME_DESC"
+			class="inputbox"
+			size="50"
+			required="true"
+		/>
+            [%%IF INCLUDE_ALIAS%%]
+        <field
+			id="alias"
+			name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FIELD_ALIAS_DESC"
+    		class="inputbox"
+			size="50"
+			filter="unset"
+		/>
+            [%%ENDIF INCLUDE_ALIAS%%]
+        [%%ENDIF INCLUDE_NAME%%]
+
+        [%%IF INCLUDE_DESCRIPTION%%]
+        <field
+            [%%IF INCLUDE_INTRO%%]
+		    id="introdescription"
+		    name="introdescription"
+            [%%ELSE INCLUDE_INTRO%%]
+		    id="description"
+		    name="description"
+            [%%ENDIF INCLUDE_INTRO%%]
+			type="editor"
+			label="JGLOBAL_DESCRIPTION"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_DESCRIPTION_DESC"
+			class="inputbox"
+            filter="JComponentHelper::filterText"
+			buttons="true"
+            [%%IF GENERATE_PLUGINS%%]
+                [%%IF GENERATE_PLUGINS_PAGEBREAK%%]
+            hide="article"
+                [%%ELSE GENERATE_PLUGINS_PAGEBREAK%%]
+            hide="article"
+                [%%ENDIF GENERATE_PLUGINS_PAGEBREAK%%]
+            [%%ELSE GENERATE_PLUGINS%%]            
+            hide="article,pagebreak"                
+            [%%ENDIF GENERATE_PLUGINS%%] 
+		/>
+        [%%ENDIF INCLUDE_DESCRIPTION%%]
+        [%%IF INCLUDE_INTRO%%]
+        <field
+		    id="intro"
+		    name="intro"
+            type="editor"
+			label="JGLOBAL_INTRO_TEXT"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_INTRO_DESC"
+            class="inputbox"
+            buttons="false"
+            readonly="true"
+        />
+        [%%ENDIF INCLUDE_INTRO%%]
+        [%%IF GENERATE_CATEGORIES%%]
+        <field
+			id="catid"
+			name="catid"
+			type="categoryedit"
+			label="JCATEGORY"
+			description="JFIELD_CATEGORY_DESC"
+			extension="[%%com_architectcomp%%]"
+			class="inputbox"
+			required="true"
+            addfieldpath="/administrator/components/com_categories/models/fields"
+		/>
+        [%%ENDIF GENERATE_CATEGORIES%%]	
+        [%%IF INCLUDE_TAGS%%]
+        <field
+            id="tags"
+            name="tags"
+            type="tag"
+            label="JTAG"
+            description="JTAG_DESC"
+            class="inputbox"
+            multiple="true"
+	>
+        </field>
+        [%%ENDIF INCLUDE_TAGS%%]
+        [%%IF INCLUDE_CREATED%%]
+        <field
+			id="created"
+			name="created"
+			type="calendar"
+			label="[%%COM_ARCHITECTCOMP%%]_FIELD_CREATED_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CREATED_BY_DESC"
+			class="inputbox"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"			
+		/>
+        <field
+			id="created_by"
+			name="created_by"
+			type="user"
+			label="[%%COM_ARCHITECTCOMP%%]_FIELD_CREATED_BY_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CREATED_BY_DESC"
+		/>
+        <field
+			id="created_by_alias"
+			name="created_by_alias"
+			type="text"
+			label="[%%COM_ARCHITECTCOMP%%]_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CREATED_BY_ALIAS_DESC"
+            class="inputbox"
+            size="20"
+		/>
+        [%%ENDIF INCLUDE_CREATED%%]
+        [%%IF INCLUDE_MODIFIED%%]
+        <field
+            name="modified"
+            type="calendar"
+			label="[%%COM_ARCHITECTCOMP%%]_FIELD_MODIFIED_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_MODIFIED_DESC"
+            class="readonly"
+			size="22"
+			readonly="true"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+            name="modified_by"
+            type="user"
+		    label="[%%COM_ARCHITECTCOMP%%]_FIELD_MODIFIED_BY_LABEL"
+		    class="readonly"
+		    readonly="true"
+		    filter="unset"
+		/>
+        [%%ENDIF INCLUDE_MODIFIED%%]
+        [%%IF INCLUDE_PUBLISHED_DATES%%]
+        <field
+			id="publish_up"
+			name="publish_up"
+			type="calendar"
+			label="[%%COM_ARCHITECTCOMP%%]_FIELD_PUBLISH_UP_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_PUBLISH_UP_DESC"
+			class="inputbox"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc"
+		/>
+        <field
+			id="publish_down"
+			name="publish_down"
+			type="calendar"
+			label="[%%COM_ARCHITECTCOMP%%]_FIELD_PUBLISH_DOWN_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_PUBLISH_DOWN_DESC"
+			class="inputbox"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc"
+		/>
+        [%%ENDIF INCLUDE_PUBLISHED_DATES%%]
+        [%%IF INCLUDE_STATUS%%]
+        <field
+            id="state"
+            name="state"
+            type="list"
+            label="JSTATUS"
+            description="JFIELD_PUBLISHED_DESC"
+			class="chzn-color-state"
+            size="1"
+            default="1"
+	    >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASH</option>
+        </field>
+        [%%ENDIF INCLUDE_STATUS%%]
+        [%%IF INCLUDE_ACCESS%%]
+        <field
+			id="access"
+			name="access"
+			type="accesslevel"
+			label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		/>
+        [%%ENDIF INCLUDE_ACCESS%%]
+        [%%IF INCLUDE_FEATURED%%]
+        <field
+			id="featured"
+			name="featured"
+			type="radio"
+			label="JGLOBAL_FIELD_FEATURED_LABEL"
+			description="JGLOBAL_FIELD_FEATURED_DESC"
+            class="btn-group"    
+			default="0"
+		>
+            <option	value="1">JYES</option>
+            <option	value="0">JNO</option>
+        </field>
+        [%%ENDIF INCLUDE_FEATURED%%]
+        [%%IF INCLUDE_LANGUAGE%%]
+        <field
+            id="language"
+            name="language"
+            type="contentlanguage"
+            label="JFIELD_LANGUAGE_LABEL"
+            description="JFIELD_LANGUAGE_DESC"
+            class="inputbox"
+ 			default="*"
+       >
+            <option value="*">JALL</option>
+        </field>
+        [%%ENDIF INCLUDE_LANGUAGE%%]
+        [%%IF INCLUDE_VERSIONS%%]
+        <field
+			id="version_note"
+			name="version_note"
+			type="text"
+			label="JGLOBAL_FIELD_VERSION_NOTE_LABEL"
+			description="JGLOBAL_FIELD_VERSION_NOTE_DESC"
+			class="inputbox"
+			size="45"
+		/>
+        [%%ENDIF INCLUDE_VERSIONS%%]		
+        [%%IF INCLUDE_METADATA%%]
+        <field
+           id="metakey"
+           name="metakey"
+           type="textarea"
+           label="JFIELD_META_KEYWORDS_LABEL"
+           description="JFIELD_META_KEYWORDS_DESC"
+           cols="60"
+           rows="3"
+	    />
+        <field
+            id="metadesc"
+            name="metadesc"
+            type="textarea"
+            label="JFIELD_META_DESCRIPTION_LABEL"
+            description="JFIELD_META_DESCRIPTION_DESC"
+            cols="60"
+            rows="3"
+	    />
+        <field
+            id="robots"
+            name="robots"
+            type="list"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_ROBOTS_LABEL"
+			class="chzn-color"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_ROBOTS_DESC"
+		>
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="index, follow">[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_ROBOTS_VALUE_INDEX_FOLLOW</option>
+            <option value="noindex, follow">[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_ROBOTS_VALUE_NOINDEX_FOLLOW</option>
+            <option value="index, nofollow">[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_ROBOTS_VALUE_INDEX_NOFOLLOW</option>
+            <option value="noindex, nofollow">[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_ROBOTS_VALUE_NOINDEX_NOFOLLOW</option>
+        </field>
+        <field
+            id="author" 
+            name="author" 
+            type="text"
+			label="JAUTHOR"
+			description="[%%COM_ARCHITECTCOMP%%]_FIELD_METADATA_AUTHOR_DESC"
+			size="20"
+		/>        
+        <field
+            id="xreference"
+            name="xreference"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_XREFERENCE_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_XREFERENCE_DESC"
+            class="inputbox"
+            size="50"
+        />
+        [%%ENDIF INCLUDE_METADATA%%]
+        [%%FOREACH OBJECT_FIELDSET%%]
+            [%%IF FIELDSET_BASIC_DETAILS%%]
+                [%%FOREACH OBJECT_FIELD%%]
+        <field
+            id="[%%FIELD_CODE_NAME%%]"
+            name="[%%FIELD_CODE_NAME%%]"
+            type="[%%FIELD_TYPE%%]"
+            label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+            [%%FIELD_PARAMETERS%%]
+        >
+            [%%FIELD_OPTIONS%%]
+        </field>  
+                [%%ENDFOR OBJECT_FIELD%%]
+            [%%ENDIF FIELDSET_BASIC_DETAILS%%]
+        [%%ENDFOR OBJECT_FIELDSET%%]         
+    </fieldset>
+    [%%IF INCLUDE_IMAGE%%]
+    <fields
+        name="images"
+        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_IMAGE_OPTIONS"
+    >
+        <field
+            id="image_url"
+            name="image_url"
+            type="media"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_IMAGE_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_IMAGE_DESC"
+        />
+        <field
+            id="image_alt_text"
+            name="image_alt_text"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_IMAGE_ALTTEXT_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_IMAGE_ALTTEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            name="image_caption"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_IMAGE_CAPTION_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_IMAGE_CAPTION_DESC"
+            class="inputbox"
+            size="20"
+            [%%IF OBJECT_READONLY%%]
+            readonly="true"
+            disabled="true"
+            [%%ENDIF OBJECT_READONLY%%]
+        />
+        [%%IF INCLUDE_INTRO%%]
+        <field
+            id="intro_image_url"
+            name="intro_image_url"
+            type="media"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_INTRO_IMAGE_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_INTRO_IMAGE_DESC"
+        />
+        <field
+            id="intro_image_alt_text"
+            name="intro_image_alt_text"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_INTRO_IMAGE_ALTTEXT_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_INTRO_IMAGE_ALTTEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            name="intro_image_caption"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_INTRO_IMAGE_CAPTION_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_INTRO_IMAGE_CAPTION_DESC"
+            class="inputbox"
+            size="20"
+            [%%IF OBJECT_READONLY%%]
+            readonly="true"
+            disabled="true"
+            [%%ENDIF OBJECT_READONLY%%]
+        />
+        [%%ENDIF INCLUDE_INTRO%%]
+    </fields>
+    [%%ENDIF INCLUDE_IMAGE%%]
+    [%%IF INCLUDE_URLS%%]
+    <fields
+        name="urls"
+        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_URLS_OPTIONS"
+    >
+        <field
+            id="urla"
+            name="urla"
+            type="url"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLA_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_DESC"
+            validate="url"
+            filter="url"
+        />
+        <field
+            id="urla_text"
+            name="urla_text"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLA_LINK_TEXT_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_LINK_TEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="urla_target"
+            name="urla_target"
+            type="list"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLA_TARGET_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_TARGET_DESC"
+			class="chzn-color"
+            filter="options"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+        <field
+                name="spacer3"
+            type="spacer"
+            hr="true"
+				/>
+        <field
+            id="urlb"
+            name="urlb"
+            type="url"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLB_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_DESC"
+            validate="url"
+            filter="url"
+       />
+        <field
+            id="urlb_text"
+            name="urlb_text"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLB_LINK_TEXT_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_LINK_TEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="urlb_target"
+            name="urlb_target"
+            type="list"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLB_TARGET_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_TARGET_DESC"
+			class="chzn-color"
+            default=""
+            filter="options"
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+        <field
+                name="spacer4"
+            type="spacer"
+            hr="true"
+				/>
+        <field
+            id="urlc"
+            name="urlc"
+            type="url"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLC_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_DESC"
+            validate="url"
+            filter="url"
+        />
+        <field
+            id="urlc_text"
+            name="urlc_text"
+            type="text"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLC_LINK_TEXT_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_LINK_TEXT_DESC"
+            class="inputbox"
+            size="20"
+        />
+        <field
+            id="urlc_target"
+            name="urlc_target"
+            type="list"
+            label="[%%COM_ARCHITECTCOMP%%]_FIELD_URLC_TARGET_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_FIELD_URL_TARGET_DESC"
+			class="chzn-color"
+            filter="options"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+    </fields>
+    [%%ENDIF INCLUDE_URLS%%]
+    [%%FOREACH OBJECT_FIELDSET%%]
+        [%%IF FIELDSET_NOT_BASIC_DETAILS%%]
+    <fieldset
+        name="fieldset_[%%FIELDSET_CODE_NAME%%]"
+        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELDSET_[%%FIELDSET_CODE_NAME_UPPER%%]_LABEL"
+    >
+
+            [%%FOREACH OBJECT_FIELD%%]
+        <field
+            id="[%%FIELD_CODE_NAME%%]"
+            name="[%%FIELD_CODE_NAME%%]"
+            type="[%%FIELD_TYPE%%]"
+            label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+            [%%FIELD_PARAMETERS%%]
+        >
+            [%%FIELD_OPTIONS%%]
+        </field>  
+            [%%ENDFOR OBJECT_FIELD%%]
+    </fieldset>
+        [%%ENDIF FIELDSET_NOT_BASIC_DETAILS%%]
+    [%%ENDFOR OBJECT_FIELDSET%%]
+    [%%FOREACH REGISTRY_FIELD%%]
+    <fields
+        name="[%%FIELD_CODE_NAME%%]"
+        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"        
+    >
+    <fieldset
+        name="[%%FIELD_CODE_NAME%%]"
+        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+        description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+    >
+        [%%FOREACH REGISTRY_ENTRY%%]
+        <field
+            id="[%%FIELD_CODE_NAME%%]"
+            name="[%%FIELD_CODE_NAME%%]"
+            type="[%%FIELD_TYPE%%]"
+            label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+            description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+            [%%FIELD_PARAMETERS%%]
+        >
+            [%%FIELD_OPTIONS%%]
+        </field>  
+        [%%ENDFOR REGISTRY_ENTRY%%]
+    </fieldset>
+    </fields>
+    [%%ENDFOR REGISTRY_FIELD%%]
+</form>

@@ -1,0 +1,79 @@
+/**
+ * @version 		$Id:$
+ * @name			ModCreator (Release 1.0.0)
+ * @author			 ()
+ * @package			com_modcreator
+ * @subpackage		com_modcreator.admin
+ * @copyright		
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @CAversion		Id: help.css 330 2014-08-25 15:04:28Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.admin
+ * @CAtemplate		joomla_2_5_standard (Release 1.0.2)
+ * @CAcopyright		Copyright (c) 2013 - 2014 Environmental Computing Options Ltd. (trading as Component Architect). All Rights Reserved
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+} 
+h1, h2, h3
+{
+	font-weight: bold;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	
+}
+h1
+{
+	margin: 0;
+	color: #025A8D;
+	font-size: 150%;
+}
+h2
+{
+	font-size: 125%;
+	color: #146295;
+}
+h3
+{
+    font-size: 110%;
+}
+
+.parameter
+{
+
+}
+.parameter .field-desc
+{
+    margin-top: 5px;
+}
+.parameter .field-type
+{
+    margin-top: 5px;
+}
+.parameter .field-options
+{
+    margin-top: 5px;
+}
+.parameter .field-options ul
+{
+    margin-top: 2px;
+}
+.parameter label
+{
+	font-weight: bold;
+}

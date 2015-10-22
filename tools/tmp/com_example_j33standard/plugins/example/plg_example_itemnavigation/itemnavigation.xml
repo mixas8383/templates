@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id:$ -->
+<!-- @name			    Example (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_example -->
+<!-- @subpackage		com_example.itemnavigation -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: itemnavigation.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.itemnavigation -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension type="plugin" version="3.3" group="example" method="upgrade">
+    <name>plg_example_itemnavigation</name>
+    <author></author>
+    <creationDate>July 2015</creationDate>
+    <copyright>
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail></authorEmail>
+    <authorUrl></authorUrl>
+    <version>1.0.0</version>
+	<description>PLG_EXAMPLE_ITEMNAVIGATION_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="itemnavigation">itemnavigation.php</filename>
+		<filename>index.html</filename>
+    </files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_example_itemnavigation.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_example_itemnavigation.sys.ini</language>
+	</languages>
+	<config>
+		<fields
+		    name="params"
+		>
+			<fieldset
+			name="basic"
+			>
+			<field
+			    name="item_position"
+			    type="radio"
+				label="PLG_EXAMPLE_ITEMS_ITEMNAVIGATION_FIELD_POSITION_LABEL"
+				description="PLG_EXAMPLE_ITEMS_ITEMNAVIGATION_FIELD_POSITION_DESC"
+                class="btn-group"
+				default="1"
+			>
+			    <option value="1">PLG_EXAMPLE_ITEMNAVIGATION_FIELD_VALUE_BELOW</option>
+			    <option value="0">PLG_EXAMPLE_ITEMNAVIGATION_FIELD_VALUE_ABOVE</option>
+			</field>
+			<field name="item_relative"
+			    type="radio"
+			    description="PLG_EXAMPLE_ITEMS_ITEMNAVIGATION_FIELD_RELATIVE_DESC"
+			    label="PLG_EXAMPLE_ITEMS_ITEMNAVIGATION_FIELD_RELATIVE_LABEL"
+                class="btn-group"    
+			    default="1"
+			>
+			    <option value="1">PLG_EXAMPLE_ITEMS_ITEMNAVIGATION_FIELD_VALUE_ITEM</option>
+			    <option value="0">PLG_EXAMPLE_ITEMNAVIGATION_FIELD_VALUE_TEXT</option>
+			</field>
+			<field
+			    name="keep_item_itemid"
+			    type="radio"
+			    label="PLG_EXAMPLE_KEEP_ITEMID_LABEL"
+			    description="PLG_EXAMPLE_ITEMS_KEEP_ITEMID_DESC"
+                class="btn-group"    
+			    default="1"
+			>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>                
+			</fieldset>
+		</fields>
+	</config>
+</extension>

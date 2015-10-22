@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @version		    $Id: componentarchitect_generate.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author		    Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_modcreator -->
+<!-- @subpackage		com_modcreator.admin.help -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+<!--[%%START_CUSTOM_CODE%%]-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB" xml:lang="en_GB">
+<head>
+<title>Component Architect Generate Help</title>
+<link href="../../css/help.css" rel="stylesheet" type="text/css" />
+<meta name="copyright" content="c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved" />
+<meta name="license" content="GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html" />
+</head>
+<body>
+<h1><img src="images/icon-48-generate.png" alt="Generate Image" style="width:32px; margin-right: 10px;"/>Component Architect Generate Help</h1>
+    <div>The Generate function available from the Components/Extensions List view opens this dialog where the required Component/Extension, Code Template and generation parameters for component generation can be specified.</div>
+    <div>You can use the following links to jump to a section of this help page:</div>
+   <ul>
+        <li>
+            <a href="#toolbar">Toolbar Buttons</a>
+        </li>
+        <li>
+            <a href="#generate-parameters">Generate Parameters</a>
+        </li>  
+        <li>
+            <a href="#progress">Generate Component - Generation Progress</a>
+        </li>
+        <li>
+            <a href="#complete">Generate Component - Succesfully Completed</a>
+        </li>
+        <li>
+            <a href="#error">Generate Component - Errors</a>
+        </li>
+    </ul> 
+    <h2>Screenshot</h2>
+        <img class="help-image" src="images/generate-screenshot.jpg" alt="Generate Component - Screenshot" style="width:100%; max-width:1100px;"/>
+
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div> 
+    <h2 id="toolbar">Toolbar Buttons</h2>
+        <img class="help-image" src="images/generate-toolbar.jpg" alt="Generate Component - Toolbar" style="width:100%; max-width:1100px;"/>
+        <h3>Cancel</h3>
+            <div class="parameter">
+                <div class="field-desc">Return to the Components/Extensions List view</div>
+            </div>
+         <h3>Help</h3>
+            <div class="parameter">
+                <div class="field-desc">Link to display the Help system.</div>
+            </div>            
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>             
+    <h2 id="generate-parameters">Generate Parameters</h2>
+        <img class="help-image" src="images/generate-parameters.jpg" alt="Generate Component - Parameters" style="width:90%; max-width:1000px;"/>
+        <h3>Select a Component/Extension</h3>
+            <div class="parameter">
+                <div class="field-desc">A pop-up box showing all Components/Extensions.  A Component/Extension must be selected for the component generation.</div>
+                <div class="field-type"><label>Field Type: </label>Modal</div>
+            </div> 
+        <h3>Select a Code Template</h3>
+            <div class="parameter">
+                <div class="field-desc">A pop-up box showing all Code Templates.  A Code Template must be selected for the component generation.</div>
+                <div class="field-type"><label>Field Type: </label>Modal</div>
+            </div>                    
+        <h3>Output Path</h3>
+            <div class="parameter">
+                <div class="field-desc">The relative location within the website where the folder containing the generated component files will be created.  The default value is 'tmp' (this can be changed in the Component Architect Options).</div>
+                <div class="field-type"><label>Field Type: </label>Text</div>
+            </div>
+        <h3>Zip Format</h3>
+             <div class="parameter">
+                <div class="field-desc">Select from the options whether to created zipped copy of the generated component folder.  The default value is 'None' (this can be changed in the Component Architect Options). At the moment only creation of '.zip' files is natively supported by Joomla!.</div>
+                <div class="field-type"><label>Field Type: </label>List</div>
+            </div>
+        <h3>Logging</h3>
+             <div class="parameter">
+                <div class="field-desc">Select whether to create a log file for the component generation.  The default value is 'No' (this can be changed in the Component Architect Options). The location of the log files is by default the 'logs' folder (again this can be changed in the Component Architect Options).</div>
+                <div class="field-type"><label>Field Type: </label>List</div>
+            </div> 
+        <h3>Output Path</h3>
+            <div class="parameter">
+                <div class="field-desc">The relative location within the website where the folder containing the generated component files will be created.  The default value is 'tmp' (this can be changed in the Component Architect Options).</div>
+                <div class="field-type"><label>Field Type: </label>Text</div>
+            </div> 
+        <h3>Generate</h3>
+            <div class="parameter">
+                <div class="field-desc">Button to initiate the generate component process.  Once clicked this dialog web page will be replaced with a progress web page showing the stages of the component generation and progress in each.  Any error or warning messages will be displayed and also the location of the component folder, and if specified the zip file for the component.</div>
+            </div> 
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div> 
+	<h2 id="progress">Generate Component - Progress</h2>
+        <div class="field-desc">Whilst the component code is being generated a progress page will be constantly updated to show how complete the generation is. This page will be similar to this:</div>
+        <img class="help-image" src="images/generate-progress.jpg" alt="Generate Component - Progress" style="width:90%; max-width:1000px;"/>
+        <h3>Cancel</h3>
+            <div class="parameter">
+                <div class="field-desc">Button to cancel the component generation.</div>
+            </div>			 
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>
+	<h2 id="complete">Generate Component - Succesfully Completed</h2>
+        <div class="field-desc">If the component generation has completed successfully then the final progress page should look like below. Note: The View Logs button will only be displayed if logging was selected for this component generation.</div>
+        <img class="help-image" src="images/generate-complete.jpg" alt="Generate Component - Complete" style="width:90%; max-width:1000px;"/>
+        <h3>Close</h3>
+            <div class="parameter">
+                <div class="field-desc">A button to close the Generate dialog and return to Components/Extensions Manager view.</div>
+            </div>  
+        <h3>View Logs</h3>
+            <div class="parameter">
+                <div class="field-desc">If Logging has been selected for the component generation then once the generation of the component has completed the View Logs button will be displayed</div>
+            </div>  
+        <h3>Generate Another</h3>
+            <div class="parameter">
+                <div class="field-desc">A button to go back to restart the Generate dialog again to perform another component/extension generation. Useful if you need to generate with a different code template.</div>
+            </div> 	
+        <h3>Install</h3>
+            <div class="parameter">
+                <div class="field-desc">A button to install the component/extension straight away, if you wish, using this Install button.  This will use either the zip file or, if no zip file created, just the output path to install the component.</div>
+            </div> 
+        <h3>Download</h3>
+            <div class="parameter">
+                <div class="field-desc">If a zip file has been created then using this button you can download it straight away to your computer.  If you do not download it then you will have to use ftp to do so (not though if you are on XAMPP/WAMP) or use the Joomla! Extensions/Install and install from a directory.</div>
+            </div>              
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>
+    <h2 id="error">Generate Component - Error</h2>
+        <div class="field-desc">If errors have been detected during the generation process then these should be shown on the final progress page similar to this:</div>
+        <img class="help-image" src="images/generate-error.jpg" alt="Generate Component - Error" style="width:90%; max-width:1000px;"/>
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>                             	
+</body>
+</html>
+<!--[%%END_CUSTOM_CODE%%]-->

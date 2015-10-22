@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @tempversion -->
+<!-- @name			    [%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%]) -->
+<!-- @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%]) -->
+<!-- @package			[%%com_architectcomp%%] -->
+<!-- @subpackage		[%%com_architectcomp%%].pagebreak -->
+<!-- @copyright		    [%%COMPONENTCOPYRIGHT%%] -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @version			$Id: pagebreak.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.pagebreak -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension type="plugin" version="3.3" group="[%%architectcomp%%]" method="upgrade">
+    <name>plg_[%%architectcomp%%]_pagebreak</name>
+    <author>[%%COMPONENTAUTHOR%%]</author>
+    <creationDate>[%%COMPONENTCREATED%%]</creationDate>
+    <copyright>
+        [%%COMPONENTCOPYRIGHT%%]
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail>[%%COMPONENTEMAIL%%]</authorEmail>
+    <authorUrl>[%%COMPONENTWEBSITE%%]</authorUrl>
+    <version>[%%COMPONENTSTARTVERSION%%]</version>
+    <description>PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="pagebreak">pagebreak.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_[%%architectcomp%%]_pagebreak.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_[%%architectcomp%%]_pagebreak.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+            [%%FOREACH COMPONENT_OBJECT%%]
+                [%%IF INCLUDE_DESCRIPTION%%]
+                    [%%IF GENERATE_PLUGINS%%]
+                        [%%IF GENERATE_PLUGINS_PAGEBREAK%%]
+            <fieldset
+                name="[%%compobject%%]"
+                label="[%%CompObject_name%%]"
+              >
+                <field
+                    name="title"
+                    type="radio"
+					label="PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_SITE_TITLE_LABEL"
+					description="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_SITE_TITLE_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field
+                    name="[%%compobject%%]_index"
+                    type="radio"
+					label="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_SITE_INDEX_LABEL"
+					description="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_SITE_INDEX_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field
+                    name="[%%compobject%%]_index_text"
+                    type="text" default=""
+					label="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_SITE_INDEX_TEXT_LABEL"
+					description="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_SITE_INDEX_TEXT_DESC"
+				/>
+
+                <field
+                    name="multipage_toc"
+                    type="radio"
+					label="PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_TOC_LABEL"
+					description="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_TOC_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field
+                    name="showall"
+                    type="radio"
+					label="PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_SHOW_ALL_LABEL"
+					description="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_SHOW_ALL_DESC"
+					class="btn-group btn-group-yesno"
+					default="1"
+				>
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field
+                    name="style"
+                    type="list"
+					label="PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_STYLE_LABEL"
+					description="PLG_[%%ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_PAGEBREAK_STYLE_DESC"
+			        class="chzn-color"
+					default="pages"
+				>
+                    <option value="pages">PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_PAGES</option>
+                    <option value="sliders">PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_SLIDERS</option>
+                    <option value="tabs">PLG_[%%ARCHITECTCOMP%%]_PAGEBREAK_TABS</option>
+                </field>
+            </fieldset>
+                        [%%ENDIF GENERATE_PLUGINS_PAGEBREAK%%]
+                    [%%ENDIF GENERATE_PLUGINS%%]
+                 [%%ENDIF INCLUDE_DESCRIPTION%%]
+            [%%ENDFOR COMPONENT_OBJECT%%]
+        </fields>
+	</config>
+</extension>

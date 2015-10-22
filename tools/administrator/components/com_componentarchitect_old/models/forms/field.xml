@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id: field.xml 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_componentarchitect -->
+<!-- @subpackage		com_componentarchitect.admin -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: compobject.xml 785 2013-12-08 18:44:06Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_x_enhanced (Release 1.0.0) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<form
+    addfieldpath="/administrator/components/com_componentarchitect/models/fields"
+    addrulepath="/administrator/components/com_componentarchitect/models/rules"
+
+>
+    <fieldset
+        name="basic_details"
+    >
+        <field
+		    name="id"
+		    type="text"
+            label="JGLOBAL_FIELD_ID_LABEL"
+            description ="JGLOBAL_FIELD_ID_DESC"
+			readonly="true"
+            class="readonly"
+            default="0"
+		/>
+        <field
+		    name="name"
+		    type="text"
+			label="COM_COMPONENTARCHITECT_FIELD_NAME_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDS_FIELD_NAME_DESC"
+		    class="inputbox"
+			size="50"
+			required="true"
+   		/>
+        <field
+            name="ordering"
+			label="JFIELD_ORDERING_LABEL"
+			description="JFIELD_ORDERING_DESC"
+			type="componentarchitectordering"
+            class="inputbox"
+			table="#__componentarchitect_fields"
+		/>
+        <field
+		    name="description"
+            type="editor"
+			label="JGLOBAL_DESCRIPTION"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_DESCRIPTION_DESC"
+            class="inputbox"
+            filter="JComponentHelper::filterText"
+            buttons="true"
+            hide="article"
+        />
+        <field
+            name="code_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_CODE_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CODE_NAME_DESC"
+            class="inputbox validate-fieldcodename"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="fieldcodename"
+		/>
+        <field
+            name="component_id"
+            type="modal_components"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_COMPONENT_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_COMPONENT_ID_DESC"
+            class="modal"
+			required="true"
+			default="0"
+		/>
+        <field
+            name="component_object_id"
+            type="modal_componentobjects"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_COMPONENT_OBJECT_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_COMPONENT_OBJECT_ID_DESC"
+            class="modal"
+			required="true"
+			default="0"
+		/>
+        <field
+            name="fieldset_id"
+            type="modal_fieldsets"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIELDSET_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIELDSET_ID_DESC"
+            class="modal"
+			required="true"
+			default="0"
+		/>
+        <field
+            name="predefined_field"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_PREDEFINED_FIELD_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_PREDEFINED_FIELD_DESC"
+            class="inputbox"
+			size="1"
+			readonly="true"
+			default="'0'"
+		>
+            <option	value="0">JNO</option>
+            <option	value="1">JYES</option>
+        </field>
+        <field
+            name="fieldtype_id"
+            type="modal_fieldtypes"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIELDTYPE_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIELDTYPE_ID_DESC"
+            class="modal"
+			required="true"
+			default="1"
+		/>
+        <field
+            name="required"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_REQUIRED_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_REQUIRED_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="filter"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FILTER_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FILTER_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="order"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_ORDER_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_ORDER_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="search"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_SEARCH_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_SEARCH_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="readonly"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_READONLY_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_READONLY_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="disabled"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_DISABLED_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_DISABLED_DESC"
+            class="inputbox"
+			default="0"
+			value="1"
+		/>
+        <field
+            name="hidden"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDDEN_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDDEN_DESC"
+            class="inputbox"
+			value="1"
+		/>
+    </fieldset>
+    <fieldset
+        name="fieldset_field_specific_attributes"
+        label="COM_COMPONENTARCHITECT_FIELDS_FIELDSET_FIELD_SPECIFIC_ATTRIBUTES_LABEL"
+        description="COM_COMPONENTARCHITECT_FIELDS_FIELDSET_FIELD_SPECIFIC_ATTRIBUTES_DESC"
+    >
+        <field
+            name="validate"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_VALIDATE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_VALIDATE_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="validation_type"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_VALIDATION_TYPE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_VALIDATION_TYPE_DESC"
+            class="inputbox"
+			size="1"
+		>
+			<option	value="">JNONE</option>
+			<option	value="custom">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_CUSTOM</option>
+			<option	value="numeric">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_NUMERIC</option>
+			<option	value="email">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_EMAIL</option>
+			<option	value="tel">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_TEL</option>
+			<option	value="password">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_PASSWORD</option>
+			<option	value="url">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_URL</option>
+			<option	value="username">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_USERNAME</option>
+			<option	value="options">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_OPTIONS</option>
+			<option	value="color">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_COLOR</option>
+			<option	value="boolean">COM_COMPONENTARCHITECT_FIELD_VALIDATION_TYPE_VALUE_BOOLEAN</option>
+		</field>
+        <field
+            name="allowed_input"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_ALLOWED_INPUT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_ALLOWED_INPUT_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="100"
+		/>
+        <field
+            name="custom_error_message"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_CUSTOM_ERROR_MESSAGE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CUSTOM_ERROR_MESSAGE_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="255"
+		/>
+        <field
+            name="registry_field_id"
+            type="modal_fields"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_REGISTRY_FIELD_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_REGISTRY_FIELD_ID_DESC"
+		    class="modal validate-fieldregistryfieldid"
+			default="0"
+			validate="fieldregistryfieldid"
+		/>
+        <field
+            name="php_variable_type"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_PHP_VARIABLE_TYPE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_PHP_VARIABLE_TYPE_DESC"
+            class="inputbox"
+			size="1"
+			required="true"
+			default="string"
+		>
+			<option	value="string">COM_COMPONENTARCHITECT_CONSTANT_VALUES_PHP_VARIABLE_TYPE_STRING</option>
+			<option	value="int">COM_COMPONENTARCHITECT_CONSTANT_VALUES_PHP_VARIABLE_TYPE_INTEGER</option>
+			<option	value="bool">COM_COMPONENTARCHITECT_CONSTANT_VALUES_PHP_VARIABLE_TYPE_BOOLEAN</option>
+			<option	value="float">COM_COMPONENTARCHITECT_CONSTANT_VALUES_PHP_VARIABLE_TYPE_FLOAT</option>
+			<option	value="array">COM_COMPONENTARCHITECT_CONSTANT_VALUES_PHP_VARIABLE_TYPE_ARRAY</option>
+			<option	value="object">COM_COMPONENTARCHITECT_CONSTANT_VALUES_PHP_VARIABLE_TYPE_OBJECT</option>
+		</field>
+        <field
+            name="default"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_DEFAULT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_DEFAULT_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="255"
+		/>
+    </fieldset>
+    <fieldset
+        name="fieldset_field_type_specific_attributes"
+        label="COM_COMPONENTARCHITECT_FIELDS_FIELDSET_FIELD_TYPE_SPECIFIC_ATTRIBUTES_LABEL"
+        description="COM_COMPONENTARCHITECT_FIELDS_FIELDSET_FIELD_TYPE_SPECIFIC_ATTRIBUTES_DESC"
+    >
+        <field
+            name="class"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_CLASS_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CLASS_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="50"
+		/>
+        <field
+            name="size"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_SIZE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_SIZE_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="maxlength"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_MAXLENGTH_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MAXLENGTH_DESC"
+            class="inputbox"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="width"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_WIDTH_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_WIDTH_DESC"
+            class="inputbox"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="height"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_HEIGHT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_HEIGHT_DESC"
+            class="inputbox"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="cols"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_COLS_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_COLS_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="rows"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_ROWS_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_ROWS_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="value_source"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_VALUE_SOURCE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_VALUE_SOURCE_DESC"
+            class="inputbox"
+			size="1"
+			readonly="true"
+			disabled="true"
+			default="Option Values"
+		>
+			<option	value="Option Values">COM_COMPONENTARCHITECT_FIELDS_VALUE_SOURCE_VALUE_OPTION_VALUES</option>
+		</field>
+        <field
+            name="option_values"
+            type="textarea"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_OPTION_VALUES_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_OPTION_VALUES_DESC"
+            class="inputbox"
+			cols="50"
+			rows="5"
+		/>
+        <field
+            name="multiple"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_MULTIPLE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MULTIPLE_DESC"
+		    class="inputbox validate-fieldmultiple"
+			value="1"
+			validate="fieldmultiple"
+		/>
+        <field
+            name="format"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FORMAT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FORMAT_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="25"
+		/>
+        <field
+            name="first"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIRST_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIRST_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="last"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_LAST_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_LAST_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="step"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_STEP_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_STEP_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="hide_none"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDE_NONE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDE_NONE_DESC"
+            class="inputbox"
+			default="1"
+			value="1"
+		/>
+        <field
+            name="hide_default"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDE_DEFAULT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDE_DEFAULT_DESC"
+            class="inputbox"
+			default="1"
+			value="1"
+		/>
+        <field
+            name="buttons"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_BUTTONS_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_BUTTONS_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="100"
+			default="*"
+		/>
+        <field
+            name="hide_buttons"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDE_BUTTONS_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_HIDE_BUTTONS_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="100"
+			default="*"
+		/>
+        <field
+            name="foreign_object_id"
+            type="modal_componentobjects"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FOREIGN_OBJECT_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FOREIGN_OBJECT_ID_DESC"
+            class="modal"
+			default="0"
+		/>
+        <field
+            name="field_filter"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIELD_FILTER_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_FIELD_FILTER_DESC"
+            class="inputbox"
+			size="1"
+		>
+			<option	value="">JNONE</option>
+			<option	value="raw">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_RAW</option>
+			<option	value="safehtml">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_SAFE_HTML</option>
+			<option	value="alnum">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_ALNUM</option>
+			<option	value="array">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_ARRAY</option>
+			<option	value="base64">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_BASE64</option>
+			<option	value="boolean">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_BOOLEAN</option>
+			<option	value="cmd">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_CMD</option>
+			<option	value="safe_editor">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_EDITOR_CONTENT</option>
+			<option	value="float">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_FLOAT</option>
+			<option	value="html">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_HTML</option>
+			<option	value="int">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_INT</option>
+			<option	value="uint">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_UINT</option>
+			<option	value="path">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_PATH</option>
+			<option	value="string">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_STRING</option>
+			<option	value="server_utc">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_SERVER_TIME</option>
+			<option	value="tel">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_TEL_NO</option>
+			<option	value="unset">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_UNSET</option>
+			<option	value="url">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_URL</option>
+			<option	value="user_utc">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_USER_TIME</option>
+			<option	value="word">COM_COMPONENTARCHITECT_FIELD_FILTER_FIELD_VALUE_WORD</option>
+		</field>
+        <field
+            name="max_file_size"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_MAX_FILE_SIZE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MAX_FILE_SIZE_DESC"
+            class="inputbox validate-numeric"
+			size="15"
+			maxlength="10"
+		/>
+        <field
+            name="exclude_files"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_EXCLUDE_FILES_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_EXCLUDE_FILES_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="50"
+		/>
+        <field
+            name="accept_file_types"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_ACCEPT_FILE_TYPES_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_ACCEPT_FILE_TYPES_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="50"
+		/>
+        <field
+            name="directory"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_DIRECTORY_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_DIRECTORY_DESC"
+            class="inputbox"
+			size="100"
+			maxlength="255"
+		/>
+        <field
+            name="link"
+            type="url"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_LINK_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_LINK_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="255"
+		/>
+        <field
+            name="sql_query"
+            type="textarea"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_SQL_QUERY_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_SQL_QUERY_DESC"
+            class="inputbox"
+			cols="75"
+			rows="5"
+			filter="raw"
+		/>
+        <field
+            name="sql_key_field"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_SQL_KEY_FIELD_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_SQL_KEY_FIELD_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="50"
+		/>
+        <field
+            name="sql_value_field"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_SQL_VALUE_FIELD_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_SQL_VALUE_FIELD_DESC"
+            class="inputbox"
+			size="50"
+			maxlength="50"
+		/>
+        <field
+            name="translate"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_TRANSLATE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_TRANSLATE_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="client"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_CLIENT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CLIENT_DESC"
+            class="inputbox"
+			size="1"
+			default="site"
+		>
+			<option	value="site">COM_COMPONENTARCHITECT_FIELDS_CLIENT_VALUE_SITE_CLIENT</option>
+			<option	value="administrator">COM_COMPONENTARCHITECT_FIELDS_CLIENT_VALUE_ADMINISTRATOR_CLIENT</option>
+		</field>
+        <field
+            name="stripext"
+            type="checkbox"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_STRIPEXT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_STRIPEXT_DESC"
+            class="inputbox"
+			value="1"
+		/>
+        <field
+            name="preview"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_PREVIEW_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_PREVIEW_DESC"
+            class="inputbox"
+			size="1"
+			default="true"
+		>
+			<option	value="true">JYES</option>
+			<option	value="false">JNO</option>
+			<option	value="tooltip">COM_COMPONENTARCHITECT_FIELDS_PREVIEW_VALUE_AS_TOOLTIP</option>
+		</field>
+        <field
+            name="autocomplete"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_AUTOCOMPLETE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_AUTOCOMPLETE_DESC"
+            class="inputbox"
+			size="1"
+			default="on"
+		>
+			<option	value="on">JON</option>
+			<option	value="off">JOFF</option>
+		</field>
+        <field
+            name="onclick"
+            type="textarea"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_ONCLICK_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_ONCLICK_DESC"
+            class="inputbox"
+			cols="50"
+			rows="5"
+			filter="raw"
+		/>
+        <field
+            name="onchange"
+            type="textarea"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_ONCHANGE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_ONCHANGE_DESC"
+            class="inputbox"
+			cols="50"
+			rows="5"
+			filter="raw"
+		/>
+    </fieldset>
+    <fieldset
+        name="fieldset_field_mysql_settings"
+        label="COM_COMPONENTARCHITECT_FIELDS_FIELDSET_FIELD_MYSQL_SETTINGS_LABEL"
+        description="COM_COMPONENTARCHITECT_FIELDS_FIELDSET_FIELD_MYSQL_SETTINGS_DESC"
+    >
+        <field
+            name="mysql_datatype"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_MYSQL_DATATYPE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MYSQL_DATATYPE_DESC"
+            class="inputbox"
+			size="1"
+		>
+			<option	value="">JNONE</option>
+            <option value="VARCHAR">VARCHAR</option>
+            <option value="CHAR">CHAR</option>
+            <option value="TINYTEXT">TINYTEXT</option>
+            <option value="TEXT">TEXT</option>
+            <option value="MEDIUMTEXT">MEDIUMTEXT</option>
+            <option value="LONGTEXT">LONGTEXT</option>
+            <option value="DATE">DATE</option>
+            <option value="DATETIME">DATETIME</option>
+            <option value="TIMESTAMP">TIMESTAMP</option>
+            <option value="TIME">TIME</option>
+            <option value="YEAR">YEAR</option>
+            <option value="TINYINT">TINYINT</option>
+            <option value="SMALLINT">SMALLINT</option>
+            <option value="MEDIUMINT">MEDIUMINT</option>
+            <option value="INT">INT</option>
+            <option value="BIGINT">BIGINT</option>
+            <option value="DECIMAL">DECIMAL</option>
+            <option value="FLOAT">FLOAT</option>
+            <option value="DOUBLE">DOUBLE</option>
+            <option value="REAL">REAL</option>
+            <option value="BIT">BIT</option>
+            <option value="BOOLEAN">BOOLEAN</option>
+            <option value="SERIAL">SERIAL</option>
+            <option	value="BLOB">BLOB</option>
+		</field>
+        <field
+            name="mysql_size"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_MYSQL_SIZE_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MYSQL_SIZE_DESC"
+            class="inputbox"
+			size="15"
+			maxlength="5"
+		/>
+        <field
+            name="mysql_default"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDS_FIELD_MYSQL_DEFAULT_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MYSQL_DEFAULT_DESC"
+            class="inputbox validate-fieldmysqldefault"
+			size="50"
+			maxlength="50"
+			validate="fieldmysqldefault"
+		/>
+    </fieldset>
+    <fieldset
+        name="publishing"
+		label="COM_COMPONENTARCHITECT_FIELDSET_PUBLISHING_LABEL"
+    >
+        <field
+            name="created_by"
+            type="user"
+			label="COM_COMPONENTARCHITECT_FIELD_CREATED_BY_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CREATED_BY_DESC"
+		/>
+        <field
+            name="created"
+            type="calendar"
+            label="COM_COMPONENTARCHITECT_FIELD_CREATED_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CREATED_DESC"
+            class="inputbox"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+			id="created_by_alias"
+			name="created_by_alias"
+			type="text"
+			label="COM_COMPONENTARCHITECT_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDS_FIELD_CREATED_BY_ALIAS_DESC"
+            class="inputbox"
+            size="20"
+		/>
+        <field
+            name="modified"
+            type="calendar"
+			label="COM_COMPONENTARCHITECT_FIELD_MODIFIED_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDS_FIELD_MODIFIED_DESC"
+            class="readonly"
+			size="22"
+			readonly="true"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+            name="modified_by"
+            type="user"
+		    label="COM_COMPONENTARCHITECT_FIELD_MODIFIED_BY_LABEL"
+		    class="readonly"
+		    readonly="true"
+		    filter="unset"
+		/>
+        <field
+            name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+        <field
+            name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		 />
+    </fieldset>
+</form>

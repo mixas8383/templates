@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id: fieldset.xml 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_componentarchitect -->
+<!-- @subpackage		com_componentarchitect.admin -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: compobject.xml 785 2013-12-08 18:44:06Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_x_enhanced (Release 1.0.0) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<form
+    addfieldpath="/administrator/components/com_componentarchitect/models/fields"
+    addrulepath="/administrator/components/com_componentarchitect/models/rules"
+
+>
+    <fieldset
+        name="basic_details"
+    >
+        <field
+		    name="id"
+		    type="text"
+            label="JGLOBAL_FIELD_ID_LABEL"
+            description ="JGLOBAL_FIELD_ID_DESC"
+			readonly="true"
+			class="readonly"
+            default="0"
+		/>
+        <field
+		    name="name"
+		    type="text"
+			label="COM_COMPONENTARCHITECT_FIELD_NAME_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_NAME_DESC"
+		    class="inputbox"
+			size="50"
+			required="true"
+   		/>
+        <field
+            name="ordering"
+			label="JFIELD_ORDERING_LABEL"
+			description="JFIELD_ORDERING_DESC"
+			type="componentarchitectordering"
+			class="inputbox"
+			table="#__componentarchitect_fieldsets"
+		/>
+        <field
+		    name="description"
+            type="editor"
+			label="JGLOBAL_DESCRIPTION"
+            description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_DESCRIPTION_DESC"
+            class="inputbox"
+            filter="JComponentHelper::filterText"
+            buttons="true"
+            hide="article"
+        />
+        <field
+            name="code_name"
+            type="text"
+            label="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_CODE_NAME_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_CODE_NAME_DESC"
+			class="inputbox validate-fieldsetcodename"
+			size="50"
+			maxlength="50"
+			required="true"
+			validate="fieldsetcodename"
+		/>
+        <field
+            name="component_id"
+            type="modal_components"
+            label="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_COMPONENT_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_COMPONENT_ID_DESC"
+			class="modal"
+			required="true"
+			default="0"
+		/>
+        <field
+            name="component_object_id"
+            type="modal_componentobjects"
+            label="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_COMPONENT_OBJECT_ID_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_COMPONENT_OBJECT_ID_DESC"
+			class="modal"
+			required="true"
+			default="0"
+		/>
+        <field
+            name="predefined_fieldset"
+            type="list"
+            label="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_PREDEFINED_FIELDSET_LABEL"
+            description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_PREDEFINED_FIELDSET_DESC"
+			class="inputbox"
+			size="1"
+			readonly="true"
+			default="'0'"
+		>
+            <option	value="0">JNO</option>
+            <option	value="1">JYES</option>
+        </field>
+    </fieldset>
+    <fieldset
+        name="publishing"
+		label="COM_COMPONENTARCHITECT_FIELDSET_PUBLISHING_LABEL"
+    >
+        <field
+            name="created_by"
+            type="user"
+			label="COM_COMPONENTARCHITECT_FIELD_CREATED_BY_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_CREATED_BY_DESC"
+		/>
+        <field
+            name="created"
+            type="calendar"
+            label="COM_COMPONENTARCHITECT_FIELD_CREATED_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_CREATED_DESC"
+			class="inputbox"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+			id="created_by_alias"
+			name="created_by_alias"
+			type="text"
+			label="COM_COMPONENTARCHITECT_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_CREATED_BY_ALIAS_DESC"
+            class="inputbox"
+            size="20"
+		/>
+        <field
+            name="modified"
+            type="calendar"
+			label="COM_COMPONENTARCHITECT_FIELD_MODIFIED_LABEL"
+			description="COM_COMPONENTARCHITECT_FIELDSETS_FIELD_MODIFIED_DESC"
+            class="readonly"
+			size="22"
+			readonly="true"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+        <field
+            name="modified_by"
+            type="user"
+		    label="COM_COMPONENTARCHITECT_FIELD_MODIFIED_BY_LABEL"
+		    class="readonly"
+		    readonly="true"
+		    filter="unset"
+		/>
+        <field
+            name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+        <field
+            name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		 />
+    </fieldset>
+</form>

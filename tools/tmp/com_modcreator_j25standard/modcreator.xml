@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @version 			$Id:$ -->
+<!-- @name			    ModCreator (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_modcreator -->
+<!-- @subpackage		com_modcreator.admin -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: architectcomp.xml 418 2014-10-22 14:42:36Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_2_5_standard (Release 1.0.4) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_modcreator</name>
+    <author></author>
+    <creationDate>July 2015</creationDate>
+    <copyright>
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail></authorEmail>
+    <authorUrl></authorUrl>
+    <version>1.0.0</version>
+    <description>
+    </description>
+    <media destination="com_modcreator" folder="media">
+        <filename>index.html</filename>
+        <folder>administrator</folder>
+        <folder>images</folder>
+    </media>
+
+    <administration>
+        <!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+        <menu img="../media/com_modcreator/images/modcreator.png"
+              alt="ModCreator">COM_MODCREATOR</menu>
+        <submenu>
+            <menu link="option=com_modcreator&amp;view=items" alias="items" img="../media/com_modcreator/images/modcreator-items.png"
+                    alt="ModCreator/Items">COM_MODCREATOR_ITEMS</menu>
+        </submenu>
+
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>modcreator.php</filename>
+            <filename>controller.php</filename>
+            <filename>modcreator_uninstall.html</filename>
+            <filename>gpl-3.0.txt</filename>
+            <filename>index.html</filename>
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_modcreator.sys.ini</language>
+        </languages>
+        
+    </administration>
+
+    <!-- Runs on install/uninstall/update; New in 1.6 -->
+    <scriptfile>modcreator_install.php</scriptfile>
+          
+    <install>
+        <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.modcreator_mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.modcreator_mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <!-- Runs on update; -->
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <config>
+        <fields name="params">
+            <fieldset
+                    name="global-permissions"
+                    label="COM_MODCREATOR_PERMISSIONS_LABEL"
+                    description="COM_MODCREATOR_PERMISSIONS_DESC"
+	        >
+                    <field
+                        name="rules"
+                        type="rules"
+                        label="COM_MODCREATOR_PERMISSIONS_LABEL"
+                        class="inputbox"
+                        filter="rules"
+                        validate="rules"
+                        component="com_modcreator"
+                        section="component"
+		    />
+            </fieldset>
+        </fields>
+
+    </config>    
+</extension>
+

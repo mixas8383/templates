@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version			$Id: componentwizard.xml 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_componentarchitect -->
+<!-- @subpackage		com_componentarchitect.admin -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<!-- [%%START_CUSTOM_CODE%%] -->
+<form
+    addrulepath="/administrator/components/com_componentarchitect/models/rules"
+>
+    <field
+        name="component_name"
+        type="text"
+        label="COM_COMPONENTARCHITECT_COMPONENT_WIZARD_COMPONENT_NAME_LABEL"
+        description="COM_COMPONENTARCHITECT_GENERATE_COMPONENT_DESC"
+        class="inputbox validate-componentname"
+        size="50"
+        validate="componentname"
+        required="true"
+	/>
+    <field
+        name="component_objects"
+        type="text"
+        label="COM_COMPONENTARCHITECT_COMPONENT_WIZARD_COMPONENT_OBJECTS_LABEL"
+        description="COM_COMPONENTARCHITECT_COMPONENT_WIZARD_COMPONENT_OBJECTS_DESC"
+        class="inputbox validate-componentobjectname"
+        size="50"
+        validate="componentobjectname"
+	/>
+</form>
+<!-- [%%END_CUSTOM_CODE%%] -->

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @version 			$Id: componentarchitect_codetemplate_view.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @name			    Component Architect (Release 1.1.3) -->
+<!-- @author			Component Architect (www.componentarchitect.com) -->
+<!-- @package			com_componentarchitect -->
+<!-- @subpackage		com_componentarchitect.admin.help -->
+<!-- @copyright		    Copyright (c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license			GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion		$Id: componentarchitect_codetemplate_view.html 411 2014-10-19 18:39:07Z BrianWade $ -->
+<!-- @CAauthor		Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		architectcomp -->
+<!-- @CAsubpackage	architectcomp.admin.help -->
+<!-- @CAtemplate    joomla_3_x_enhanced (Release 1.0.0)-->
+<!-- @CAcopyright	(c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @CAlicense		GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB" xml:lang="en_GB">
+<head>
+<title>Code Template View Help</title>
+<link href="../../css/help.css" rel="stylesheet" type="text/css" />
+<meta name="copyright" content="(c)2013 - 2014 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved" />
+<meta name="license" content="GNU Free Documentation License version 1.3 or later; See http://www.gnu.org/licenses/fdl-1.3.html" />
+</head>
+<body>
+<h1><img src="images/icon-48-codetemplates.png" alt="Code Tamplates Image" style="width:32px; margin-right: 10px;"/>Code Template View Help</h1>
+    <div><p>A code template is a set of files containing marked up component code. The code templates are used as the skeletons structure and code for the generated components.</p>
+		<p>In the Standard (i.e. free version) of Component Architect the code templates are predefined and cannot be changed or new ones created. In the Pro version of Component Architect the supplied code templates may be copied and altered to meet the requirements of the developer.</p></div>
+    <div>You can use the following links to jump to a section of this help page:</div>
+    <ul>
+        <li>
+            <a href="#toolbar">Toolbar Buttons</a>
+        </li>
+        <li>
+           <a href="#headline">Headline Details</a>
+        </li>
+        <li>
+           <a href="#basic-details">Basic Details</a>
+        </li>
+        <li>
+            <a href="#markup-defaults">Code Template Markup Defaults</a>
+        </li>
+        <li>
+            <a href="#publishing">Publishing</a>
+        </li>
+    </ul>
+    <h2>Screenshot</h2>
+        <img class="help-image" src="images/codetemplate-view-screenshot.jpg" alt="Code Template - Screenshot" style="width:100%; max-width:1100px;"/>
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="toolbar">Toolbar Buttons</h2>
+        <img class="help-image" src="images/codetemplate-view-toolbar.jpg" alt="Code Template - Toolbar"/>
+       <h3>Close</h3>
+            <div class="parameter">
+                <div class="field-desc">Close the view form and return to the list.</div>
+            </div>     
+        <h3>Help</h3>
+            <div class="parameter">
+                <div class="field-desc">Link to display the Help system.</div>
+            </div> 
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="headline">Headline Details</h2>
+        <img class="help-image" src="images/codetemplate-view-headline.jpg" alt="Code Template - Headline Details"/>
+        <h3>Name</h3>
+            <div class="parameter">        
+                <div class="field-desc"The name for the template. This will be used as the main name in the templates menu.</div>
+                <div class="field-type"><label>Field Type: </label>Text</div>
+            </div>
+            
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="basic-details">Basic Details</h2>
+        <img class="help-image" src="images/codetemplate-view-basic.jpg" alt="Code Template - Basic Details" style="width:90%; max-width:1000px;"/>
+        <h3>Description</h3>
+            <div class="parameter">         
+                <div class="field-desc">The description for the template.</div>
+                <div class="field-type"><label>Field Type: </label>Editor</div>
+            </div>      
+        <h3>Category</h3>
+            <div class="parameter">         
+                <div class="field-desc">The category that this item is assigned to.</div>
+                <div class="field-type"><label>Field Type: </label>Category List</div>
+            </div>    
+
+        <h3>Version</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The version number of this code template.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Source Path</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The root folder for this code template.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Pre-defined</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Flag indicating whether this code template is pre-defined or not. As pre-defined code templates are provided with the Component Architect extension they are read-only. They can be cloned (which will also create a copy of the code tempalte files with the cascade batch copy method</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Generate Pre-defined Fields</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Flag indicating whether this Code Template will ignore the fields marked as pre-defined or will use them in generating a component. Some templates are marked-up to handle the Include Joomla! Features flags without reference to a defined Field, others may use the pre-defined Fields to implement the Joomla! Feature.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Multiple Category Objects</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>Flag indicating whether this Code Template will generate categories that can be set for multiple Component Objects or just a single Component Object.</p></div>
+                <div class="field-type"><label>Field Type: </label>checkbox</div>
+            </div>   
+        <h3>Platform</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The platform for this code template. Currently only Joomla</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Platform Version</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The version of the platform for this code template.</p></div>
+                <div class="field-type"><label>Field Type: </label>list</div>
+            </div>   
+        <h3>Coding Language</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The coding language(s) used by this code template</p></div>
+                <div class="field-type"><label>Field Type: </label>checkboxes</div>
+            </div>   
+   
+        <h3>Ordering</h3>
+            <div class="parameter">         
+                <div class="field-desc">The ordering of template.</div>
+                <div class="field-type"><label>Field Type: </label>Ordering List</div>
+            </div>       
+        <h3>ID</h3>
+            <div class="parameter">        
+                <div class="field-desc">The ID of the displayedcode template.</div>
+                <div class="field-type"><label>Field Type: </label>Text - read only</div>
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="markup-defaults">Code Template Markup Defaults</h2>
+        <div><p>Fieldset containing the default values used in the Code Template for marking up the code.</p></div>
+        <img class="help-image" src="images/codetemplate-view-markup-defaults.jpg" alt="Code Template - Code Template Markup Defaults"/>
+        <h3>Template Component Name</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The name used in the template to represent the component name used in code. For example if this field is set to 'architect comp' the component folder would be 'com_architectcomp' on generating a component, say called Events, the 'architectcomp' name would be replaced throughout the component with 'events' so 'com_architectcomp' would become 'com_events'.</p>
+<p>For best results this should be two words e.g. 'architect comp'. This allows the code generator to output the maximum number of variations of capitals and words possible.</p>
+<p>Only alphanumeric and space are allowed.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Template Object Name</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The name used in the template to represent an object (i.e. table) name used in code. For example if this field is set to 'comp object' there should be model files called 'compobject' and 'compobjectplural' on generating a component, with a component object of say Event, the 'compobject' name would be replaced throughout the component with 'event' and 'compobjectplural' with 'events'.</p>
+<p>For best results this should be two words e.g. 'architect comp'. This allows the code generator to output the maximum number of variations of capitals and words possible.</p>
+<p>Only alphanumeric and space are allowed.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Template Markup Prefix</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The characters to be used to prefix a markup command in a code template. The default value is '[%%'. The Template Markup Suffix will mark the end of the markup command.</p>
+<p>The value should be something which will not be used elsewhere in the code template as part of the normal code otherwise unexpected results will occur on component generation.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+        <h3>Template Markup Suffix</h3>
+            <div class="parameter">         
+                <div class="field-desc"><p>The characters to be used to suffix a markup command in a code template. The default value is '%%]'. The Template Markup Prefix will mark the start of the markup command.</p>
+<p>The value should be something which will not be used elsewhere in the code template as part of the normal code otherwise unexpected results will occur on component generation.</p></div>
+                <div class="field-type"><label>Field Type: </label>text</div>
+            </div>   
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>     
+    <h2 id="publishing">Publishing Options</h2>
+        <img class="help-image" src="images/codetemplate-view-publishing.jpg" alt="Code Template - Publishing"/>
+        <h3>Created By</h3>
+            <div class="parameter">         
+                <div class="field-desc">The user that is to be shown as creating the template. If none selected on create then the current logged in user will be used.</div>
+                <div class="field-type"><label>Field Type: </label>Calendar</div> 
+            </div> 
+        <h3>Created By Alias</h3>
+            <div class="parameter">         
+                <div class="field-desc">An alias for the user that is to be shown as creating the template.</div>
+                <div class="field-type"><label>Field Type: </label>Text</div> 
+            </div>                 
+        <h3>Created Date</h3>
+            <div class="parameter">         
+                <div class="field-desc">Code template created date.</div>
+                <div class="field-type"><label>Field Type: </label>Calendar</div>
+            </div> 
+        <h3>Modified Date</h3>
+            <div class="parameter">         
+                <div class="field-desc">Code template last modified date.</div>
+                <div class="field-type"><label>Field Type: </label>Text - protected</div>
+            </div>  
+        <h3>Modified By</h3>
+            <div class="parameter">         
+                <div class="field-desc">The user that last modifed the Code template record.</div>
+                <div class="field-type"><label>Field Type: </label>Text - protected</div>
+            </div>                
+    <div style="float: right;">    
+        <a href="#" >Top</a>
+    </div> 
+    <div style="float: left; width: 100%;">    
+        <hr />
+    </div>  	
+</body>
+</html>

@@ -1,0 +1,362 @@
+/**
+ * @tempversion
+ * @name			[%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%])
+ * @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%])
+ * @package			[%%com_architectcomp%%]
+ * @subpackage		[%%com_architectcomp%%].site
+ * @copyright		[%%COMPONENTCOPYRIGHT%%]
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @version			$Id: site_compobjectplural.css 408 2014-10-19 18:31:00Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.site
+ * @CAtemplate		joomla_3_3_standard (Release 0.5.0)
+ * @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @Joomlacopyright Copyright (c)2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+/*#################### itemses list table with grid settings ############################ */
+.itemses-list table.itemses
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.itemses-list table.itemses td
+{
+        padding:7px;
+}
+.itemses-list table.itemses th
+{
+        padding:7px;
+}
+.itemses .display-limit
+{
+    float: right;
+    display: inline;
+}
+/*#################### itemses list grid settings ############################ */
+
+.itemses-list a.saveorder {
+        width: 16px;
+        height: 16px;
+        display: block;
+        overflow: hidden;
+        background: url(../images/filesave.png) no-repeat;
+        float: right;
+        margin-right: 8px;
+}
+.itemses-list td.list-order
+{
+	    float: right;
+	    border: none;
+}
+.itemses-list a.jgrid:hover
+{
+    text-decoration: none;
+}
+
+.itemses-list .jgrid span.state
+{
+	    display: inline-block;
+	    height: 16px;
+	    width: 16px;
+}
+.itemses-list .jgrid span.text 
+{
+        display:none;
+}
+.itemses-list .jgrid span.downarrow				
+{
+        background-image: url(../images/downarrow.png);
+}
+.itemses-list .jgrid span.downarrow_disabled
+{
+       background-image: url(../images/downarrow0.png);
+       background-position: 0 -12px;
+}
+.itemses-list .jgrid span.uparrow	
+{
+        background-image: url(../images/uparrow.png);
+}
+.itemses-list .jgrid span.uparrow_disabled
+{
+        background-image: url(../images/uparrow0.png);
+        background-position: 0 -12px;
+}
+/*#################### itemses list actions icons ############################ */
+.itemses-list ul.actions
+{
+        padding:0 ;
+        width:100%;
+        margin:0;
+        list-style-type: none;
+}
+.itemses-list ul.actions a
+{
+        text-decoration:none
+}
+/*#################### itemses list pagination ############################ */
+.itemses-list .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+/*#################### itemses modal list ############################ */
+.itemses-modal
+{
+        width: 760px;
+}
+/*#################### itemses modal list tables ############################ */
+.itemses-modal table.itemses th a {
+}
+.itemses-modal table.itemses th  a img {
+	    border:solid 0px ;
+}
+.itemses-modal table.itemses
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.itemses-modal table.itemses td
+{
+        padding:7px;
+}
+.itemses-modal table.itemses th
+{
+        padding:7px;
+        text-align:left;
+	    background:#444 ;        
+}
+.itemses-modal table.itemses th
+{
+	    color:#fff
+}
+/*#################### itemses modal list pagination ############################ */
+
+.itemses-modal .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### itemses blog ############################ */
+.itemses-blog h1
+{
+        margin:0 0px 10px 0px
+}
+/*#################### itemses blog actions icons ############################ */
+.itemses-blog ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.itemses-blog ul.actions li
+{
+        display:inline
+}
+.itemses-blog ul.actions a
+{
+        text-decoration:none
+}
+/*#################### itemses blog items more ############################ */
+.itemses-blog .items-more
+{
+        padding-top:10px;
+}
+.itemses-blog .items-more h3
+{
+        font-weight:normal;
+        margin:0;
+        padding:5px 5px 5px 5px;
+        font-size:1.4em
+}
+.itemses-blog .items-more ol
+{
+        line-height:1.3em;
+        list-style-type:none;
+        margin:0;
+        padding:10px 0 10px 2px;
+}
+.itemses-blog .items-more ol li
+{
+        padding:2px;
+}
+.itemses-blog .items-more ol li a
+{
+        display:inline;
+        margin:0;
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+}
+.itemses-blog .items-more ol li a:hover,
+.itemses-blog .items-more ol li a:active,
+.itemses-blog .items-more ol li a:focus
+{
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+        text-decoration:none
+}
+/*#################### itemses blog pagination ############################ */
+.itemses-blog .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### items view ############################ */
+.items-view
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.items-view .formelm label,
+{
+    width: 200px;
+}
+/* #main required */
+#main .items-view .formelm ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .items-view .formelm ul label
+{
+         font-weight: normal;
+}
+.items-view .formelm fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+.items-view .formelm label,
+.items-view .formelm-area label  
+{
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;    
+}
+.items-view .formelm span  
+{
+        margin-bottom: 5px;    
+}
+.items-view fieldset legend
+{
+        font-weight: bold;
+        font-size: 120%;
+}
+/*#################### items view actions icons ############################ */
+.items-view ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.items-view ul.actions li
+{
+        display:inline
+}
+.items-view ul.actions a
+{
+        text-decoration:none
+}
+/*#################### items article ############################ */
+.items-article
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.items-article dt.info-title,
+.items-article dt.fields-title
+{
+        font-weight: bold;
+        font-size: 120%;
+		margin-top: 10px;
+}
+#main .items-article dd ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .items-article dd.field label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+#main .items-article dd ul label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+.items-article dd fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+/*#################### items article actions icons ############################ */
+.items-article ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.items-article ul.actions li
+{
+        display:inline
+}
+.items-article ul.actions a
+{
+        text-decoration:none
+}
+
+
+/*#################### items edit form ############################ */
+.items-edit
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.items-edit .button2-left,
+.items-edit .button2-left div,
+.items-edit .button2-left a
+{
+        float: none;
+        display: inline;
+}
+.items-edit .control-group .control-label
+{
+        display: inline-block !important; 
+}
+.items-edit .control-group .controls
+{
+        display: inline-block !important;      
+}
+.items-edit .control-group .control-label
+{
+        width: 150px !important;      
+}

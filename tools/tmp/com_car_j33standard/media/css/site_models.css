@@ -1,0 +1,362 @@
+/**
+ * @version 		$Id:$
+ * @name			Car (Release 1.0.0)
+ * @author			 ()
+ * @package			com_car
+ * @subpackage		com_car.site
+ * @copyright		
+ * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html 
+ * 
+ * The following Component Architect header section must remain in any distribution of this file
+ *
+ * @CAversion		Id: site_compobjectplural.css 408 2014-10-19 18:31:00Z BrianWade $
+ * @CAauthor		Component Architect (www.componentarchitect.com)
+ * @CApackage		architectcomp
+ * @CAsubpackage	architectcomp.site
+ * @CAtemplate		joomla_3_3_standard (Release 0.5.0)
+ * @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
+ * @Joomlacopyright Copyright (c)2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @CAlicense		GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+ * 
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ */
+/*#################### models list table with grid settings ############################ */
+.models-list table.models
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.models-list table.models td
+{
+        padding:7px;
+}
+.models-list table.models th
+{
+        padding:7px;
+}
+.models .display-limit
+{
+    float: right;
+    display: inline;
+}
+/*#################### models list grid settings ############################ */
+
+.models-list a.saveorder {
+        width: 16px;
+        height: 16px;
+        display: block;
+        overflow: hidden;
+        background: url(../images/filesave.png) no-repeat;
+        float: right;
+        margin-right: 8px;
+}
+.models-list td.list-order
+{
+	    float: right;
+	    border: none;
+}
+.models-list a.jgrid:hover
+{
+    text-decoration: none;
+}
+
+.models-list .jgrid span.state
+{
+	    display: inline-block;
+	    height: 16px;
+	    width: 16px;
+}
+.models-list .jgrid span.text 
+{
+        display:none;
+}
+.models-list .jgrid span.downarrow				
+{
+        background-image: url(../images/downarrow.png);
+}
+.models-list .jgrid span.downarrow_disabled
+{
+       background-image: url(../images/downarrow0.png);
+       background-position: 0 -12px;
+}
+.models-list .jgrid span.uparrow	
+{
+        background-image: url(../images/uparrow.png);
+}
+.models-list .jgrid span.uparrow_disabled
+{
+        background-image: url(../images/uparrow0.png);
+        background-position: 0 -12px;
+}
+/*#################### models list actions icons ############################ */
+.models-list ul.actions
+{
+        padding:0 ;
+        width:100%;
+        margin:0;
+        list-style-type: none;
+}
+.models-list ul.actions a
+{
+        text-decoration:none
+}
+/*#################### models list pagination ############################ */
+.models-list .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+/*#################### models modal list ############################ */
+.models-modal
+{
+        width: 760px;
+}
+/*#################### models modal list tables ############################ */
+.models-modal table.models th a {
+}
+.models-modal table.models th  a img {
+	    border:solid 0px ;
+}
+.models-modal table.models
+{
+        font-size:1em;
+        margin:10px 10px 20px 0px;
+        width:99%;
+}
+.models-modal table.models td
+{
+        padding:7px;
+}
+.models-modal table.models th
+{
+        padding:7px;
+        text-align:left;
+	    background:#444 ;        
+}
+.models-modal table.models th
+{
+	    color:#fff
+}
+/*#################### models modal list pagination ############################ */
+
+.models-modal .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### models blog ############################ */
+.models-blog h1
+{
+        margin:0 0px 10px 0px
+}
+/*#################### models blog actions icons ############################ */
+.models-blog ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.models-blog ul.actions li
+{
+        display:inline
+}
+.models-blog ul.actions a
+{
+        text-decoration:none
+}
+/*#################### models blog items more ############################ */
+.models-blog .items-more
+{
+        padding-top:10px;
+}
+.models-blog .items-more h3
+{
+        font-weight:normal;
+        margin:0;
+        padding:5px 5px 5px 5px;
+        font-size:1.4em
+}
+.models-blog .items-more ol
+{
+        line-height:1.3em;
+        list-style-type:none;
+        margin:0;
+        padding:10px 0 10px 2px;
+}
+.models-blog .items-more ol li
+{
+        padding:2px;
+}
+.models-blog .items-more ol li a
+{
+        display:inline;
+        margin:0;
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+}
+.models-blog .items-more ol li a:hover,
+.models-blog .items-more ol li a:active,
+.models-blog .items-more ol li a:focus
+{
+        font-weight:normal;
+        padding:5px 5px 5px 20px;
+        text-decoration:none
+}
+/*#################### models blog pagination ############################ */
+.models-blog .pagination p.counter
+{
+        text-align: center;
+        margin: 0 auto 0 auto; 
+}
+
+/*#################### model view ############################ */
+.model-view
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.model-view .formelm label,
+{
+    width: 200px;
+}
+/* #main required */
+#main .model-view .formelm ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .model-view .formelm ul label
+{
+         font-weight: normal;
+}
+.model-view .formelm fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+.model-view .formelm label,
+.model-view .formelm-area label  
+{
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;    
+}
+.model-view .formelm span  
+{
+        margin-bottom: 5px;    
+}
+.model-view fieldset legend
+{
+        font-weight: bold;
+        font-size: 120%;
+}
+/*#################### model view actions icons ############################ */
+.model-view ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.model-view ul.actions li
+{
+        display:inline
+}
+.model-view ul.actions a
+{
+        text-decoration:none
+}
+/*#################### model article ############################ */
+.model-article
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.model-article dt.info-title,
+.model-article dt.fields-title
+{
+        font-weight: bold;
+        font-size: 120%;
+		margin-top: 10px;
+}
+#main .model-article dd ul
+{
+        list-style-type: none;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+}
+#main .model-article dd.field label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+#main .model-article dd ul label
+{
+         font-weight: bold;
+         margin-top: 10px;
+}
+.model-article dd fieldset
+{
+        padding: 0;
+        margin: 0;
+        margin-top: 5px;
+        display: inline;
+}
+/*#################### model article actions icons ############################ */
+.model-article ul.actions
+{
+        text-align:right;
+        padding:0 ;
+        width:100%;
+        margin:0
+}
+.model-article ul.actions li
+{
+        display:inline
+}
+.model-article ul.actions a
+{
+        text-decoration:none
+}
+
+
+/*#################### model edit form ############################ */
+.model-edit
+{
+        padding:0 5px;
+        display:block;
+        overflow:hidden
+}
+.model-edit .button2-left,
+.model-edit .button2-left div,
+.model-edit .button2-left a
+{
+        float: none;
+        display: inline;
+}
+.model-edit .control-group .control-label
+{
+        display: inline-block !important; 
+}
+.model-edit .control-group .controls
+{
+        display: inline-block !important;      
+}
+.model-edit .control-group .control-label
+{
+        width: 150px !important;      
+}

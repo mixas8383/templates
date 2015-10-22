@@ -1,0 +1,100 @@
+#Date: 2015-07-29 09:10:02 UTC
+#Software: Joomla Platform 11.4.0 Stable [ Brian Kernighan ] 03-Jan-2012 00:00 GMT
+
+#Fields: date	time	duration	message	errorcode	file	line_number
+2015-07-29	09:10:02	0.000000	Stage 1 - Analysing Component started (94 fields to process)	-	-	-
+2015-07-29	09:10:02	0.032295	Stage 1 - Analysing Component (1 of 94 fields processed).  Completed step: processing field 'Id' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.350547	Stage 1 - Analysing Component (2 of 94 fields processed).  Completed step: processing field 'Name' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.351886	Stage 1 - Analysing Component (3 of 94 fields processed).  Completed step: processing field 'Alias' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.353161	Stage 1 - Analysing Component (4 of 94 fields processed).  Completed step: processing field 'Category' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.354445	Stage 1 - Analysing Component (5 of 94 fields processed).  Completed step: processing field 'Status' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.355730	Stage 1 - Analysing Component (6 of 94 fields processed).  Completed step: processing field 'Access' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.357032	Stage 1 - Analysing Component (7 of 94 fields processed).  Completed step: processing field 'Ordering' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.358299	Stage 1 - Analysing Component (8 of 94 fields processed).  Completed step: processing field 'Featured' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.359428	Stage 1 - Analysing Component (9 of 94 fields processed).  Completed step: processing field 'Hits' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.360539	Stage 1 - Analysing Component (10 of 94 fields processed).  Completed step: processing field 'Language' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.361675	Stage 1 - Analysing Component (11 of 94 fields processed).  Completed step: processing field 'Version' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.362798	Stage 1 - Analysing Component (12 of 94 fields processed).  Completed step: processing field 'Description' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.363926	Stage 1 - Analysing Component (13 of 94 fields processed).  Completed step: processing field 'Intro Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.368446	Stage 1 - Analysing Component (14 of 94 fields processed).  Completed step: processing field 'Images' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.369655	Stage 1 - Analysing Component (15 of 94 fields processed).  Completed step: processing field 'Image' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.370832	Stage 1 - Analysing Component (16 of 94 fields processed).  Completed step: processing field 'Alt Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.372039	Stage 1 - Analysing Component (17 of 94 fields processed).  Completed step: processing field 'Image Caption' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.373196	Stage 1 - Analysing Component (18 of 94 fields processed).  Completed step: processing field 'Intro Image' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.374334	Stage 1 - Analysing Component (19 of 94 fields processed).  Completed step: processing field 'Intro Alt Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.375467	Stage 1 - Analysing Component (20 of 94 fields processed).  Completed step: processing field 'Intro Image Caption' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.380329	Stage 1 - Analysing Component (21 of 94 fields processed).  Completed step: processing field 'Urls' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.381501	Stage 1 - Analysing Component (22 of 94 fields processed).  Completed step: processing field 'Urls' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.382653	Stage 1 - Analysing Component (23 of 94 fields processed).  Completed step: processing field 'Link A' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.383798	Stage 1 - Analysing Component (24 of 94 fields processed).  Completed step: processing field 'Link A Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.384945	Stage 1 - Analysing Component (25 of 94 fields processed).  Completed step: processing field 'URL A Target Window' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.386096	Stage 1 - Analysing Component (26 of 94 fields processed).  Completed step: processing field 'Link B' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.387242	Stage 1 - Analysing Component (27 of 94 fields processed).  Completed step: processing field 'Link B Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.388397	Stage 1 - Analysing Component (28 of 94 fields processed).  Completed step: processing field 'URL B Target Window' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.389547	Stage 1 - Analysing Component (29 of 94 fields processed).  Completed step: processing field 'Link C' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.390694	Stage 1 - Analysing Component (30 of 94 fields processed).  Completed step: processing field 'Link C Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.391834	Stage 1 - Analysing Component (31 of 94 fields processed).  Completed step: processing field 'URL C Target Window' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.396651	Stage 1 - Analysing Component (32 of 94 fields processed).  Completed step: processing field 'Created' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.397871	Stage 1 - Analysing Component (33 of 94 fields processed).  Completed step: processing field 'Created By' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.399042	Stage 1 - Analysing Component (34 of 94 fields processed).  Completed step: processing field 'Created By Alias' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.400213	Stage 1 - Analysing Component (35 of 94 fields processed).  Completed step: processing field 'Modified' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.401378	Stage 1 - Analysing Component (36 of 94 fields processed).  Completed step: processing field 'Modified By' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.402537	Stage 1 - Analysing Component (37 of 94 fields processed).  Completed step: processing field 'Published Date' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.403701	Stage 1 - Analysing Component (38 of 94 fields processed).  Completed step: processing field 'Unpublish Date' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.404856	Stage 1 - Analysing Component (39 of 94 fields processed).  Completed step: processing field 'Checked Out' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.406001	Stage 1 - Analysing Component (40 of 94 fields processed).  Completed step: processing field 'Check Out Time' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.410237	Stage 1 - Analysing Component (41 of 94 fields processed).  Completed step: processing field 'Meta Keywords' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.411397	Stage 1 - Analysing Component (42 of 94 fields processed).  Completed step: processing field 'Meta Description' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.412548	Stage 1 - Analysing Component (43 of 94 fields processed).  Completed step: processing field 'Robots' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.413711	Stage 1 - Analysing Component (44 of 94 fields processed).  Completed step: processing field 'Author' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.414852	Stage 1 - Analysing Component (45 of 94 fields processed).  Completed step: processing field 'Key Reference' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.418611	Stage 1 - Analysing Component (46 of 94 fields processed).  Completed step: processing field 'Asset Id' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.419748	Stage 1 - Analysing Component (47 of 94 fields processed).  Completed step: processing field 'Params' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.426807	Stage 1 - Analysing Component (48 of 94 fields processed).  Completed step: processing field 'Id' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.428003	Stage 1 - Analysing Component (49 of 94 fields processed).  Completed step: processing field 'Name' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.429134	Stage 1 - Analysing Component (50 of 94 fields processed).  Completed step: processing field 'Alias' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.430271	Stage 1 - Analysing Component (51 of 94 fields processed).  Completed step: processing field 'Category' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.431393	Stage 1 - Analysing Component (52 of 94 fields processed).  Completed step: processing field 'Status' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.432522	Stage 1 - Analysing Component (53 of 94 fields processed).  Completed step: processing field 'Access' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.433653	Stage 1 - Analysing Component (54 of 94 fields processed).  Completed step: processing field 'Ordering' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.434758	Stage 1 - Analysing Component (55 of 94 fields processed).  Completed step: processing field 'Featured' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.435862	Stage 1 - Analysing Component (56 of 94 fields processed).  Completed step: processing field 'Hits' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.436983	Stage 1 - Analysing Component (57 of 94 fields processed).  Completed step: processing field 'Language' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.438114	Stage 1 - Analysing Component (58 of 94 fields processed).  Completed step: processing field 'Version' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.439242	Stage 1 - Analysing Component (59 of 94 fields processed).  Completed step: processing field 'Description' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.440355	Stage 1 - Analysing Component (60 of 94 fields processed).  Completed step: processing field 'Intro Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.441449	Stage 1 - Analysing Component (61 of 94 fields processed).  Completed step: processing field 'Images' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.442586	Stage 1 - Analysing Component (62 of 94 fields processed).  Completed step: processing field 'Image' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.443704	Stage 1 - Analysing Component (63 of 94 fields processed).  Completed step: processing field 'Alt Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.444823	Stage 1 - Analysing Component (64 of 94 fields processed).  Completed step: processing field 'Image Caption' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.445950	Stage 1 - Analysing Component (65 of 94 fields processed).  Completed step: processing field 'Intro Image' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.447084	Stage 1 - Analysing Component (66 of 94 fields processed).  Completed step: processing field 'Intro Alt Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.448205	Stage 1 - Analysing Component (67 of 94 fields processed).  Completed step: processing field 'Intro Image Caption' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.449311	Stage 1 - Analysing Component (68 of 94 fields processed).  Completed step: processing field 'Urls' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.450453	Stage 1 - Analysing Component (69 of 94 fields processed).  Completed step: processing field 'Urls' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.451613	Stage 1 - Analysing Component (70 of 94 fields processed).  Completed step: processing field 'Link A' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.452721	Stage 1 - Analysing Component (71 of 94 fields processed).  Completed step: processing field 'Link A Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.453864	Stage 1 - Analysing Component (72 of 94 fields processed).  Completed step: processing field 'URL A Target Window' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.454998	Stage 1 - Analysing Component (73 of 94 fields processed).  Completed step: processing field 'Link B' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.456113	Stage 1 - Analysing Component (74 of 94 fields processed).  Completed step: processing field 'Link B Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.457221	Stage 1 - Analysing Component (75 of 94 fields processed).  Completed step: processing field 'URL B Target Window' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.458338	Stage 1 - Analysing Component (76 of 94 fields processed).  Completed step: processing field 'Link C' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.459467	Stage 1 - Analysing Component (77 of 94 fields processed).  Completed step: processing field 'Link C Text' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.460609	Stage 1 - Analysing Component (78 of 94 fields processed).  Completed step: processing field 'URL C Target Window' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.461734	Stage 1 - Analysing Component (79 of 94 fields processed).  Completed step: processing field 'Created' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.462872	Stage 1 - Analysing Component (80 of 94 fields processed).  Completed step: processing field 'Created By' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.463991	Stage 1 - Analysing Component (81 of 94 fields processed).  Completed step: processing field 'Created By Alias' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.465116	Stage 1 - Analysing Component (82 of 94 fields processed).  Completed step: processing field 'Modified' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.466229	Stage 1 - Analysing Component (83 of 94 fields processed).  Completed step: processing field 'Modified By' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.467343	Stage 1 - Analysing Component (84 of 94 fields processed).  Completed step: processing field 'Published Date' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.468479	Stage 1 - Analysing Component (85 of 94 fields processed).  Completed step: processing field 'Unpublish Date' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.469601	Stage 1 - Analysing Component (86 of 94 fields processed).  Completed step: processing field 'Checked Out' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.470713	Stage 1 - Analysing Component (87 of 94 fields processed).  Completed step: processing field 'Check Out Time' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.471873	Stage 1 - Analysing Component (88 of 94 fields processed).  Completed step: processing field 'Meta Keywords' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.473002	Stage 1 - Analysing Component (89 of 94 fields processed).  Completed step: processing field 'Meta Description' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.474128	Stage 1 - Analysing Component (90 of 94 fields processed).  Completed step: processing field 'Robots' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.475242	Stage 1 - Analysing Component (91 of 94 fields processed).  Completed step: processing field 'Author' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.476354	Stage 1 - Analysing Component (92 of 94 fields processed).  Completed step: processing field 'Key Reference' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.477458	Stage 1 - Analysing Component (93 of 94 fields processed).  Completed step: processing field 'Asset Id' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.478601	Stage 1 - Analysing Component (94 of 94 fields processed).  Completed step: processing field 'Params' in component object 'item'	-	-	-
+2015-07-29	09:10:02	0.482313	Stage 1 - Analysing Component (94 of 94 fields processed).  Completed step: Stage 1 - Analysing Component completed	-	-	-

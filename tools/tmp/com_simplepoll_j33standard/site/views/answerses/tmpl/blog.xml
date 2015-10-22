@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version 			$Id:$ -->
+<!-- @name			    Simplepoll (Release 1.0.0) -->
+<!-- @author			 () -->
+<!-- @package			com_simplepoll -->
+<!-- @subpackage		com_simplepoll.site -->
+<!-- @copyright		     -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @CAversion			Id: blog.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<metadata>
+	<layout
+	    title="COM_SIMPLEPOLL_ANSWERSES_VIEW_BLOG_TITLE"
+	    option="COM_SIMPLEPOLL_ANSWERSES_VIEW_BLOG_OPTION"
+	>
+        <message>
+			<![CDATA[COM_SIMPLEPOLL_ANSWERSES_VIEW_BLOG_DESC]]>
+		</message>
+	</layout>
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields
+        name="params"
+    >
+        <fieldset
+            name="answers_filters"
+            label="COM_SIMPLEPOLL_ANSWERSES_FIELDSET_FILTERS"
+        >
+
+            <field
+                name="filter_answers_featured"
+                type="radio"
+                label="COM_SIMPLEPOLL_FEATURED_FILTER_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_FEATURED_FILTER_DESC"
+				class="btn-group"
+ 		    >
+                <option value="">COM_SIMPLEPOLL_SHOW_ALL</option>
+                <option value="0">COM_SIMPLEPOLL_HIDE_ALL</option>
+                <option value="1">COM_SIMPLEPOLL_SHOW_ONLY</option>
+            </field>
+            <field
+                name="filter_answers_archived"
+                type="radio"
+                label="COM_SIMPLEPOLL_ARCHIVED_FILTER_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_ARCHIVED_FILTER_DESC"
+				class="btn-group btn-group-yesno"
+				default="0"
+ 		    >
+                <option	value="2">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="answers_blog_settings"
+            label="COM_SIMPLEPOLL_ANSWERSES_BLOG_LAYOUT_OPTIONS"
+        >
+            <field
+                name="answers_num_leading"
+                type="text"
+				label="COM_SIMPLEPOLL_ANSWERSES_NUM_LEADING_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_NUM_LEADING_DESC"
+				size="3"
+			/>
+            <field
+                name="answers_num_intro"
+                type="text"
+				label="COM_SIMPLEPOLL_ANSWERSES_NUM_INTRO_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_NUM_INTRO_DESC"
+				size="3"
+			/>
+            <field
+                name="answers_num_columns"
+                type="text"
+				label="COM_SIMPLEPOLL_NUM_COLUMNS_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_NUM_COLUMNS_DESC"
+				size="3"
+			/>
+            <field
+                name="answers_num_links"
+                type="text"
+				label="COM_SIMPLEPOLL_NUM_LINKS_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_NUM_LINKS_DESC"
+				size="3"
+			/>
+            <field
+                name="answers_multi_column_order"
+                type="radio"
+				label="COM_SIMPLEPOLL_MULTI_COLUMN_ORDER_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_MULTI_COLUMN_ORDER_DESC"
+                class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JGLOBAL_Down</option>
+                <option value="1">JGLOBAL_Across</option>
+            </field>
+            <field
+                name="answers_initial_sort"
+                type="list"
+				label="COM_SIMPLEPOLL_ANSWERSES_ORDER_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_ORDER_DESC"
+			    class="chzn-color"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="created">JGLOBAL_CREATED</option>
+                <option value="modified">JGLOBAL_MODIFIED</option>
+                <option value="publish_up">JPUBLISHED</option>
+                <option value="name">COM_SIMPLEPOLL_NAME_ALPHABETICAL</option>
+                <option value="created_by_name">COM_SIMPLEPOLL_CREATED_BY_ALPHABETICAL</option>
+                <option value="hits">JGLOBAL_MOST_HITS</option>
+                <option value="ordering">COM_SIMPLEPOLL_ANSWERSES_ORDER</option>
+            </field>
+            <field
+                name="answers_initial_direction"
+                type="radio"
+                label="COM_SIMPLEPOLL_ORDER_DIRECTION_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_ORDER_DIRECTION_DESC"
+				class="btn-group"
+                default="ASC"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="DESC">COM_SIMPLEPOLL_ORDER_DIRECTION_DESCENDING_LABEL</option>
+                <option value="ASC">COM_SIMPLEPOLL_ORDER_DIRECTION_ASCENDING_LABEL</option>
+            </field>
+            <field
+                name="answers_date_format"
+                type="text"
+				label="JGLOBAL_DATE_FORMAT_LABEL"
+				description="JGLOBAL_DATE_FORMAT_DESC"
+				size="15"
+			/>
+            <field
+                name="show_answers_pagination"
+                type="radio"
+			    label="JGLOBAL_PAGINATION_LABEL"
+			    description="JGLOBAL_PAGINATION_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+                <option value="2">JGLOBAL_AUTO</option>
+            </field>
+            <field
+                name="show_answers_pagination_results"
+                type="radio"
+			    label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+			    description="JGLOBAL_PAGINATION_RESULTS_DESC"
+				class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_no_answerses"
+                type="radio"
+				label="COM_SIMPLEPOLL_ANSWERSES_NO_ITEMS_LABEL"
+				description="COM_SIMPLEPOLL_ANSWERSES_NO_ITEMS_DESC"
+				class="btn-group"
+			>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="answers_layout_settings"
+            label="COM_SIMPLEPOLL_ANSWERSES_FIELDSET_LAYOUT"
+        >
+            <field
+                name="answers_layout"
+                type="componentlayout"
+                label="JGLOBAL_FIELD_LAYOUT_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_CHOOSE_LAYOUT_DESC"
+                menuitems="true"
+                extension="com_simplepoll"
+                view="answers"
+                default="_:article"
+		    />
+            <field
+                name="spacer1"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_answers_icons"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_ICONS_LABEL"
+                description="COM_SIMPLEPOLL_SHOW_ICONS_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option	value="0">COM_SIMPLEPOLL_SHOW_ICONS_VALUE_TEXT</option>
+                <option	value="1">COM_SIMPLEPOLL_SHOW_ICONS_VALUE_ICONS</option>
+                <option	value="-1">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_print_icon"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_PRINT_ICON_LABEL"
+                description="COM_SIMPLEPOLL_SHOW_PRINT_ICON_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_email_icon"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_EMAIL_ICON_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_EMAIL_ICON_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+		        name="answers_info_block_position"
+		        type="radio"
+		        label="COM_SIMPLEPOLL_ANSWERSES_INFOBLOCK_POSITION_LABEL"
+		        description="COM_SIMPLEPOLL_ANSWERSES_INFOBLOCK_POSITION_DESC"
+                class="btn-group"            
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="0">COM_SIMPLEPOLL_VALUE_ABOVE</option>
+                <option value="1">COM_SIMPLEPOLL_VALUE_BELOW</option>
+            </field>            
+            <field
+                name="keep_answers_itemid"
+                type="radio"
+                label="COM_SIMPLEPOLL_KEEP_ITEMID_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_KEEP_ITEMID_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_answers_navigation"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_NAVIGATION_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_NAVIGATION_DESC"
+                class="btn-group"            
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="spacer2"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_answers_readmore"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_READMORE_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_READMORE_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="answers_readmore_limit"
+                type="text"
+                label="COM_SIMPLEPOLL_SHOW_READMORE_LIMIT_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_READMORE_LIMIT_DESC"
+                default="100"
+	        />
+            <field
+                name="show_answers_readmore_name"
+                type="radio"
+                label="COM_SIMPLEPOLL_ANSWERSES_SHOW_READMORE_NAME_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_READMORE_NAME_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_noauth"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_UNAUTH_LINKS_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_UNAUTH_LINKS_DESC"
+                class="btn-group"            
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+        </fieldset>
+        <fieldset
+            name="answers_field_settings"
+	        label="COM_SIMPLEPOLL_ANSWERSES_FIELDSET_FIELDS"
+	    >
+            <field
+                name="show_answers_name"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_NAME_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_NAME_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_answers_names"
+                type="radio"
+                label="COM_SIMPLEPOLL_LINKED_NAMES_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_LINKED_NAMES_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_answers_intro"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_INTRO_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_INTRO_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_image"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_IMAGE_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_IMAGE_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_image_float"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_IMAGE_FLOAT_LABEL"
+                description="COM_SIMPLEPOLL_SHOW_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="right">COM_SIMPLEPOLL_VALUE_FLOAT_RIGHT</option>
+                <option value="left">COM_SIMPLEPOLL_VALUE_FLOAT_LEFT</option>
+                <option value="none">COM_SIMPLEPOLL_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_answers_image_width"
+                type="text"
+                label="COM_SIMPLEPOLL_SHOW_IMAGE_WIDTH_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_answers_image_height"
+                type="text"
+                label="COM_SIMPLEPOLL_SHOW_IMAGE_HEIGHT_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_answers_intro_image"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_INTRO_IMAGE_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_INTRO_IMAGE_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_intro_image_float"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_INTRO_IMAGE_FLOAT_LABEL"
+                description="COM_SIMPLEPOLL_SHOW_INTRO_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="right">COM_SIMPLEPOLL_VALUE_FLOAT_RIGHT</option>
+                <option value="left">COM_SIMPLEPOLL_VALUE_FLOAT_LEFT</option>
+                <option value="none">COM_SIMPLEPOLL_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_answers_intro_image_width"
+                type="text"
+                label="COM_SIMPLEPOLL_SHOW_INTRO_IMAGE_WIDTH_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_INTRO_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_answers_intro_image_height"
+                type="text"
+                label="COM_SIMPLEPOLL_SHOW_INTRO_IMAGE_HEIGHT_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_INTRO_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_answers_urls"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_URLS_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_URLS_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field> 
+            <field
+                name="show_answers_urls_position"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_URLS_POSITION_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_URLS_POSITION_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="0">COM_SIMPLEPOLL_VALUE_ABOVE</option>
+                <option value="1">COM_SIMPLEPOLL_VALUE_BELOW</option>
+            </field>
+            <field
+                name="spacer3"
+                type="spacer"
+                hr="true"
+	        />
+            <field
+                name="show_answers_tags"
+                type="radio"
+                label="COM_SIMPLEPOLL_FIELD_SHOW_TAGS_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_FIELD_SHOW_TAGS_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="spacer4"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_answers_created_by"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_CREATED_BY_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_CREATED_BY_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_answers_created_by"
+                type="radio"
+                label="COM_SIMPLEPOLL_LINK_CREATED_BY_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_LINK_CREATED_BY_DESC"
+                class="btn-group"
+		    >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_answers_created_by_alias"
+                type="radio"
+		        label="COM_SIMPLEPOLL_SHOW_CREATED_BY_ALIAS_LABEL"
+		        description="COM_SIMPLEPOLL_ANSWERSES_SHOW_CREATED_BY_ALIAS_DESC"
+		        class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_created"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_CREATED_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_CREATED_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_modified"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_MODIFIED_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_MODIFIED_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_publish_up"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_PUBLISH_UP_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_PUBLISH_UP_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_answers_publish_down"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_PUBLISH_DOWN_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_PUBLISH_DOWN_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_answers_hits"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_HITS_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_HITS_DESC"
+                class="btn-group"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_admin"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_ADMIN_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_ADMIN_DESC"
+                class="btn-group"
+           >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_answers_vote"
+                type="radio"
+                label="COM_SIMPLEPOLL_SHOW_VOTE_LABEL"
+                description="COM_SIMPLEPOLL_ANSWERSES_SHOW_VOTE_DESC"
+                class="btn-group"
+	        >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="use_answers">COM_SIMPLEPOLL_ANSWERSES_USE_SETTINGS</option>
+                <option value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+        </fieldset>
+        <fieldset
+	        name="integration"
+            label="JGLOBAL_INTEGRATION_LABEL"
+	    >
+            <field
+		        name="show_feed_link"
+		        type="radio"
+			    label="COM_SIMPLEPOLL_SHOW_FEED_LINK_LABEL"
+			    description="COM_SIMPLEPOLL_SHOW_FEED_LINK_DESC"
+                class="btn-group"
+			    default="1"
+		    >
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+		        name="feed_summary"
+		        type="radio"
+			    label="COM_SIMPLEPOLL_FEED_SUMMARY_LABEL"
+			    description="COM_SIMPLEPOLL_ANSWERSES_FEED_SUMMARY_DESC"
+                class="btn-group"
+			    default="0"
+		    >
+                <option value="0">JGLOBAL_INTRO_TEXT</option>
+                <option value="1">JGLOBAL_FULL_TEXT</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>
