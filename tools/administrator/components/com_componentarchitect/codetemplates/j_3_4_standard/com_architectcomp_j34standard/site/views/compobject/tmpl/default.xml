@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @tempversion -->
+<!-- @name			    [%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%]) -->
+<!-- @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%]) -->
+<!-- @package			[%%com_architectcomp%%] -->
+<!-- @subpackage		[%%com_architectcomp%%].site -->
+<!-- @copyright		    [%%COMPONENTCOPYRIGHT%%] -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @version			$Id: default.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.site -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<metadata>
+	<layout
+	    title="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_VIEW_ITEM_DEFAULT_TITLE"
+	    option="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_VIEW_ITEM_DEFAULT_OPTION"
+	>
+        <message>
+			<![CDATA[[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_VIEW_ITEM_DEFAULT_DESC]]>
+		</message>
+	</layout>
+	<!-- Add fields to the request variables for the layout. -->
+	<fields
+	    name="request"
+	>
+		<fieldset
+		    name="request"
+			addfieldpath="/administrator/components/[%%com_architectcomp%%]/models/fields"
+		>
+			<field
+			    name="id"
+			    type="modal_[%%compobjectplural%%]"
+				label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SELECT_ITEM_LABEL"
+				description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SELECT_ITEM_DESC"
+				required="true"
+				edit="true"
+				clear="false"				
+			/>
+		</fieldset>
+	</fields>
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields
+	    name="params"
+	>
+        [%%IF INCLUDE_PARAMS_MENU%%]
+        <!-- Basic options. -->
+        <fieldset
+            name="[%%compobject%%]_basic_settings"
+            label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELDSET_LAYOUT"
+        >
+            <field
+                name="show_[%%compobject%%]_icons"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="0">[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_VALUE_TEXT</option>
+                <option	value="1">[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_VALUE_ICONS</option>
+                <option	value="-1">JHIDE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_print_icon"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_PRINT_ICON_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_SHOW_PRINT_ICON_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_email_icon"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_EMAIL_ICON_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_EMAIL_ICON_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+		        name="[%%compobject%%]_info_block_position"
+		        type="radio"
+		        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_INFOBLOCK_POSITION_LABEL"
+		        description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_INFOBLOCK_POSITION_DESC"
+                class="btn-group"            
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="0">[%%COM_ARCHITECTCOMP%%]_VALUE_ABOVE</option>
+                <option value="1">[%%COM_ARCHITECTCOMP%%]_VALUE_BELOW</option>
+            </field>            
+            <field
+                name="keep_[%%compobject%%]_itemid"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_KEEP_ITEMID_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_KEEP_ITEMID_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_navigation"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_NAVIGATION_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_NAVIGATION_DESC"
+                class="btn-group"            
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%IF GENERATE_CATEGORIES%%]
+            <field
+                name="show_[%%compobject%%]_category_breadcrumb"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_CATEGORY_BREADCRUMB_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CATEGORY_BREADCRUMB_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="limit_category_[%%compobject%%]_navigation"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_LIMIT_CATEGORY_NAVIGATION_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LIMIT_CATEGORY_NAVIGATION_DESC"
+                class="btn-group"            
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            [%%ENDIF GENERATE_CATEGORIES%%]
+            <field
+                name="spacer2"
+                type="spacer"
+                hr="true"
+			/>
+            <field
+                name="show_[%%compobject%%]_readmore"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_READMORE_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="[%%compobject%%]_readmore_limit"
+                type="text"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_READMORE_LIMIT_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_LIMIT_DESC"
+                default="100"
+	        />
+            [%%IF INCLUDE_NAME%%]
+            <field
+                name="show_[%%compobject%%]_readmore_name"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_NAME_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_NAME_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%ENDIF INCLUDE_NAME%%]
+            [%%IF INCLUDE_ACCESS%%]
+            <field
+                name="show_[%%compobject%%]_noauth"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_UNAUTH_LINKS_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_UNAUTH_LINKS_DESC"
+                class="btn-group"            
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            [%%ENDIF INCLUDE_ACCESS%%]
+        </fieldset>
+        <fieldset
+            name="[%%compobject%%]_field_settings"
+	        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELDSET_FIELDS"
+	    >
+            [%%IF INCLUDE_NAME%%]
+            <field
+                name="show_[%%compobject%%]_name"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_NAME_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_NAME_DESC"
+                class="btn-group"
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_[%%compobject%%]_names"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_LINKED_NAMES_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINKED_NAMES_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            [%%ENDIF INCLUDE_NAME%%]
+            [%%IF INCLUDE_INTRO%%]
+            <field
+                name="show_[%%compobject%%]_intro"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%ENDIF INCLUDE_INTRO%%]
+            [%%IF INCLUDE_IMAGE%%]
+            <field
+                name="show_[%%compobject%%]_image"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_IMAGE_DESC"
+                class="btn-group"
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_image_float"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_FLOAT_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="right">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_RIGHT</option>
+                <option value="left">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_LEFT</option>
+                <option value="none">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_image_width"
+                type="text"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_WIDTH_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_[%%compobject%%]_image_height"
+                type="text"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_HEIGHT_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            	[%%IF INCLUDE_INTRO%%]
+            <field
+                name="show_[%%compobject%%]_intro_image"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_IMAGE_DESC"
+                class="btn-group"
+            >
+                    [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                    [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                    [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                    [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_intro_image_float"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_FLOAT_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_FLOAT_DESC"
+                class="btn-group"
+            >
+                    [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                    [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                    [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                    [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="right">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_RIGHT</option>
+                <option value="left">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_LEFT</option>
+                <option value="none">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_NONE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_intro_image_width"
+                type="text"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_WIDTH_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_IMAGE_WIDTH_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            <field
+                name="show_[%%compobject%%]_intro_image_height"
+                type="text"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_HEIGHT_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_IMAGE_HEIGHT_DESC"
+                class="validate-numeric"
+                size="5"
+             />
+            [%%ENDIF INCLUDE_INTRO%%]
+            [%%ENDIF INCLUDE_IMAGE%%]
+            [%%IF INCLUDE_URLS%%]
+            <field
+                name="show_[%%compobject%%]_urls"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_URLS_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_URLS_DESC"
+                class="btn-group"
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field> 
+            <field
+                name="show_[%%compobject%%]_urls_position"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_URLS_POSITION_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_URLS_POSITION_DESC"
+                class="btn-group"
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="0">[%%COM_ARCHITECTCOMP%%]_VALUE_ABOVE</option>
+                <option value="1">[%%COM_ARCHITECTCOMP%%]_VALUE_BELOW</option>
+            </field>
+            [%%ENDIF INCLUDE_URLS%%]
+            <field
+                name="spacer3"
+                type="spacer"
+                hr="true"
+	        />
+            [%%IF GENERATE_CATEGORIES%%]
+            <field
+                name="show_[%%compobject%%]_category"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_CATEGORY_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_[%%compobject%%]_category"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_LINK_CATEGORY_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINK_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_parent_category"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_PARENT_CATEGORY_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PARENT_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_[%%compobject%%]_parent_category"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_LINK_PARENT_CATEGORY_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINK_PARENT_CATEGORY_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            [%%ENDIF GENERATE_CATEGORIES%%]
+            [%%IF INCLUDE_TAGS%%]
+            <field
+                name="show_[%%compobject%%]_tags"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_FIELD_SHOW_TAGS_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_SHOW_TAGS_DESC"
+                class="btn-group"
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%ENDIF INCLUDE_TAGS%%]
+            [%%IF GENERATE_CATEGORIES%%]
+            <field
+                name="spacer4"
+                type="spacer"
+                hr="true"
+			/>
+            [%%ELSE GENERATE_CATEGORIES%%]
+                [%%IF INCLUDE_TAGS%%]
+            <field
+                name="spacer4"
+                type="spacer"
+                hr="true"
+			/>
+                [%%ENDIF INCLUDE_TAGS%%]
+            [%%ENDIF GENERATE_CATEGORIES%%]
+            [%%IF INCLUDE_CREATED%%]
+            <field
+                name="show_[%%compobject%%]_created_by"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_CREATED_BY_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CREATED_BY_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="link_[%%compobject%%]_created_by"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_LINK_CREATED_BY_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINK_CREATED_BY_DESC"
+                class="btn-group"
+		    >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="1">JYES</option>
+                <option	value="0">JNO</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_created_by_alias"
+                type="radio"
+		        label="[%%COM_ARCHITECTCOMP%%]_SHOW_CREATED_BY_ALIAS_LABEL"
+		        description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CREATED_BY_ALIAS_DESC"
+		        class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_created"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_CREATED_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CREATED_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%ENDIF INCLUDE_CREATED%%]
+            [%%IF INCLUDE_MODIFIED%%]
+            <field
+                name="show_[%%compobject%%]_modified"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_MODIFIED_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_MODIFIED_DESC"
+                class="btn-group"
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%ENDIF INCLUDE_MODIFIED%%]
+            [%%IF INCLUDE_PUBLISHED_DATES%%]
+            <field
+                name="show_[%%compobject%%]_publish_up"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_PUBLISH_UP_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PUBLISH_UP_DESC"
+                class="btn-group"
+            >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            <field
+                name="show_[%%compobject%%]_publish_down"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_PUBLISH_DOWN_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PUBLISH_DOWN_DESC"
+                class="btn-group"
+             >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            [%%ENDIF INCLUDE_PUBLISHED_DATES%%]
+            [%%IF INCLUDE_HITS%%]
+            <field
+                name="show_[%%compobject%%]_hits"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_HITS_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_HITS_DESC"
+                class="btn-group"
+             >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%ENDIF INCLUDE_HITS%%]
+            <field
+                name="show_[%%compobject%%]_admin"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_ADMIN_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_ADMIN_DESC"
+                class="btn-group"
+           >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            [%%IF GENERATE_PLUGINS_VOTE%%]
+            <field
+                name="show_[%%compobject%%]_vote"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_SHOW_VOTE_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_VOTE_DESC"
+                class="btn-group"
+	        >
+                [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            [%%ENDIF GENERATE_PLUGINS_VOTE%%]
+            [%%FOREACH OBJECT_FIELD%%]
+                [%%IF FIELD_NOT_HIDDEN%%]
+            <field
+                name="show_[%%compobject%%]_[%%FIELD_CODE_NAME%%]"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+                class="btn-group"
+           >
+                	[%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                	[%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+                	[%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+                	[%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+            	[%%ENDIF FIELD_NOT_HIDDEN%%]
+            [%%ENDFOR OBJECT_FIELD%%]
+            [%%FOREACH REGISTRY_FIELD%%]
+            <field
+                name="show_[%%compobject%%]_[%%FIELD_CODE_NAME%%]"
+                type="radio"
+                label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+                class="btn-group"
+            >
+				    [%%IF INCLUDE_PARAMS_GLOBAL%%]
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+				    [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+				    [%%IF INCLUDE_PARAMS_RECORD%%]
+                <option value="use_[%%compobject%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_USE_SETTINGS</option>
+				    [%%ENDIF INCLUDE_PARAMS_RECORD%%]
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+		    [%%ENDFOR REGISTRY_FIELD%%]
+        </fieldset>
+        [%%ENDIF INCLUDE_PARAMS_MENU%%]
+    </fields>
+</metadata>

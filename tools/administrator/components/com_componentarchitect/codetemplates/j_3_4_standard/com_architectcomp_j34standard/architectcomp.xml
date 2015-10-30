@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @tempversion -->
+<!-- @name			    [%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%]) -->
+<!-- @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%]) -->
+<!-- @package			[%%com_architectcomp%%] -->
+<!-- @subpackage		[%%com_architectcomp%%].admin -->
+<!-- @copyright		    [%%COMPONENTCOPYRIGHT%%] -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @version			$Id: architectcomp.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension type="component" version="3.4" method="upgrade">
+    <name>[%%com_architectcomp%%]</name>
+    <author>[%%COMPONENTAUTHOR%%]</author>
+    <creationDate>[%%COMPONENTCREATED%%]</creationDate>
+    <copyright>
+        [%%COMPONENTCOPYRIGHT%%]
+    </copyright>
+    <license>
+        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
+    </license>
+    <authorEmail>[%%COMPONENTEMAIL%%]</authorEmail>
+    <authorUrl>[%%COMPONENTWEBSITE%%]</authorUrl>
+    <version>[%%COMPONENTSTARTVERSION%%]</version>
+    <description>
+        [%%Architectcomp_description%%]
+    </description>
+    [%%IF GENERATE_SITE%%]
+    <files folder="site">
+        <filename>[%%architectcomp%%].php</filename>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <filename>router.php</filename>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+    </files>
+    [%%ENDIF GENERATE_SITE%%]
+    <media destination="[%%com_architectcomp%%]" folder="media">
+        <filename>index.html</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+    </media>
+
+    [%%IF GENERATE_ADMIN%%]
+    <administration>
+        <!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+        <menu img="../media/[%%com_architectcomp%%]/images/[%%architectcomp%%].png"
+              alt="[%%ArchitectComp_name%%]">[%%COM_ARCHITECTCOMP%%]</menu>
+        <submenu>
+            [%%FOREACH COMPONENT_OBJECT%%]
+                [%%IF GENERATE_ADMIN%%]
+            <menu link="option=[%%com_architectcomp%%]&amp;view=[%%compobjectplural%%]" alias="[%%compobjectplural%%]" img="../media/[%%com_architectcomp%%]/images/[%%architectcomp%%]-[%%compobjectplural%%].png"
+                    alt="[%%ArchitectComp_name%%]/[%%CompObject_plural_name%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]</menu>
+                [%%ENDIF GENERATE_ADMIN%%]
+            [%%ENDFOR COMPONENT_OBJECT%%]
+            [%%IF GENERATE_CATEGORIES%%]
+            <menu link="option=com_categories&amp;extension=[%%com_architectcomp%%]" view="categories" img="../media/[%%com_architectcomp%%]/images/[%%architectcomp%%]-categories.png"
+                    alt="[%%ArchitectComp_name%%]/Categories">[%%COM_ARCHITECTCOMP%%]_CATEGORIES</menu>
+            [%%ENDIF GENERATE_CATEGORIES%%]
+        </submenu>
+
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>[%%architectcomp%%].php</filename>
+            <filename>controller.php</filename>
+            <filename>[%%architectcomp%%]_uninstall.html</filename>
+            <filename>gpl-3.0.txt</filename>
+            <filename>index.html</filename>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.[%%com_architectcomp%%].sys.ini</language>
+        </languages>
+    </administration>
+    [%%ENDIF GENERATE_ADMIN%%]
+    [%%IF GENERATE_MODULES%%]
+    <modules>
+        <module folder="modules" module="mod_[%%architectcomp%%]" />
+        [%%FOREACH COMPONENT_OBJECT%%]
+            [%%IF GENERATE_MODULES%%]
+        <module folder="modules" module="mod_[%%architectcomp%%]_[%%compobjectplural%%]" />
+            [%%ENDIF GENERATE_MODULES%%]
+        [%%ENDFOR COMPONENT_OBJECT%%]
+    </modules>
+    [%%ENDIF GENERATE_MODULES%%]
+
+    [%%IF GENERATE_PLUGINS%%]
+    <plugins>
+        [%%FOREACH COMPONENT_OBJECT%%]
+            [%%IF GENERATE_PLUGINS%%]
+                [%%IF GENERATE_PLUGINS_FINDER%%]
+        <plugin folder="plugins/finder" plugin="plg_finder_[%%compobjectplural%%]" group="finder" />
+                [%%ENDIF GENERATE_PLUGINS_FINDER%%]
+            [%%ENDIF GENERATE_PLUGINS%%]
+        [%%ENDFOR COMPONENT_OBJECT%%]
+        [%%FOREACH COMPONENT_OBJECT%%]
+            [%%IF GENERATE_PLUGINS%%]
+                [%%IF GENERATE_PLUGINS_SEARCH%%]
+        <plugin folder="plugins/search" plugin="plg_search_[%%compobjectplural%%]" group="search" />
+                [%%ENDIF GENERATE_PLUGINS_SEARCH%%]
+            [%%ENDIF GENERATE_PLUGINS%%]
+        [%%ENDFOR COMPONENT_OBJECT%%]
+        [%%IF GENERATE_PLUGINS_FINDER%%]
+        <plugin folder="plugins/[%%architectcomp%%]" plugin="plg_[%%architectcomp%%]_finder" group="[%%architectcomp%%]" />
+        [%%ENDIF GENERATE_PLUGINS_FINDER%%]
+        [%%IF GENERATE_PLUGINS_ITEMNAVIGATION%%]
+        <plugin folder="plugins/[%%architectcomp%%]" plugin="plg_[%%architectcomp%%]_itemnavigation" group="[%%architectcomp%%]" />
+        [%%ENDIF GENERATE_PLUGINS_ITEMNAVIGATION%%]
+        [%%IF GENERATE_PLUGINS_PAGEBREAK%%]
+        <plugin folder="plugins/[%%architectcomp%%]" plugin="plg_[%%architectcomp%%]_pagebreak" group="[%%architectcomp%%]" />
+        [%%ENDIF GENERATE_PLUGINS_PAGEBREAK%%]
+        [%%IF GENERATE_PLUGINS_VOTE%%]
+        <plugin folder="plugins/[%%architectcomp%%]" plugin="plg_[%%architectcomp%%]_vote" group="[%%architectcomp%%]" />
+        [%%ENDIF GENERATE_PLUGINS_VOTE%%]
+    </plugins>
+    [%%ENDIF GENERATE_PLUGINS%%]
+    <!-- Runs on install/uninstall/update; New in 1.6 -->
+    <scriptfile>[%%architectcomp%%]_install.php</scriptfile>
+          
+    <install>
+        <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.[%%architectcomp%%]_mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.[%%architectcomp%%]_mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <!-- Runs on update; -->
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <config>
+    
+        <fields name="params">
+            [%%IF INCLUDE_VERSIONS%%]
+            <fieldset
+                name="versioncontrol"
+                label="[%%COM_ARCHITECTCOMP%%]_FIELDSET_VERSION_CONTROL_LABEL"
+		        description="[%%COM_ARCHITECTCOMP%%]_FIELDSET_VERSION_CONTROL_DESC"
+	        >
+                <field
+			        name="history_limit"
+			        type="text"
+			        label="JGLOBAL_HISTORY_LIMIT_OPTIONS_LABEL"
+			        description="JGLOBAL_HISTORY_LIMIT_OPTIONS_DESC"
+			        default="10"
+			        filter="integer"
+		        />
+                <field
+                    name="save_history"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    label="JGLOBAL_SAVE_HISTORY_OPTIONS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SAVE_HISTORY_OPTIONS_DESC"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>		        
+                [%%FOREACH COMPONENT_OBJECT%%]
+                    [%%IF INCLUDE_VERSIONS%%]
+                <field
+			        name="[%%compobject%%]_save_history"
+			        type="radio"
+			        class="btn-group btn-group-yesno"
+			        default="1"
+			        label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_SAVE_HISTORY_LABEL"
+			        description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_SAVE_HISTORY_DESC"
+			        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                     [%%ENDIF INCLUDE_VERSIONS%%]
+                [%%ENDFOR COMPONENT_OBJECT%%]
+            </fieldset>
+            [%%ENDIF INCLUDE_VERSIONS%%]        
+            [%%FOREACH COMPONENT_OBJECT%%]
+                [%%IF GENERATE_SITE%%]
+                    [%%IF INCLUDE_PARAMS_GLOBAL%%]
+            <fieldset
+                name="[%%compobject%%]_display"
+                label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CONFIG_SINGLE_ITEM_DISPLAY"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CONFIG_SINGLE_ITEM_DESC"
+	        >
+                <field
+                    name="[%%compobject%%]_layout"
+                    type="componentlayout"
+                    label="JGLOBAL_FIELD_LAYOUT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_CHOOSE_LAYOUT_DESC"
+                    menuitems="true"
+                    extension="[%%com_architectcomp%%]"
+                    view="[%%compobject%%]"
+                    default="_:default"
+		        />
+                <field
+                    name="spacer0"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="show_[%%compobject%%]_icons"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_DESC"
+                    class="btn-group"
+                    default="1"
+		        >
+                    <option	value="0">[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_VALUE_TEXT</option>
+                    <option	value="1">[%%COM_ARCHITECTCOMP%%]_SHOW_ICONS_VALUE_ICONS</option>
+                    <option	value="-1">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_print_icon"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_PRINT_ICON_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_PRINT_ICON_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_email_icon"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_EMAIL_ICON_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_EMAIL_ICON_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="keep_[%%compobject%%]_itemid"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_KEEP_ITEMID_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_KEEP_ITEMID_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_navigation"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_NAVIGATION_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_NAVIGATION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%IF GENERATE_CATEGORIES%%]
+                <field
+                    name="show_[%%compobject%%]_category_breadcrumb"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_CATEGORY_BREADCRUMB_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CATEGORY_BREADCRUMB_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="limit_category_[%%compobject%%]_navigation"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LIMIT_CATEGORY_NAVIGATION_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LIMIT_CATEGORY_NAVIGATION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                [%%ENDIF GENERATE_CATEGORIES%%]
+                <field
+                    name="spacer1"
+                    type="spacer"
+                    hr="true"
+		        />
+                <field
+                    name="show_[%%compobject%%]_readmore"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_READMORE_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="[%%compobject%%]_readmore_limit"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_READMORE_LIMIT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_LIMIT_DESC"
+                    default="100"
+		        />
+                [%%IF INCLUDE_NAME%%]
+                <field
+                    name="show_[%%compobject%%]_readmore_name"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_NAME_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_READMORE_NAME_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_NAME%%]
+                [%%IF INCLUDE_ACCESS%%]
+                <field
+                    name="show_[%%compobject%%]_noauth"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_UNAUTH_LINKS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_UNAUTH_LINKS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                [%%ENDIF INCLUDE_ACCESS%%]
+                <field
+                    name="spacer2"
+                    type="spacer"
+                    hr="true"
+		        />
+                [%%IF INCLUDE_NAME%%]
+                <field
+                    name="show_[%%compobject%%]_name"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_NAME_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_NAME_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="link_[%%compobject%%]_names"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LINKED_NAMES_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINKED_NAMES_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                [%%ENDIF INCLUDE_NAME%%]
+                [%%IF INCLUDE_INTRO%%]
+                <field
+                    name="show_[%%compobject%%]_intro"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_INTRO%%]
+                [%%IF INCLUDE_IMAGE%%]
+                <field
+                    name="show_[%%compobject%%]_image"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_IMAGE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_image_float"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_FLOAT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_FLOAT_DESC"
+                    class="btn-group"
+                >
+                    <option value="none">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_NONE</option>
+                    <option value="right">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_RIGHT</option>
+                    <option value="left">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_LEFT</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_image_width"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_WIDTH_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_IMAGE_WIDTH_DESC"
+                    class="validate-numeric"
+                    size="5"
+                    default="100"
+                />
+                <field
+                    name="show_[%%compobject%%]_image_height"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_IMAGE_HEIGHT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_IMAGE_HEIGHT_DESC"
+                    class="validate-numeric"
+                    size="5"
+                    default="0"
+                />
+                    [%%IF INCLUDE_INTRO%%]
+                <field
+                    name="show_[%%compobject%%]_intro_image"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_IMAGE_DESC"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_intro_image_float"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_FLOAT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_FLOAT_DESC"
+                    class="btn-group"
+                >
+                    <option value="none">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_NONE</option>
+                    <option value="right">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_RIGHT</option>
+                    <option value="left">[%%COM_ARCHITECTCOMP%%]_VALUE_FLOAT_LEFT</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_intro_image_width"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_WIDTH_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_IMAGE_WIDTH_DESC"
+                    class="validate-numeric"
+                    size="5"
+                />
+                <field
+                    name="show_[%%compobject%%]_intro_image_height"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_INTRO_IMAGE_HEIGHT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_INTRO_IMAGE_HEIGHT_DESC"
+                    class="validate-numeric"
+                    size="5"
+                />
+                    [%%ENDIF INCLUDE_INTRO%%]
+                [%%ENDIF INCLUDE_IMAGE%%]
+                [%%IF INCLUDE_URLS%%]
+                <field
+                    name="show_[%%compobject%%]_urls"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_URLS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_URLS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_urls_position"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_URLS_POSITION_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_URLS_POSITION_DESC"
+                    class="btn-group"
+                    default="1"
+                >
+                    <option value="0">[%%COM_ARCHITECTCOMP%%]_VALUE_ABOVE</option>
+                    <option value="1">[%%COM_ARCHITECTCOMP%%]_VALUE_BELOW</option>
+                </field>
+                [%%ENDIF INCLUDE_URLS%%]
+                [%%IF GENERATE_CATEGORIES%%]
+                <field
+                    name="show_[%%compobject%%]_category"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_CATEGORY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CATEGORY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="link_[%%compobject%%]_category"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LINK_CATEGORY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINK_CATEGORY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_parent_category"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_PARENT_CATEGORY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PARENT_CATEGORY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="link_[%%compobject%%]_parent_category"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LINK_PARENT_CATEGORY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINK_PARENT_CATEGORY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                [%%ENDIF GENERATE_CATEGORIES%%]
+                [%%IF INCLUDE_TAGS%%]
+                <field
+                    name="show_[%%compobject%%]_tags"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_FIELD_SHOW_TAGS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_SHOW_TAGS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_TAGS%%]
+                [%%IF INCLUDE_CREATED%%]
+                <field
+                    name="show_[%%compobject%%]_created_by"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_CREATED_BY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CREATED_BY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="link_[%%compobject%%]_created_by"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LINK_CREATED_BY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LINK_CREATED_BY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_created_by_alias"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_CREATED_BY_ALIAS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CREATED_BY_ALIAS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+				>
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_created"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_CREATED_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_CREATED_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_CREATED%%]
+                [%%IF INCLUDE_MODIFIED%%]
+                <field
+                    name="show_[%%compobject%%]_modified"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_MODIFIED_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_MODIFIED_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_MODIFIED%%]
+                [%%IF INCLUDE_PUBLISHED_DATES%%]
+                <field
+                    name="show_[%%compobject%%]_publish_up"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_PUBLISH_UP_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PUBLISH_UP_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_publish_down"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_PUBLISH_DOWN_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PUBLISH_DOWN_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                [%%ENDIF INCLUDE_PUBLISHED_DATES%%]
+                [%%IF INCLUDE_HITS%%]
+                <field
+                    name="show_[%%compobject%%]_hits"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_HITS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_HITS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_HITS%%]
+                <field
+                    name="show_[%%compobject%%]_admin"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_ADMIN_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_ADMIN_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%IF GENERATE_PLUGINS_VOTE%%]
+                <field
+                    name="show_[%%compobject%%]_vote"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_VOTE_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_VOTE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                [%%ENDIF GENERATE_PLUGINS_VOTE%%]
+                [%%FOREACH OBJECT_FIELD%%]
+                    [%%IF FIELD_NOT_HIDDEN%%]
+                <field
+                    name="show_[%%compobject%%]_[%%FIELD_CODE_NAME%%]"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                    [%%ENDIF FIELD_NOT_HIDDEN%%]
+                [%%ENDFOR OBJECT_FIELD%%]
+                [%%FOREACH REGISTRY_FIELD%%]
+                <field
+                    name="show_[%%compobject%%]_[%%FIELD_CODE_NAME%%]"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_FIELD_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+                [%%ENDFOR REGISTRY_FIELD%%]
+            </fieldset>
+            <fieldset
+                name="[%%compobjectplural%%]_list_display"
+                label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CONFIG_BLOG_LIST_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_CONFIG_BLOG_LIST_DESC"
+	        >
+                [%%IF GENERATE_SITE_LAYOUT_BLOG%%]
+                <field
+                    name="[%%compobject%%]_num_leading"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_LEADING_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_LEADING_DESC"
+                    size="3"
+                    default=""
+		        />
+                <field
+                    name="[%%compobject%%]_num_intro"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_INTRO_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_INTRO_DESC"
+                    size="3"
+                    default=""
+		        />
+                <field
+                    name="[%%compobject%%]_num_columns"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_NUM_COLUMNS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_COLUMNS_DESC"
+                    size="3"
+                    default=""
+		        />
+                <field
+                    name="[%%compobject%%]_num_links"
+                    type="text"
+                    label="[%%COM_ARCHITECTCOMP%%]_NUM_LINKS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_LINKS_DESC"
+                    size="3"
+                    default=""
+		        />
+                <field
+                    name="[%%compobject%%]_multi_column_order"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_MULTI_COLUMN_ORDER_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_MULTI_COLUMN_ORDER_DESC"
+                    class="btn-group"
+                    default="0"
+		        >
+                    <option value="0">JGLOBAL_DOWN</option>
+                    <option value="1">JGLOBAL_ACROSS</option>
+                </field>
+                [%%ENDIF GENERATE_SITE_LAYOUT_BLOG%%]
+                [%%IF GENERATE_CATEGORIES%%]
+                <field
+                    name="[%%compobject%%]_orderby_pri"
+                    type="list"
+                    label="[%%COM_ARCHITECTCOMP%%]_CATEGORY_ORDER_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_CATEGORY_ORDER_DESC"
+			        class="chzn-color"
+                    default="none"
+		        >
+                    <option value="none">JGLOBAL_NO_ORDER</option>
+                    <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                    <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                    <option value="order">JGLOBAL_CATEGORY_MANAGER_ORDER</option>
+                </field>
+                <field
+                    name="[%%compobject%%]_orderby_sec"
+                    type="list"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_CATEGORY_ORDER_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_CATEGORY_ORDER_DESC"
+			        class="chzn-color"
+                    default="none"
+		        >
+                    <option value="none">JGLOBAL_NO_ORDER</option>
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="rdate">JGLOBAL_MOST_RECENT_FIRST</option>
+                    <option value="date">JGLOBAL_OLDEST_FIRST</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_NAME%%]
+                    <option value="alpha">[%%COM_ARCHITECTCOMP%%]_NAME_ALPHABETICAL</option>
+                    <option value="ralpha">[%%COM_ARCHITECTCOMP%%]_NAME_REVERSE_ALPHABETICAL</option>
+                    [%%ENDIF INCLUDE_NAME%%]
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="created_by">[%%COM_ARCHITECTCOMP%%]_CREATED_BY_ALPHABETICAL</option>
+                    <option value="rcreated_by">[%%COM_ARCHITECTCOMP%%]_CREATED_BY_REVERSE_ALPHABETICAL</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_HITS%%]
+                    <option value="hits">JGLOBAL_MOST_HITS</option>
+                    <option value="rhits">JGLOBAL_LEAST_HITS</option>
+                    [%%ENDIF INCLUDE_HITS%%]
+                    [%%IF INCLUDE_ORDERING%%]
+                    <option value="ordering">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_ORDER</option>
+                    [%%ENDIF INCLUDE_ORDERING%%]
+                </field>
+                <field
+                    name="[%%compobject%%]_order_date"
+                    type="list"
+                    label="[%%COM_ARCHITECTCOMP%%]_ORDERING_DATE_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_ORDERING_DATE_DESC"
+			        class="chzn-color"
+		        >
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="created">JGLOBAL_CREATED</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_MODIFIED%%]
+                    <option value="modified">JGLOBAL_MODIFIED</option>
+                    [%%ENDIF INCLUDE_MODIFIED%%]
+                    [%%IF INCLUDE_PUBLISHED_DATES%%]
+                    <option value="publish_up">JPUBLISHED</option>
+                    [%%ENDIF INCLUDE_PUBLISHED_DATES%%]
+                </field>
+                [%%ENDIF GENERATE_CATEGORIES%%]
+                <field
+                    name="[%%compobject%%]_initial_sort"
+                    type="list"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_ORDER_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_ORDER_DESC"
+			        class="chzn-color"
+		        >
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="created">JGLOBAL_CREATED</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_MODIFIED%%]
+                    <option value="modified">JGLOBAL_MODIFIED</option>
+                    [%%ENDIF INCLUDE_MODIFIED%%]
+                    [%%IF INCLUDE_PUBLISHED_DATES%%]
+                    <option value="publish_up">JPUBLISHED</option>
+                    [%%ENDIF INCLUDE_PUBLISHED_DATES%%]
+                    [%%IF INCLUDE_NAME%%]
+                    <option value="name">[%%COM_ARCHITECTCOMP%%]_NAME_ALPHABETICAL</option>
+                    [%%ENDIF INCLUDE_NAME%%]
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="created_by_name">[%%COM_ARCHITECTCOMP%%]_CREATED_BY_ALPHABETICAL</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_HITS%%]
+                    <option value="hits">JGLOBAL_MOST_HITS</option>
+                    [%%ENDIF INCLUDE_HITS%%]
+                    [%%IF INCLUDE_ORDERING%%]
+                    <option value="ordering">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_ORDER</option>
+                    [%%ENDIF INCLUDE_ORDERING%%]
+                </field>
+                <field
+                    name="[%%compobject%%]_initial_direction"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_ORDER_DIRECTION_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_ORDER_DIRECTION_DESC"
+                    class="btn-group"
+                    default="ASC"
+		        >
+                    <option value="DESC">[%%COM_ARCHITECTCOMP%%]_ORDER_DIRECTION_DESCENDING_LABEL</option>
+                    <option value="ASC">[%%COM_ARCHITECTCOMP%%]_ORDER_DIRECTION_ASCENDING_LABEL</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_filter_field"
+                    type="list"
+                    label="JGLOBAL_FILTER_FIELD_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FILTER_FIELD_DESC"
+                    class="chzn-color"
+                        [%%IF INCLUDE_NAME%%]
+                    default="name"
+                        [%%ELSE INCLUDE_NAME%%]
+                            [%%IF INCLUDE_CREATED%%]
+                    default="created_by"
+                            [%%ELSE INCLUDE_CREATED%%]
+                                [%%IF INCLUDE_HITS%%]
+                    default="hits"
+                                [%%ELSE INCLUDE_HITS%%]
+                    default="hide"
+                                [%%ENDIF INCLUDE_HITS%%]
+                            [%%ENDIF INCLUDE_CREATED%%]
+                        [%%ENDIF INCLUDE_NAME%%]
+			    >
+                    <option value="hide">JHIDE</option>
+                    [%%IF INCLUDE_NAME%%]
+                    <option value="name">[%%COM_ARCHITECTCOMP%%]_FIELD_VALUE_NAME</option>
+                    [%%ENDIF INCLUDE_NAME%%]
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="created_by">[%%COM_ARCHITECTCOMP%%]_FIELD_VALUE_CREATED_BY</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_HITS%%]
+                    <option value="hits">JGLOBAL_HITS</option>
+                    [%%ENDIF INCLUDE_HITS%%]
+                </field>                
+                <field
+                    name="show_[%%compobject%%]_headings"
+                    type="radio"
+                    label="JGLOBAL_SHOW_HEADINGS_LABEL"
+                    description="JGLOBAL_SHOW_HEADINGS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_pagination"
+                    type="radio"
+                    label="JGLOBAL_PAGINATION_LABEL"
+                    description="JGLOBAL_PAGINATION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="2"
+		        >
+                    <option value="2">JGLOBAL_AUTO</option>
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_pagination_results"
+                    type="radio"
+                    label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+                    description="JGLOBAL_PAGINATION_RESULTS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_pagination_limit"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_PAGINATION_LIMIT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_PAGINATION_LIMIT_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="[%%compobject%%]_num_per_page"
+                    type="list"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_PER_PAGE_DESC"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NUM_PER_PAGE_LABEL"
+			        class="chzn-color"
+                    default="5"
+                >
+                    <option value="5">J5</option>
+                    <option value="10">J10</option>
+                    <option value="15">J15</option>
+                    <option value="20">J20</option>
+                    <option value="25">J25</option>
+                    <option value="30">J30</option>
+                    <option value="50">J50</option>
+                    <option value="100">J100</option>
+                    <option value="0">JALL</option>
+                </field>
+                <field
+                    name="show_no_[%%compobjectplural%%]"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NO_ITEMS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_NO_ITEMS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+			    >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_[%%compobject%%]_add_link"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_ADD_LINK_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_ADD_LINK_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="list_show_[%%compobject%%]_date"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_DATE_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SHOW_DATE_DESC"
+                    class="btn-group"
+                    default="0"
+		        >
+                    <option value="0">JHIDE</option>
+                    [%%IF INCLUDE_CREATED%%]
+                    <option value="created">JGLOBAL_CREATED</option>
+                    [%%ENDIF INCLUDE_CREATED%%]
+                    [%%IF INCLUDE_PUBLISHED_DATES%%]
+                    <option value="publish_up">[%%COM_ARCHITECTCOMP%%]_FIELD_VALUE_PUBLISH_UP</option>
+                    [%%ENDIF INCLUDE_PUBLISHED_DATES%%]
+                    [%%IF INCLUDE_MODIFIED%%]
+                    <option value="modified">JGLOBAL_MODIFIED</option>
+                    [%%ENDIF INCLUDE_MODIFIED%%]
+                </field>
+                <field
+                    name="[%%compobject%%]_date_format"
+                    type="text"
+                    label="JGLOBAL_DATE_FORMAT_LABEL"
+                    description="JGLOBAL_DATE_FORMAT_DESC"
+                    size="15"
+		        />
+                [%%IF INCLUDE_HITS%%]
+                <field
+                    name="list_show_[%%compobject%%]_hits"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LIST_HITS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LIST_HITS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_HITS%%]
+                [%%IF INCLUDE_CREATED%%]
+                <field
+                    name="list_show_[%%compobject%%]_created_by"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LIST_CREATED_BY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LIST_CREATED_BY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_CREATED%%]
+                [%%IF INCLUDE_ORDERING%%]
+                <field
+                    name="list_show_[%%compobject%%]_ordering"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_LIST_ORDERING_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_LIST_ORDERING_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                [%%ENDIF INCLUDE_ORDERING%%]
+            </fieldset>
+            [%%ENDIF INCLUDE_PARAMS_GLOBAL%%]
+            [%%ENDIF GENERATE_SITE%%]
+            [%%ENDFOR COMPONENT_OBJECT%%]
+            [%%IF GENERATE_CATEGORIES%%]
+            [%%IF GENERATE_SITE%%]
+            <fieldset
+                name="categories"
+                label="JCATEGORIES"
+                description="[%%COM_ARCHITECTCOMP%%]_FIELD_CONFIG_CATEGORIES_DESC"
+	        >
+                <field
+                    name="show_categories_base_description"
+                    type="radio"
+                    label="JGLOBAL_FIELD_SHOW_BASE_DESCRIPTION_LABEL"
+                    description="JGLOBAL_FIELD_SHOW_BASE_DESCRIPTION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_empty_categories"
+                    type="radio"
+                    label="JGLOBAL_SHOW_EMPTY_CATEGORIES_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_EMPTY_CATEGORIES_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_subcategories_desc"
+                    type="radio"
+                    label="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_LABEL"
+                    description="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_categories_max_level"
+                    type="list"
+                    label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
+                    description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
+			        class="chzn-color"
+                    default="-1"
+		        >
+                    <option value="-1">JALL</option>
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                </field>
+                <field
+                    name="show_categories_noauth"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_UNAUTH_LINKS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_CATEGORY_UNAUTH_LINKS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="items_to_display"
+                    type="list"
+                    label="[%%COM_ARCHITECTCOMP%%]_CATEGORY_ITEMS_TO_DISPLAY_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_CATEGORY_ITEMS_TO_DISPLAY_DESC"
+			        class="chzn-color"
+                default=""
+		        >
+                    <option value="">JNONE</option>
+                    [%%FOREACH COMPONENT_OBJECT%%]
+                    [%%IF GENERATE_CATEGORIES%%]
+                    [%%IF GENERATE_SITE%%]
+                    <option value="[%%CompObject_plural_name%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]</option>
+                    [%%ENDIF GENERATE_SITE%%]
+                    [%%ENDIF GENERATE_CATEGORIES%%]
+                    [%%ENDFOR COMPONENT_OBJECT%%]
+                </field>
+                <field
+                    name="show_categories_num_items"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_NUMBER_CATEGORY_ITEMS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_NUMBER_CATEGORY_ITEMS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+            </fieldset>
+            <fieldset
+                name="Category"
+                label="JCATEGORY"
+                description="[%%COM_ARCHITECTCOMP%%]_FIELD_CONFIG_CATEGORY_DESC"
+	        >
+                <field
+                    id="category_component"
+                    name="category_component"
+                    type="component"
+                    label="[%%COM_ARCHITECTCOMP%%]_FIELD_CATEGORY_COMPONENT_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_FIELD_CATEGORY_COMPONENT_DESC"
+                    extension="[%%com_architectcomp%%]"
+                />
+                <field
+                    name="show_cat_title"
+                    type="radio"
+                    label="JGLOBAL_SHOW_CATEGORY_TITLE"
+                    description="JGLOBAL_SHOW_CATEGORY_TITLE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_cat_description"
+                    type="radio"
+                    label="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_LABEL"
+                    description="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_cat_description_image"
+                    type="radio"
+                    label="JGLOBAL_SHOW_CATEGORY_IMAGE_LABEL"
+                    description="JGLOBAL_SHOW_CATEGORY_IMAGE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_cat_subcat_heading"
+                    type="radio"
+                    label="JGLOBAL_SHOW_CATEGORY_HEADING_TITLE_TEXT_LABEL"
+                    description="JGLOBAL_SHOW_CATEGORY_HEADING_TITLE_TEXT_DESC"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>                
+                <field
+                    name="show_empty_cat"
+                    type="radio"
+                    label="JGLOBAL_SHOW_EMPTY_CATEGORIES_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_EMPTY_CATEGORIES_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_subcat_desc"
+                    type="radio"
+                    label="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_LABEL"
+                    description="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field
+                    name="show_category_max_level"
+                    type="list"
+                    label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
+                    description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
+			        class="chzn-color"
+                    default="-1"
+		        >
+                    <option value="-1">JALL</option>
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                </field>
+                <field
+                    name="show_cat_noauth"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_SHOW_UNAUTH_LINKS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_SHOW_CATEGORY_UNAUTH_LINKS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option	value="1">JYES</option>
+                    <option	value="0">JNO</option>
+                </field>
+                <field
+                    name="show_cat_num_items"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_NUMBER_CATEGORY_ITEMS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_NUMBER_CATEGORY_ITEMS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                 [%%IF INCLUDE_TAGS%%]
+                <field
+                    name="show_cat_tags"
+                    type="radio"
+                    label="[%%COM_ARCHITECTCOMP%%]_FIELD_SHOW_CATEGORY_TAGS_LABEL"
+                    description="[%%COM_ARCHITECTCOMP%%]_FIELD_SHOW_CATEGORY_TAGS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+		        >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                    [%%ENDIF INCLUDE_TAGS%%]
+            </fieldset>
+                [%%ENDIF GENERATE_SITE%%]
+            [%%ENDIF GENERATE_CATEGORIES%%]
+            [%%IF INCLUDE_ASSETACL%%]
+            <fieldset
+                name="global-permissions"
+                label="[%%COM_ARCHITECTCOMP%%]_PERMISSIONS_LABEL"
+                description="[%%COM_ARCHITECTCOMP%%]_PERMISSIONS_DESC"
+	        >
+                <field
+                    name="rules"
+                    type="rules"
+                    label="[%%COM_ARCHITECTCOMP%%]_PERMISSIONS_LABEL"
+                    filter="rules"
+                    validate="rules"
+                    component="[%%com_architectcomp%%]"
+                    section="component"
+		        />
+            </fieldset>
+            [%%ENDIF INCLUDE_ASSETACL%%]
+        </fields>
+    </config>    
+</extension>
+

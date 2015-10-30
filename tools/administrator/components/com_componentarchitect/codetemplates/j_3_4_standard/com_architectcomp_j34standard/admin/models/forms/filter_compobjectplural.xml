@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @tempversion -->
+<!-- @name			    [%%ArchitectComp_name%%] (Release [%%COMPONENTSTARTVERSION%%]) -->
+<!-- @author			[%%COMPONENTAUTHOR%%] ([%%COMPONENTWEBSITE%%]) -->
+<!-- @package			[%%com_architectcomp%%] -->
+<!-- @subpackage		[%%com_architectcomp%%].admin -->
+<!-- @copyright		    [%%COMPONENTCOPYRIGHT%%] -->
+<!-- @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- The following Component Architect header section must remain in any distribution of this file -->
+
+<!-- @version			$Id: filter_compobjectplural.xml 408 2014-10-19 18:31:00Z BrianWade $ -->
+<!-- @CAauthor		    Component Architect (www.componentarchitect.com) -->
+<!-- @CApackage		    architectcomp -->
+<!-- @CAsubpackage	    architectcomp.admin -->
+<!-- @CAtemplate		joomla_3_3_standard (Release 1.0.3) -->
+<!-- @CAcopyright		Copyright (c)2013 - 2014  Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @Joomlacopyright   Copyright (c)2005 - 2014 Open Source Matters, Inc. All rights reserved. -->
+<!-- @CAlicense		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+        [%%FOREACH FILTER_FIELD%%]
+            [%%IF FIELD_LINK%%]
+        <field
+			name="[%%FIELD_CODE_NAME%%]"
+			type="sql"
+			label="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+			onchange="this.form.submit();"
+			query="SELECT `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`.`id` AS `value`, `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`.`[%%FIELD_FOREIGN_OBJECT_LABEL_FIELD%%]` AS `text`
+		            FROM `#__[%%architectcomp%%]_[%%FIELD_FOREIGN_OBJECT_PLURAL%%]` AS `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`
+		            INNER JOIN `#__[%%architectcomp%%]_[%%compobjectplural%%]` AS `a` ON `a`.`[%%FIELD_CODE_NAME%%]`  =  `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`.`id`
+		            GROUP BY `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`.`id`, `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`.`[%%FIELD_FOREIGN_OBJECT_LABEL_FIELD%%]`
+		            ORDER BY `[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]`.`[%%FIELD_FOREIGN_OBJECT_LABEL_FIELD%%]`"
+			key_field="value"
+			value_field="text"
+		>
+            <option value="">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SELECT_[%%FIELD_FOREIGN_OBJECT_ACRONYM_UPPER%%]_[%%FIELD_FOREIGN_OBJECT_UPPER%%]</option>
+        </field>
+            [%%ELSE FIELD_LINK%%]
+                [%%IF FIELD_SQL%%]
+        <field
+            name="[%%FIELD_CODE_NAME%%]"
+            type="sql"
+			label="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+			onchange="this.form.submit();"
+            [%%FIELD_SQL_PARAMETERS%%]
+        >
+            <option value="">
+                [%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SELECT_[%%FIELD_CODE_NAME_UPPER%%]
+            </option>
+        </field>
+                [%%ELSE FIELD_SQL%%]
+                    [%%IF FIELD_TAG%%]
+        <field
+            name="[%%FIELD_CODE_NAME%%]"
+            type="sql"
+			label="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+			onchange="this.form.submit();"
+            [%%FIELD_SQL_PARAMETERS%%]
+        >
+            <option value="">
+                [%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SELECT_[%%FIELD_CODE_NAME_UPPER%%]
+            </option>
+        </field>
+                    [%%ELSE FIELD_TAG%%]
+                        [%%IF FIELD_NOT_MULTIPLE%%]
+        <field
+			name="[%%FIELD_CODE_NAME%%]"
+			type="sql"
+			label="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FILTER_[%%FIELD_CODE_NAME_UPPER%%]_DESC"
+			onchange="this.form.submit();"
+			query="SELECT DISTINCT `a`.`[%%FIELD_CODE_NAME_UPPER%%]` AS `value`, `a`.`[%%FIELD_CODE_NAME_UPPER%%]` AS `text`
+		            FROM `#__[%%architectcomp%%]_[%%compobjectplural%%]` AS `a` 
+		            ORDER BY `a`.`[%%FIELD_CODE_NAME_UPPER%%]`"
+			key_field="value"
+			value_field="text"
+		>
+            <option value="">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_SELECT_[%%FIELD_CODE_NAME_UPPER%%]</option>
+        </field>
+                        [%%ENDIF FIELD_NOT_MULTIPLE%%]
+                    [%%ENDIF FIELD_TAG%%]
+                [%%ENDIF FIELD_SQL%%]
+            [%%ENDIF FIELD_LINK%%]
+        [%%ENDFOR FILTER_FIELD%%]
+        [%%IF INCLUDE_STATUS%%]
+        <field
+			name="state"
+			type="status"
+			label="[%%COM_ARCHITECTCOMP%%]_FILTER_STATUS_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FILTER_STATUS_DESC"
+			onchange="this.form.submit();"
+		>
+            <option value="">[%%COM_ARCHITECTCOMP%%]_SELECT_STATUS</option>
+        </field>
+        [%%ENDIF INCLUDE_STATUS%%]
+        [%%IF INCLUDE_ACCESS%%]
+        <field
+			name="access"
+			type="accesslevel"
+			label="JOPTION_FILTER_ACCESS"
+			description="JOPTION_FILTER_ACCESS_DESC"
+			onchange="this.form.submit();"
+		>
+            <option value="">JOPTION_SELECT_ACCESS</option>
+        </field>
+        [%%ENDIF INCLUDE_ACCESS%%]
+        [%%IF INCLUDE_CREATED%%]
+        <field
+			name="created_by"
+			type="sql"
+			label="[%%COM_ARCHITECTCOMP%%]_FILTER_CREATED_BY_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_FILTER_CREATED_BY_DESC"
+			onchange="this.form.submit();"
+			query="SELECT `u`.`id` AS `value`, `u`.`name` AS `text`
+			        FROM `#__users` AS `u`
+			        INNER JOIN `#__[%%architectcomp%%]_[%%compobjectplural%%]` AS `a` ON `a`.`created_by` = `u`.`id`
+			        GROUP BY `u`.`id`, `u`.`name`
+			        ORDER BY `u`.`name`"
+			key_field="value"
+			value_field="text"			        			
+		>
+            <option value="">[%%COM_ARCHITECTCOMP%%]_SELECT_CREATED_BY</option>
+        </field>
+        [%%ENDIF INCLUDE_CREATED%%]
+        [%%IF GENERATE_CATEGORIES%%]
+        <field
+			name="category_id"
+			type="category"
+			label="JOPTION_FILTER_CATEGORY"
+			description="JOPTION_FILTER_CATEGORY_DESC"
+			extension="[%%com_architectcomp%%]"
+			onchange="this.form.submit();"
+			>
+            <option value="">JOPTION_SELECT_CATEGORY</option>
+        </field>
+        [%%ENDIF GENERATE_CATEGORIES%%]
+        [%%IF INCLUDE_LANGUAGE%%]
+        <field
+			name="language"
+			type="contentlanguage"
+			label="JOPTION_FILTER_LANGUAGE"
+			description="JOPTION_FILTER_LANGUAGE_DESC"
+			onchange="this.form.submit();"
+			>
+            <option value="">JOPTION_SELECT_LANGUAGE</option>
+            <option value="*">JALL</option>
+        </field>
+        [%%ENDIF INCLUDE_LANGUAGE%%]
+        [%%IF INCLUDE_TAGS%%]
+        <field
+			name="tag"
+			type="tag"
+			mode="nested"
+			label="JOPTION_FILTER_TAG"
+			description="JOPTION_FILTER_TAG_DESC"
+			onchange="this.form.submit();"
+		>
+            <option value="">JOPTION_SELECT_TAG</option>
+        </field>
+        [%%ENDIF INCLUDE_TAGS%%]
+    </fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			onchange="this.form.submit();"
+			default="a.id DESC"
+		>
+			<option value="">JGLOBAL_SORT_BY</option>
+            [%%IF INCLUDE_ORDERING%%]
+            <option value="a.ordering">JGRID_HEADING_ORDERING</option>
+            [%%ENDIF INCLUDE_ORDERING%%]
+            [%%IF INCLUDE_NAME%%]
+            <option value="a.name">[%%COM_ARCHITECTCOMP%%]_FIELD_NAME_LABEL</option>
+            [%%ENDIF INCLUDE_NAME%%]
+            [%%FOREACH FILTER_FIELD%%]
+                [%%IF FIELD_LINK%%]
+            <option value="[%%FIELD_FOREIGN_OBJECT_ACRONYM%%]_[%%FIELD_FOREIGN_OBJECT_CODE_NAME%%]_[%%FIELD_FOREIGN_OBJECT_LABEL_FIELD%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_HEADING_[%%FIELD_CODE_NAME_UPPER%%]</option>
+                [%%ELSE FIELD_LINK%%]
+            <option value="a.[%%FIELD_CODE_NAME%%]">[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_HEADING_[%%FIELD_CODE_NAME_UPPER%%]</option>
+                [%%ENDIF FIELD_LINK%%]
+            [%%ENDFOR FILTER_FIELD%%]
+            [%%IF INCLUDE_STATUS%%]
+            <option value="a.state">[%%COM_ARCHITECTCOMP%%]_FIELD_STATUS_LABEL</option>
+            [%%ENDIF INCLUDE_STATUS%%]
+            [%%IF INCLUDE_ACCESS%%]
+            <option value="a.access">JGRID_HEADING_ACCESS</option>
+            [%%ENDIF INCLUDE_ACCESS%%]
+            [%%IF INCLUDE_CREATED%%]
+            <option value="created_by_name">[%%COM_ARCHITECTCOMP%%]_FIELD_CREATED_BY_LABEL</option>
+            [%%ENDIF INCLUDE_CREATED%%]
+            [%%IF GENERATE_CATEGORIES%%]
+            <option value="category_title">JCATEGORY</option>
+            [%%ENDIF GENERATE_CATEGORIES%%]
+            [%%IF INCLUDE_LANGUAGE%%]
+            <option value="association" requires="associations">JASSOCIATIONS</option>
+            <option value="language">JGRID_HEADING_LANGUAGE</option>
+            [%%ENDIF INCLUDE_LANGUAGE%%]
+            <option value="a.id">JGRID_HEADING_ID</option>
+        </field>
+<!--        <field
+            name="direction_table"
+            type="list"
+            label="JFIELD_ORDERING_DESC"
+            onchange="this.form.submit();"
+            default=""
+		>
+            <option value="">JFIELD_ORDERING_DESC</option>
+            <option value="asc">JGLOBAL_ORDER_ASCENDING</option>
+            <option value="desc">JGLOBAL_ORDER_DESCENDING</option>
+        </field>-->
+        <field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			label="[%%COM_ARCHITECTCOMP%%]_LIST_LIMIT_LABEL"
+			description="[%%COM_ARCHITECTCOMP%%]_LIST_LIMIT_DESC"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>
